@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="library-1.2.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/475bb44a17573442ef371f626d2f8f2ddcf910bb/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/475bb44a17573442ef371f626d2f8f2ddcf910bb/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cc.cloudist.acplibrary/library/1.2.1/e9ac9da07d8c4c9038d645c9416939cdc3a22ff9/library-1.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

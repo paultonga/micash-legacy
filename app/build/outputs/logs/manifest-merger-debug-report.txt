@@ -1,0 +1,337 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-48:12
+	package
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:3:5-35
+		INJECTED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.2] /Users/Paul/.android/build-cache/a46783048283cb668dafa3ce492c1adce1891eb6/output/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:6:5-79
+MERGED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.2] /Users/Paul/.android/build-cache/a46783048283cb668dafa3ce492c1adce1891eb6/output/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:7:22-77
+application
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:9:5-46:19
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /Users/Paul/.android/build-cache/5a0a64cfb5cc32d52e22ccf96f73fcf4bdadb643/output/AndroidManifest.xml:9:5-20
+MERGED from [com.msg91.sendotp.library:library:3.1] /Users/Paul/.android/build-cache/5d2a10ee422c3d4db86a6aadfa14ccf53beb8fdd/output/AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Paul/.android/build-cache/ec889bb12813f7b72cfd8de3db7ecfbd1362d47b/output/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:25.3.1] /Users/Paul/.android/build-cache/7c95b3147b2993234f71ff50d993954b11f64b0d/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:transition:25.3.1] /Users/Paul/.android/build-cache/fa2a8c4f5c4fe23850876f354b63599e1ea4e1e0/output/AndroidManifest.xml:26:5-20
+MERGED from [com.afollestad.material-dialogs:core:0.9.4.5] /Users/Paul/.android/build-cache/a7888dab087e97b04df37b839d42f21b352f5a39/output/AndroidManifest.xml:13:5-20
+MERGED from [com.android.support:support-v13:25.3.1] /Users/Paul/.android/build-cache/a00a4b77e40ad44a17050475598a84cb1212bf00/output/AndroidManifest.xml:29:5-20
+MERGED from [com.google.firebase:firebase-core:11.0.2] /Users/Paul/.android/build-cache/441d2b0da02df137b8930a05317e65f04c834d54/output/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.2] /Users/Paul/.android/build-cache/a46783048283cb668dafa3ce492c1adce1891eb6/output/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:28:5-49:19
+MERGED from [com.google.firebase:firebase-auth:11.0.2] /Users/Paul/.android/build-cache/06eb0138aba3b6045c42230f7f77b1f92a431d48/output/AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.android.gms:play-services-base:11.0.2] /Users/Paul/.android/build-cache/3404f505ad1d548b87251237290c128884c60db6/output/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.firebase:firebase-common:11.0.2] /Users/Paul/.android/build-cache/e4b82fcbfe97ff5dd2fcc66086194435d7a5275b/output/AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.2] /Users/Paul/.android/build-cache/9b73636efcb32f987922adafa291625bb3cf159f/output/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:11.0.2] /Users/Paul/.android/build-cache/8df1ca014ad2c7e12ca6f7b997dbba4d67e9541e/output/AndroidManifest.xml:19:5-21:19
+MERGED from [com.github.pinball83:masked-edittext:1.0.3] /Users/Paul/.android/build-cache/62492144fa35a74a04fc0fc074378ed703f4aaf1/output/AndroidManifest.xml:11:5-14:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] /Users/Paul/.android/build-cache/922e98ad7311c8e35e27dacba35f9275d3fa8851/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/Paul/.android/build-cache/2cff2afe7328795cb007d1e53f0e3cc285e02e21/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/Paul/.android/build-cache/45e282321e7cf2a8a224e44281fc8027f922fb67/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/Paul/.android/build-cache/e3ba8fc2baffb798dc6bf5307441603a202d3e68/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/Paul/.android/build-cache/27255f84efaf879cc12fa5ac1c2aa189b9249df5/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/Paul/.android/build-cache/833986a4c765404d28f5e5ebb4cec9a37bfde3b2/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/Paul/.android/build-cache/290e27226fff835a9fbcf6a13e740d8a16d5abf7/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /Users/Paul/.android/build-cache/40aae9256cc50567eb0a40555eb5484ac507b9ff/output/AndroidManifest.xml:29:5-20
+MERGED from [com.github.reinaldoarrosi:maskededittext:1.1.0] /Users/Paul/.android/build-cache/d8dd6b4d278eda719047eefcb418b6a0688bca57/output/AndroidManifest.xml:11:5-53
+	android:label
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:13:9-41
+	android:supportsRtl
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:15:9-35
+	android:roundIcon
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:14:9-54
+	android:allowBackup
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:11:9-35
+	android:icon
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:12:9-43
+	android:theme
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:16:9-40
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:10:9-47
+activity#ng.com.bitlab.micash.common.MainActivity
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:18:9-57
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:18:19-54
+activity#ng.com.bitlab.micash.common.SplashScreenActivity
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:19:9-21:20
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:19:19-62
+activity#ng.com.bitlab.micash.ui.transactions.TransactionsActivity
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:22:9-74
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:22:19-71
+activity#ng.com.bitlab.micash.ui.cards.CardsActivity
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:23:9-60
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:23:19-57
+activity#ng.com.bitlab.micash.ui.guarantor.GuarantorActivity
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:24:9-68
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:24:19-65
+activity#ng.com.bitlab.micash.ui.settings.SettingsActivity
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:25:9-66
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:25:19-63
+activity#ng.com.bitlab.micash.ui.intro.IntroActivity
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:26:9-29:47
+	android:label
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:28:13-57
+	android:theme
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:29:13-44
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:27:13-51
+activity#ng.com.bitlab.micash.ui.register.RegisterActivity
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:30:9-66
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:30:19-63
+activity#ng.com.bitlab.micash.ui.welcome.WelcomeActivity
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:31:9-35:53
+	android:label
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:34:13-59
+	android:configChanges
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:33:13-74
+	android:theme
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:35:13-51
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:32:13-55
+activity#ng.com.bitlab.micash.ui.verify.VerifyActivity
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:36:9-61
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:36:19-59
+activity#ng.com.bitlab.micash.ui.login.LoginActivity
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:37:9-43:20
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:37:19-57
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:38:13-42:29
+action#android.intent.action.MAIN
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:39:17-69
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:39:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:41:17-77
+	android:name
+		ADDED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:41:27-74
+uses-sdk
+INJECTED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /Users/Paul/.android/build-cache/5a0a64cfb5cc32d52e22ccf96f73fcf4bdadb643/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.msg91.sendotp.library:library:3.1] /Users/Paul/.android/build-cache/5d2a10ee422c3d4db86a6aadfa14ccf53beb8fdd/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Paul/.android/build-cache/ec889bb12813f7b72cfd8de3db7ecfbd1362d47b/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.jakewharton:butterknife:8.6.0] /Users/Paul/.android/build-cache/cdd58b46ee3736b2b1c9ceac837a5d52adda3638/output/AndroidManifest.xml:5:5-43
+MERGED from [com.mikepenz:materialdrawer:5.9.2] /Users/Paul/.android/build-cache/aeb09a5704e0e00da522ab36f455ceac9a06a08d/output/AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:design:25.3.1] /Users/Paul/.android/build-cache/7c95b3147b2993234f71ff50d993954b11f64b0d/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:transition:25.3.1] /Users/Paul/.android/build-cache/fa2a8c4f5c4fe23850876f354b63599e1ea4e1e0/output/AndroidManifest.xml:20:5-44
+MERGED from [com.mikepenz:materialize:1.0.2] /Users/Paul/.android/build-cache/af361e775b6ad43e4dc8554b279ec24ed7f05d4f/output/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:iconics-core:2.8.5] /Users/Paul/.android/build-cache/03d8550e6db35d6c1d2cad640f9e8dd8148285c4/output/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:fastadapter:2.5.3] /Users/Paul/.android/build-cache/b2583f25e665e092419c8fb6e36fb3428ea4422e/output/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:fontawesome-typeface:4.4.0.1] /Users/Paul/.android/build-cache/4da0ef62fb95b990ecee6370da5597db5297b370/output/AndroidManifest.xml:8:5-10:41
+MERGED from [com.intuit.ssp:ssp-android:1.0.4] /Users/Paul/.android/build-cache/26794dbcf6233ba682053edc829ff2ed66fb50be/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.intuit.sdp:sdp-android:1.0.4] /Users/Paul/.android/build-cache/c342ca874689f9346c88aae3d8f8f7d4054f857d/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.wang.avi:library:2.1.3] /Users/Paul/.android/build-cache/8121deb80c6b824b6cfbfd61b3f02ac036ad3952/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.afollestad.material-dialogs:core:0.9.4.5] /Users/Paul/.android/build-cache/a7888dab087e97b04df37b839d42f21b352f5a39/output/AndroidManifest.xml:8:5-11:75
+MERGED from [com.android.support:support-v13:25.3.1] /Users/Paul/.android/build-cache/a00a4b77e40ad44a17050475598a84cb1212bf00/output/AndroidManifest.xml:21:5-23:55
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/Paul/.android/build-cache/1371c53ba676a614fee4af7f06fdd542e4a8426b/output/AndroidManifest.xml:20:5-43
+MERGED from [me.zhanghai.android.materialprogressbar:library:1.4.1] /Users/Paul/.android/build-cache/dcc06254a68fa01deaccce05227e94710e86ca30/output/AndroidManifest.xml:12:5-14:41
+MERGED from [com.google.firebase:firebase-core:11.0.2] /Users/Paul/.android/build-cache/441d2b0da02df137b8930a05317e65f04c834d54/output/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.2] /Users/Paul/.android/build-cache/a46783048283cb668dafa3ce492c1adce1891eb6/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-auth:11.0.2] /Users/Paul/.android/build-cache/06eb0138aba3b6045c42230f7f77b1f92a431d48/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.2] /Users/Paul/.android/build-cache/3404f505ad1d548b87251237290c128884c60db6/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-database:11.0.2] /Users/Paul/.android/build-cache/8d55c353fbfb3661d985414e3df22f2e88e31698/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-database-connection:11.0.2] /Users/Paul/.android/build-cache/37d641402ef5c7baa5861e4bc226c74e3f8900f2/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-storage:11.0.2] /Users/Paul/.android/build-cache/8cec0d3e13bc2cca86e54ca79bc80d9d616fd64d/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-storage-common:11.0.2] /Users/Paul/.android/build-cache/2d068836a10f756b15d7391b2ff6866ac01d56ce/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-common:11.0.2] /Users/Paul/.android/build-cache/e4b82fcbfe97ff5dd2fcc66086194435d7a5275b/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.2] /Users/Paul/.android/build-cache/9b73636efcb32f987922adafa291625bb3cf159f/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.2] /Users/Paul/.android/build-cache/8df1ca014ad2c7e12ca6f7b997dbba4d67e9541e/output/AndroidManifest.xml:17:5-43
+MERGED from [cc.cloudist.acplibrary:library:1.2.1] /Users/Paul/.android/build-cache/475bb44a17573442ef371f626d2f8f2ddcf910bb/output/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.pinball83:masked-edittext:1.0.3] /Users/Paul/.android/build-cache/62492144fa35a74a04fc0fc074378ed703f4aaf1/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.1] /Users/Paul/.android/build-cache/922e98ad7311c8e35e27dacba35f9275d3fa8851/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/Paul/.android/build-cache/2cff2afe7328795cb007d1e53f0e3cc285e02e21/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/Paul/.android/build-cache/45e282321e7cf2a8a224e44281fc8027f922fb67/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/Paul/.android/build-cache/e3ba8fc2baffb798dc6bf5307441603a202d3e68/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/Paul/.android/build-cache/27255f84efaf879cc12fa5ac1c2aa189b9249df5/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/Paul/.android/build-cache/833986a4c765404d28f5e5ebb4cec9a37bfde3b2/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/Paul/.android/build-cache/290e27226fff835a9fbcf6a13e740d8a16d5abf7/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.1] /Users/Paul/.android/build-cache/40aae9256cc50567eb0a40555eb5484ac507b9ff/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.github.reinaldoarrosi:maskededittext:1.1.0] /Users/Paul/.android/build-cache/d8dd6b4d278eda719047eefcb418b6a0688bca57/output/AndroidManifest.xml:7:5-9:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.3.1] /Users/Paul/.android/build-cache/7c95b3147b2993234f71ff50d993954b11f64b0d/output/AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:25.3.1] /Users/Paul/.android/build-cache/7c95b3147b2993234f71ff50d993954b11f64b0d/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:transition:25.3.1] /Users/Paul/.android/build-cache/fa2a8c4f5c4fe23850876f354b63599e1ea4e1e0/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v13:25.3.1] /Users/Paul/.android/build-cache/a00a4b77e40ad44a17050475598a84cb1212bf00/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/Paul/.android/build-cache/1371c53ba676a614fee4af7f06fdd542e4a8426b/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] /Users/Paul/.android/build-cache/922e98ad7311c8e35e27dacba35f9275d3fa8851/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/Paul/.android/build-cache/2cff2afe7328795cb007d1e53f0e3cc285e02e21/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/Paul/.android/build-cache/45e282321e7cf2a8a224e44281fc8027f922fb67/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/Paul/.android/build-cache/e3ba8fc2baffb798dc6bf5307441603a202d3e68/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/Paul/.android/build-cache/27255f84efaf879cc12fa5ac1c2aa189b9249df5/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/Paul/.android/build-cache/833986a4c765404d28f5e5ebb4cec9a37bfde3b2/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/Paul/.android/build-cache/290e27226fff835a9fbcf6a13e740d8a16d5abf7/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] /Users/Paul/.android/build-cache/40aae9256cc50567eb0a40555eb5484ac507b9ff/output/AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:design:25.3.1] /Users/Paul/.android/build-cache/7c95b3147b2993234f71ff50d993954b11f64b0d/output/AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:design:25.3.1] /Users/Paul/.android/build-cache/7c95b3147b2993234f71ff50d993954b11f64b0d/output/AndroidManifest.xml:26:9-47
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.2] /Users/Paul/.android/build-cache/a46783048283cb668dafa3ce492c1adce1891eb6/output/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:22:22-65
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.2] /Users/Paul/.android/build-cache/a46783048283cb668dafa3ce492c1adce1891eb6/output/AndroidManifest.xml:25:7-26:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:25:90-112
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:25:113-137
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:25:17-89
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:27:7-31:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:27:162-184
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:27:185-208
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:27:105-161
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:27:17-104
+intent-filter#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:28:11-30:27
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:29:15-76
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:29:23-74
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.2] /Users/Paul/.android/build-cache/a46783048283cb668dafa3ce492c1adce1891eb6/output/AndroidManifest.xml:27:7-137
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:32:88-110
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:32:111-135
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:32:16-87
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:33:7-197
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:33:148-170
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:33:171-195
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:33:91-147
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/Paul/.android/build-cache/1c5aaef50c5a36ac479c1dcecaac153a051b014b/output/AndroidManifest.xml:33:16-90
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:22:5-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:22:22-79
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:24:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:26:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:30:9-35:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:30:85-108
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:30:109-169
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:30:19-84
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:31:13-34:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:32:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:32:25-78
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:33:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:33:27-58
+receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:39:9-119
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:39:93-117
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:39:19-92
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:43:9-47:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:43:83-106
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:43:18-82
+intent-filter#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:44:13-46:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:44:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:45:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.2] /Users/Paul/.android/build-cache/03904d8552adb1880af411d01e4a7cb0525f8250/output/AndroidManifest.xml:45:25-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:11.0.2] /Users/Paul/.android/build-cache/3404f505ad1d548b87251237290c128884c60db6/output/AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:11.0.2] /Users/Paul/.android/build-cache/3404f505ad1d548b87251237290c128884c60db6/output/AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:11.0.2] /Users/Paul/.android/build-cache/3404f505ad1d548b87251237290c128884c60db6/output/AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:11.0.2] /Users/Paul/.android/build-cache/3404f505ad1d548b87251237290c128884c60db6/output/AndroidManifest.xml:19:19-85
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:11.0.2] /Users/Paul/.android/build-cache/e4b82fcbfe97ff5dd2fcc66086194435d7a5275b/output/AndroidManifest.xml:6:9-194
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:11.0.2] /Users/Paul/.android/build-cache/e4b82fcbfe97ff5dd2fcc66086194435d7a5275b/output/AndroidManifest.xml:6:19-78
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:11.0.2] /Users/Paul/.android/build-cache/e4b82fcbfe97ff5dd2fcc66086194435d7a5275b/output/AndroidManifest.xml:6:144-168
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:11.0.2] /Users/Paul/.android/build-cache/e4b82fcbfe97ff5dd2fcc66086194435d7a5275b/output/AndroidManifest.xml:6:169-192
+	android:name
+		ADDED from [com.google.firebase:firebase-common:11.0.2] /Users/Paul/.android/build-cache/e4b82fcbfe97ff5dd2fcc66086194435d7a5275b/output/AndroidManifest.xml:6:79-143
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:11.0.2] /Users/Paul/.android/build-cache/8df1ca014ad2c7e12ca6f7b997dbba4d67e9541e/output/AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:11.0.2] /Users/Paul/.android/build-cache/8df1ca014ad2c7e12ca6f7b997dbba4d67e9541e/output/AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:11.0.2] /Users/Paul/.android/build-cache/8df1ca014ad2c7e12ca6f7b997dbba4d67e9541e/output/AndroidManifest.xml:20:20-65

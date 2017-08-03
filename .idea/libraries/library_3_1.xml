@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="library-3.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/5d2a10ee422c3d4db86a6aadfa14ccf53beb8fdd/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/5d2a10ee422c3d4db86a6aadfa14ccf53beb8fdd/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.msg91.sendotp.library/library/3.1/95260ed2bd85107322e2bcbee5df34c34ba6c869/library-3.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

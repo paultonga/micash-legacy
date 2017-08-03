@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
+        "source": "/Users/Paul/.android/build-cache/7c95b3147b2993234f71ff50d993954b11f64b0d/output/res/drawable-anydpi-v21/design_ic_visibility.xml"
+    },
+    {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
+        "source": "/Users/Paul/.android/build-cache/7c95b3147b2993234f71ff50d993954b11f64b0d/output/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/md_nav_back.xml",
+        "source": "/Users/Paul/.android/build-cache/a7888dab087e97b04df37b839d42f21b352f5a39/output/res/drawable-anydpi-v21/md_nav_back.xml"
+    }
+]

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "3308813838",
+    "firebase_url": "https://micash-e8219.firebaseio.com",
+    "project_id": "micash-e8219",
+    "storage_bucket": "micash-e8219.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3308813838:android:9937844827c95047",
+        "android_client_info": {
+          "package_name": "ng.com.bitlab.micash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3308813838-o3uav4s9aqh5n4bmo5h1pjdhcv5g5m7n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ng.com.bitlab.micash",
+            "certificate_hash": "db40236a2f9ff4485bf0960b993ea37795d09401"
+          }
+        },
+        {
+          "client_id": "3308813838-r8u53jiv0rjfvfn6f0uf5e15jdfnos1v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR4GJ7ukeEaPzjvSctgzImXifhYoc1O9s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3308813838-r8u53jiv0rjfvfn6f0uf5e15jdfnos1v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
