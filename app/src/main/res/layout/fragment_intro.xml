@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="24/7 Access"
-        android:textSize="@dimen/_32ssp"
+        android:textSize="@dimen/_25ssp"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
         android:layout_below="@+id/slideIcon"
@@ -32,7 +32,7 @@
         android:textColor="@color/whiteText"
         android:layout_below="@+id/titleTextView"
         android:layout_marginTop="@dimen/_10sdp"
-        android:textSize="@dimen/_17ssp"
+        android:textSize="@dimen/_14ssp"
         android:textAlignment="center"
         android:padding="@dimen/_8sdp"/>
 

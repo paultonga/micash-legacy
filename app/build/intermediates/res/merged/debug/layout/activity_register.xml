@@ -6,15 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/blue_background"
-    android:paddingTop="@dimen/layout_top_bottom_padding"
     android:paddingBottom="@dimen/layout_top_bottom_padding"
     tools:context="ng.com.bitlab.micash.ui.register.RegisterActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
         android:id="@+id/top"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_40sdp"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,8 +34,8 @@
 
         <ImageView
             android:id="@+id/iv_logo"
-            android:layout_width="@dimen/_180sdp"
-            android:layout_height="@dimen/_39sdp"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_29sdp"
             android:src="@drawable/logo_white"/>
 
         <TextView
@@ -34,7 +46,7 @@
             android:layout_marginTop="@dimen/_13sdp"
             android:textColor="@color/whiteText"
             android:text="@string/register_notice"
-            android:textSize="@dimen/_14ssp"/>
+            android:textSize="@dimen/_12ssp"/>
 
     </LinearLayout>
 
@@ -43,7 +55,7 @@
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/top"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_35sdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -60,11 +72,11 @@
                 android:id="@+id/editTextName"
                 android:layout_width="@dimen/_250sdp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
                 android:hint="@string/hint_name"
                 android:textColor="@color/whiteText"
                 android:inputType="textPersonName"
-                android:textSize="@dimen/_17ssp"/>
+                android:textSize="@dimen/_14ssp"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -80,10 +92,10 @@
                 android:id="@+id/editTextEmail"
                 android:layout_width="@dimen/_250sdp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
                 android:hint="@string/hint_email_address"
                 android:inputType="textEmailAddress"
-                android:textSize="@dimen/_17ssp"/>
+                android:textSize="@dimen/_14ssp"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -101,7 +113,7 @@
                 android:layout_width="@dimen/_250sdp"
                 android:layout_height="wrap_content"
                 android:hint="Your Password"
-                android:textSize="@dimen/_17ssp"
+                android:textSize="@dimen/_14ssp"
                 android:layout_marginBottom="@dimen/_5sdp"
                 android:inputType="text" />
 
@@ -115,7 +127,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_24sdp"
         android:gravity="center"
         android:layout_centerHorizontal="true">
 
@@ -139,7 +151,6 @@
             android:textColor="@color/whiteText"
             android:textSize="@dimen/_10ssp"
             android:textAlignment="center"/>
-
 
 
     </LinearLayout>

@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@id/iv_logo"
-        android:layout_width="@dimen/_180sdp"
-        android:layout_height="@dimen/_39sdp"
+        android:layout_width="@dimen/_175sdp"
+        android:layout_height="@dimen/_34sdp"
         android:src="@drawable/logo_white"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/_40sdp"
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Welcome"
-            android:textSize="@dimen/_30ssp"
+            android:textSize="@dimen/_25ssp"
             android:textAlignment="center"
             android:textStyle="bold"
             android:textColor="@android:color/white"
@@ -42,7 +42,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:padding="@dimen/_5sdp"
             android:text="@string/welcome_message"
-            android:textSize="@dimen/_17ssp"
+            android:textSize="@dimen/_14ssp"
             android:textAlignment="center"
             android:textStyle="normal"
             android:textColor="@android:color/white"

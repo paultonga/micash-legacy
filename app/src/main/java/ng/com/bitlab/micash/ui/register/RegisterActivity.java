@@ -3,11 +3,14 @@ package ng.com.bitlab.micash.ui.register;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -24,7 +27,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.ui.common.BaseView;
+import ng.com.bitlab.micash.ui.login.LoginActivity;
 import ng.com.bitlab.micash.ui.verify.VerifyActivity;
+import ng.com.bitlab.micash.utils.Constants;
 
 
 public class RegisterActivity extends BaseView implements RegisterContract.View {
@@ -45,11 +50,31 @@ public class RegisterActivity extends BaseView implements RegisterContract.View 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
         ButterKnife.bind(this);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+
+        if(!isTaskRoot()) {
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
+        }
         passwordEditText.setTransformationMethod(new PasswordTransformationMethod());
         passwordEditText.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
 
         mPresenter = new RegisterPresenter(this);
+        setUpPreferences();
+
     }
 
 
@@ -99,5 +124,14 @@ public class RegisterActivity extends BaseView implements RegisterContract.View 
         Intent intent = new Intent(RegisterActivity.this, VerifyActivity.class);
         startActivity(intent);
         finish();
+    }
+
+
+    private void setUpPreferences() {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sp.edit();
+
+        editor.putString(Constants.APP_STATE, Constants.START_REGISTER);
+        editor.apply();
     }
 }

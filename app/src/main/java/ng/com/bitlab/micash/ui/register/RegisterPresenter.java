@@ -31,20 +31,11 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View> impl
     }
 
     @Override
-    public boolean isValidEmail(String email) {
-        return (email != null && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches());
-
-    }
-
-    @Override
     public boolean isValidName(String name) {
         return  (name != null && name.length() >= 3);
     }
 
-    @Override
-    public boolean isValidPassword(String password) {
-        return (password != null  && password.length() > 6);
-    }
+
 
     @Override
     public void createFirebaseUser(String email, String password, final String name) {

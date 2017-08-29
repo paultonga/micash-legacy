@@ -18,6 +18,9 @@ import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.ui.intro.IntroActivity;
 import ng.com.bitlab.micash.ui.login.LoginActivity;
 import ng.com.bitlab.micash.ui.register.RegisterActivity;
+import ng.com.bitlab.micash.ui.resume.ResumeActivity;
+import ng.com.bitlab.micash.ui.upload.UploadActivity;
+import ng.com.bitlab.micash.ui.verify.VerifyActivity;
 import ng.com.bitlab.micash.ui.welcome.WelcomeActivity;
 import ng.com.bitlab.micash.utils.Constants;
 
@@ -43,32 +46,88 @@ public class SplashScreenActivity extends AppCompatActivity {
             public void run() {
 
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(SplashScreenActivity.this);
-                boolean isIntroduced = sp.getBoolean(Constants.INTRODUCED, false);
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                String appState = sp.getString(Constants.APP_STATE, "");
+                String jsonUser = sp.getString(Constants.USER, null);
 
-                if(user != null){
-                    //user is present and has been introduced
-                    //go to main activity
-                    startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
+                if(jsonUser != null){
+                    Intent intent = new Intent(SplashScreenActivity.this, ResumeActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    finish();
                 } else {
-                    if(isIntroduced){
-                        startActivity(new Intent(SplashScreenActivity.this, RegisterActivity.class));
-                    } else {
-                        startActivity(new Intent(SplashScreenActivity.this, WelcomeActivity.class));
-                        savePreferences();
+
+                    switch (appState) {
+                        case "":
+                            gotoWelcome();
+                            break;
+                        case Constants.START_APP_INTRO:
+                            gotoAppIntro();
+                            break;
+                        case Constants.START_REGISTER:
+                            gotoRegisterActivity();
+                            break;
+                        case Constants.START_PHONE_VERIFICATION:
+                            gotoPhoneVerificationView();
+                            break;
+                        case Constants.START_UPLOAD_IMAGE:
+                            gotoUploadImageView();
+                            break;
+                        case Constants.GET_STARTED_VIEW:
+                            gotoGetStartedView();
+                            break;
+                        case Constants.DONE:
+                            gotoLoginActivity();
+                            break;
+                        default:
+                            gotoWelcome();
+
                     }
                 }
-
+                        
                     }
         }, SPLASH_DISPLAY_LENGTH);
 
     }
 
-    public void savePreferences(){
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putBoolean(Constants.IS_FIRST_TIME, false);
+    private void gotoAppIntro() {
+        startActivity(new Intent(this, IntroActivity.class));
+        finish();
     }
+
+    private void gotoPhoneVerificationView() {
+        Intent i = new Intent(this, VerifyActivity.class);
+        startActivity(i);
+        finish();
+    }
+    
+
+    private void gotoRegisterActivity() {
+        startActivity(new Intent(this, RegisterActivity.class));
+        finish();
+    }
+
+    private void gotoWelcome() {
+        startActivity(new Intent(this, WelcomeActivity.class));
+        finish();
+    }
+
+    private void gotoUploadImageView() {
+        Intent i = new Intent(this, UploadActivity.class);
+        startActivity(i);
+        finish();
+    }
+
+    private void gotoGetStartedView() {
+        Intent i = new Intent(this, UploadActivity.class);
+        startActivity(i);
+        finish();
+    }
+
+    private void gotoLoginActivity() {
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
+    }
+
 
 }
 

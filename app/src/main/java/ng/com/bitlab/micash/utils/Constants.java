@@ -14,8 +14,16 @@ public class Constants {
     public final static int LOGOUT = 6;
 
 
-    public final static String HAS_LOGGED_IN_BEFORE = "Has_Logged_In_Before";
-    public final static String INTRODUCED = "Introduced";
-    public final static String IS_FIRST_TIME = "Is_First_Time";
+    public final static String APP_STATE = "appState";
+    public final static String START_APP_INTRO = "start_app_intro";
+    public final static String START_REGISTER = "start_register";
+    public final static String START_PHONE_VERIFICATION = "start_phone_verification";
+    public final static String START_CODE_VERIFICATION = "start_code_verification";
+    public final static String START_UPLOAD_IMAGE = "start_upload_image";
+    public final static String GET_STARTED_VIEW = "get_started_view";
+    public final static String DONE = "done";
+    public final static String USER = "user";
+
+    public final static String SENDER = "micash";
 
 }

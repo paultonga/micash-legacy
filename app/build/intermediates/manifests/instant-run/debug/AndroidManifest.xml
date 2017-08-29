@@ -11,6 +11,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <meta-data
         android:name="android.support.VERSION"
@@ -44,14 +46,42 @@
             android:name="ng.com.bitlab.micash.ui.intro.IntroActivity"
             android:label="@string/title_activity_intro"
             android:theme="@style/AppTheme" />
-        <activity android:name="ng.com.bitlab.micash.ui.register.RegisterActivity" />
+        <activity
+            android:name="ng.com.bitlab.micash.ui.register.RegisterActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity
             android:name="ng.com.bitlab.micash.ui.welcome.WelcomeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_welcome"
             android:theme="@style/FullscreenTheme" />
-        <activity android:name="ng.com.bitlab.micash.ui.verify.VerifyActivity" />
-        <activity android:name="ng.com.bitlab.micash.ui.login.LoginActivity" >
+        <activity
+            android:name="ng.com.bitlab.micash.ui.verify.VerifyActivity"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+        <activity
+            android:name="ng.com.bitlab.micash.ui.login.LoginActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent" >
+        </activity>
+
+        <meta-data
+            android:name="sendotp.key"
+            android:value="@string/sendotp_key" />
+
+        <activity
+            android:name="ng.com.bitlab.micash.ui.upload.UploadActivity"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+
+        <receiver android:name="ng.com.bitlab.micash.utils.SMSReceiver" >
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="ng.com.bitlab.micash.ui.recover.RecoverActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
+        <activity
+            android:name="ng.com.bitlab.micash.ui.resume.ResumeActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

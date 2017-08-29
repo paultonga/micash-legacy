@@ -3,6 +3,8 @@ package ng.com.bitlab.micash.common;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -20,6 +22,7 @@ import butterknife.ButterKnife;
 import butterknife.BindView;
 import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.ui.cards.CardsActivity;
+import ng.com.bitlab.micash.ui.common.BaseView;
 import ng.com.bitlab.micash.ui.guarantor.GuarantorActivity;
 import ng.com.bitlab.micash.ui.settings.SettingsActivity;
 import ng.com.bitlab.micash.ui.transactions.TransactionsActivity;
@@ -32,7 +35,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseView {
 
     @BindView(R.id.viewPager) ViewPager mViewPager;
     @BindView(R.id.tabs) TabLayout mTabLayout;
@@ -71,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
         getSupportActionBar().setTitle("Hello");
         mActivity = this;
+        savePreferences(Constants.DONE);
 
 
         mHeader = new AccountHeaderBuilder()
@@ -171,6 +175,14 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    private void savePreferences(String s) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sp.edit();
+
+        editor.putString(Constants.APP_STATE, s);
+        editor.apply();
     }
 
 }

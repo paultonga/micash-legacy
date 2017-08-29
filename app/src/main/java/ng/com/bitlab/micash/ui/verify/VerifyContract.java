@@ -17,24 +17,17 @@ public interface VerifyContract {
 
         void onResendCodeClicked();
 
-        void onSetProfilePictureClicked();
-
-        void onSkipProfilePictureClicked();
-
         void showVerificationLayout();
 
-        void showSetProfilePictureLayout();
+        void updateVerificationLayout(String code);
 
-        void showCompletedLayout();
+        void gotoUploadActivity();
 
         void showPhoneNumberLayout();
 
-        void startMainActivity();
+        String getNoticeString(String phone);
 
-        void selectProfileImage();
-
-        void getStartedClicked();
-
+        void showEditNumberDialog();
 
     }
 
@@ -46,18 +39,17 @@ public interface VerifyContract {
 
         boolean validatePhoneNumber(String phone);
 
-        void setProfilePicture();
-
-        void uploadProfileImage(byte[] data);
 
         String parsePhoneNumber(String phone);
 
         void resendCode();
 
-        void verifyAndMergeCredentials(String code);
+        void verifyCode(String code);
+
+        void startAutoVerification(String code);
 
 
-
+        void resume();
     }
 
     interface Repository {

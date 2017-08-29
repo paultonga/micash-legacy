@@ -25,6 +25,12 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="AppTheme.WhiteStatusBar">
+        <item name="android:colorPrimaryDark">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+    </style>
+
 
 
 
@@ -40,6 +46,12 @@
 
     <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
         <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="AppTheme.ActionBar.Transparent" parent="AppTheme">
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="android:elevation">0dp</item>
+        <item name="elevation">0dp</item>
     </style>
 
 </resources>

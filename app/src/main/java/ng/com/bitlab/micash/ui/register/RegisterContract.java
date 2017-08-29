@@ -25,12 +25,7 @@ public interface RegisterContract {
 
     interface Presenter extends IBasePresenter<View> {
 
-
-        boolean isValidEmail(String email);
-
         boolean isValidName(String name);
-
-        boolean isValidPassword(String password);
 
         void createFirebaseUser(String email, String password, String displayName);
 

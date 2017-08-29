@@ -15,7 +15,7 @@ import ng.com.bitlab.micash.R;
 public class RegisterActivity_ViewBinding implements Unbinder {
   private RegisterActivity target;
 
-  private View view2131558568;
+  private View view2131558586;
 
   @UiThread
   public RegisterActivity_ViewBinding(RegisterActivity target) {
@@ -31,7 +31,7 @@ public class RegisterActivity_ViewBinding implements Unbinder {
     target.nameEditText = Utils.findRequiredViewAsType(source, R.id.editTextName, "field 'nameEditText'", EditText.class);
     target.emailEditText = Utils.findRequiredViewAsType(source, R.id.editTextEmail, "field 'emailEditText'", EditText.class);
     view = Utils.findRequiredView(source, R.id.btn_register, "method 'onRegisterClicked'");
-    view2131558568 = view;
+    view2131558586 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -51,7 +51,7 @@ public class RegisterActivity_ViewBinding implements Unbinder {
     target.nameEditText = null;
     target.emailEditText = null;
 
-    view2131558568.setOnClickListener(null);
-    view2131558568 = null;
+    view2131558586.setOnClickListener(null);
+    view2131558586 = null;
   }
 }

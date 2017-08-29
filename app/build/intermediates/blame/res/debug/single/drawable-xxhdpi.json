@@ -20,6 +20,10 @@
         "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/drawable-xxhdpi/ic_ledger_dark.png"
     },
     {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_go_back.png",
+        "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/drawable-xxhdpi/ic_go_back.png"
+    },
+    {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_chat_white.png",
         "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/drawable-xxhdpi/ic_chat_white.png"
     },

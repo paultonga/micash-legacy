@@ -68,6 +68,7 @@ public class IntroActivity extends AppCompatActivity {
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        setUpPreferences();
 
         mViewPager.setCurrentItem(page);
         updateInterface(page);
@@ -110,19 +111,20 @@ public class IntroActivity extends AppCompatActivity {
 
     }
 
+
+
+    private void startRegister() {
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     private void setUpPreferences() {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sp.edit();
 
-        editor.putBoolean(Constants.INTRODUCED, true);
+        editor.putString(Constants.APP_STATE, Constants.START_APP_INTRO);
         editor.apply();
-    }
-
-    private void startRegister() {
-        setUpPreferences();
-        Intent intent = new Intent(this, RegisterActivity.class);
-        startActivity(intent);
-        finish();
     }
 
     private void updateInterface(int position) {
@@ -131,7 +133,9 @@ public class IntroActivity extends AppCompatActivity {
                     i == position ? R.drawable.indicator_selected : R.drawable.indicator_unselected
             );
         }
+
     }
+
 
 
     /**

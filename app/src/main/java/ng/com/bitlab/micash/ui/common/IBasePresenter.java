@@ -9,4 +9,10 @@ public interface IBasePresenter<ViewT> {
     void onViewActive(ViewT view);
 
     void onViewInactive();
+
+    boolean isValidEmail(String email);
+
+    boolean isValidPassword(String password);
+
+
 }

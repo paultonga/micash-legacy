@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
         android:name=".core.MiCashApplication"
@@ -14,7 +16,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".common.MainActivity" />
         <activity android:name=".common.SplashScreenActivity">
 
@@ -27,23 +28,49 @@
             android:name=".ui.intro.IntroActivity"
             android:label="@string/title_activity_intro"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ui.register.RegisterActivity" />
+        <activity android:name=".ui.register.RegisterActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
         <activity
             android:name=".ui.welcome.WelcomeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_welcome"
-            android:theme="@style/FullscreenTheme"/>
-        <activity android:name=".ui.verify.VerifyActivity"/>
-        <activity android:name=".ui.login.LoginActivity">
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".ui.verify.VerifyActivity"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+        <activity android:name=".ui.login.LoginActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent">
+
+
+        </activity>
+
+
+        <meta-data
+            android:name="sendotp.key"
+            android:value="@string/sendotp_key" />
+
+        <activity
+            android:name=".ui.upload.UploadActivity"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+
+        <receiver android:name=".utils.SMSReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".ui.recover.RecoverActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
+
+        <activity android:name=".ui.resume.ResumeActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-
-        <meta-data android:name="sendotp.key" android:value="@string/sendotp_key"/>
-
     </application>
 
 </manifest>

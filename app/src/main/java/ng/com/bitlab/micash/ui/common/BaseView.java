@@ -3,16 +3,20 @@ package ng.com.bitlab.micash.ui.common;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import cc.cloudist.acplibrary.ACProgressConstant;
 import cc.cloudist.acplibrary.ACProgressFlower;
@@ -41,7 +45,7 @@ public abstract class BaseView extends AppCompatActivity implements IBaseVew  {
                 if (ni != null && ni.isConnectedOrConnecting()) {
                     //Log.i(TAG, "Network " + ni.getTypeName() + " connected");
                     isConnected = true;
-                    showSnackBar("You're connected :)");
+                    //showSnackBar("You're connected :)");
                 } else if (intent.getBooleanExtra(ConnectivityManager.EXTRA_NO_CONNECTIVITY, Boolean.FALSE)) {
                     //Log.d(TAG, "There's no network connectivity");
                     isConnected = false;
@@ -50,6 +54,29 @@ public abstract class BaseView extends AppCompatActivity implements IBaseVew  {
             }
         }
     };
+
+
+    @Override
+    public void onBackPressed() {
+        if(isTaskRoot()) {
+            new AlertDialog.Builder(this)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setTitle("Closing MiCash")
+                    .setMessage("Are you sure you want to leave the app?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            FirebaseAuth.getInstance().signOut();
+                            finish();
+                        }
+
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+        } else {
+            super.onBackPressed();
+        }
+    }
 
 
 

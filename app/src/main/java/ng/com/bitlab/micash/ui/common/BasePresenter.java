@@ -19,4 +19,15 @@ public class BasePresenter<ViewT> implements IBasePresenter<ViewT> {
     public void onViewInactive() {
         this.view = null;
     }
+
+    @Override
+    public boolean isValidEmail(String email) {
+        return (email != null && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches());
+
+    }
+
+    @Override
+    public boolean isValidPassword(String password) {
+        return (password != null  && password.length() > 6);
+    }
 }

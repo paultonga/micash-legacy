@@ -16,7 +16,7 @@
     <string name="title_activity_welcome">WelcomeActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="welcome_message">You\'re welome. With advanced features and quick response,  we guarantee you will have a great experience using our app.</string>
+    <string name="welcome_message">You\'re welcome. With advanced features and quick response,  we guarantee you will have a great experience using our app.</string>
     <string name="get_started">GET STARTED</string>
     <string name="verify_notice">We have sent you a 6-digit OTP. Please enter it here and click VERIFY to proceed.</string>
     <string name="verify_confirm_notice">We have successfully verified your phone number. Click GET STARTED to continue.</string>
@@ -25,4 +25,7 @@
     <string name="profile_notice">Please touch the image to select a profile image and click SAVE to continue.</string>
 
     <string name="sendotp_key">168161AnR0pCjk598272a4</string>
+    <string name="new_login_notice">Welcome to miCash. Please enter your email and password to login.</string>
+    <string name="resume_notice">Welcome <b>%1$s</b>. Please enter your password to login.</string>
+    <string name="edit_number"> <u>Edit number</u> </string>
 </resources>

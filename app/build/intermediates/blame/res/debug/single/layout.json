@@ -68,6 +68,10 @@
         "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/layout/notification_template_icon_group.xml"
     },
     {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/activity_recover.xml",
+        "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/layout/activity_recover.xml"
+    },
+    {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/fragment_transaction_list.xml",
         "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/layout/fragment_transaction_list.xml"
     },
@@ -388,6 +392,10 @@
         "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/layout/abc_popup_menu_header_item_layout.xml"
     },
     {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/activity_resume.xml",
+        "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/layout/activity_resume.xml"
+    },
+    {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
         "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/layout/abc_list_menu_item_checkbox.xml"
     },
@@ -438,6 +446,10 @@
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/material_drawer_item_secondary_switch.xml",
         "source": "/Users/Paul/.android/build-cache/aeb09a5704e0e00da522ab36f455ceac9a06a08d/output/res/layout/material_drawer_item_secondary_switch.xml"
+    },
+    {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/activity_upload.xml",
+        "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/layout/activity_upload.xml"
     },
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/activity_verify.xml",
