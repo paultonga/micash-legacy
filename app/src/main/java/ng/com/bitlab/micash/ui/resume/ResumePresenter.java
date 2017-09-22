@@ -72,7 +72,7 @@ public class ResumePresenter extends BasePresenter<ResumeContract.View>
         mUser.setProfileImage(user.getPhotoUrl().toString());
         mUser.setLastSeen(org.joda.time.DateTime.now().getMillis());
         mUser.setDateCreated(org.joda.time.DateTime.now().getMillis());
-        mUser.device = getDevice();
+        //mUser.device = getDevice();
 
         Gson gson = new Gson();
         String json = gson.toJson(mUser);

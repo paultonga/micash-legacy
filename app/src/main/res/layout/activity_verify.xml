@@ -93,7 +93,7 @@
                 android:layout_centerHorizontal="true"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimaryText"
-                android:text="We have sent an OTP to 09027480903. Please enter the code. miCash will attempt to verify the code automatically."
+                android:text=""
                 android:textSize="@dimen/_12ssp"/>
 
 
@@ -101,15 +101,15 @@
             android:id="@+id/tv_edit_number"
             android:layout_width="@dimen/widgets_width_large"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_11sdp"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/tv_verify_notice"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryText"
-            android:text="@string/edit_number"
+            android:text="EDIT NUMBER"
             android:clickable="true"
             android:textStyle="bold"
-            android:textSize="@dimen/_10ssp"/>
+            android:textSize="@dimen/_11ssp"/>
 
 
 
@@ -150,7 +150,7 @@
                 android:text="Resend OTP"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/btn_verify"
-                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_12sdp"
                 android:textColor="@color/colorPrimaryText"
                 android:textSize="@dimen/_12ssp"
                 android:backgroundTint="@color/colorPrimaryText"

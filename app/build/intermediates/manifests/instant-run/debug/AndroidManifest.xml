@@ -35,32 +35,53 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="ng.com.bitlab.micash.common.MainActivity" />
-        <activity android:name="ng.com.bitlab.micash.common.SplashScreenActivity" >
+        <activity
+            android:name="ng.com.bitlab.micash.common.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ng.com.bitlab.micash.common.SplashScreenActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name="ng.com.bitlab.micash.ui.transactions.TransactionsActivity" />
-        <activity android:name="ng.com.bitlab.micash.ui.cards.CardsActivity" />
-        <activity android:name="ng.com.bitlab.micash.ui.guarantor.GuarantorActivity" />
-        <activity android:name="ng.com.bitlab.micash.ui.settings.SettingsActivity" />
+        <activity
+            android:name="ng.com.bitlab.micash.ui.transactions.TransactionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ng.com.bitlab.micash.ui.cards.CardsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ng.com.bitlab.micash.ui.guarantor.GuarantorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ng.com.bitlab.micash.ui.settings.SettingsActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="ng.com.bitlab.micash.ui.intro.IntroActivity"
             android:label="@string/title_activity_intro"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name="ng.com.bitlab.micash.ui.register.RegisterActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity
             android:name="ng.com.bitlab.micash.ui.welcome.WelcomeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_welcome"
+            android:screenOrientation="portrait"
             android:theme="@style/FullscreenTheme" />
         <activity
             android:name="ng.com.bitlab.micash.ui.verify.VerifyActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.WhiteStatusBar" />
         <activity
             android:name="ng.com.bitlab.micash.ui.login.LoginActivity"
-            android:theme="@style/AppTheme.ActionBar.Transparent" >
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
 
         <meta-data
             android:name="sendotp.key"
@@ -68,6 +89,7 @@
 
         <activity
             android:name="ng.com.bitlab.micash.ui.upload.UploadActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.WhiteStatusBar" />
 
         <receiver android:name="ng.com.bitlab.micash.utils.SMSReceiver" >
@@ -78,16 +100,12 @@
 
         <activity
             android:name="ng.com.bitlab.micash.ui.recover.RecoverActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity
             android:name="ng.com.bitlab.micash.ui.resume.ResumeActivity"
-            android:theme="@style/AppTheme.ActionBar.Transparent" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"

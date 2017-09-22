@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 
 import ng.com.bitlab.micash.R;
+import ng.com.bitlab.micash.ui.login.LoginActivity;
 import ng.com.bitlab.micash.ui.register.RegisterActivity;
 import ng.com.bitlab.micash.utils.Constants;
 
@@ -102,7 +103,7 @@ public class IntroActivity extends AppCompatActivity {
                 if (page <= 2 && page >=0){
                     mViewPager.setCurrentItem(page, true);
                 } else {
-                    startRegister();
+                    startLoginActivity();
                 }
             }
         });
@@ -113,8 +114,9 @@ public class IntroActivity extends AppCompatActivity {
 
 
 
-    private void startRegister() {
-        Intent intent = new Intent(this, RegisterActivity.class);
+    private void startLoginActivity() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
     }

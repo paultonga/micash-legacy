@@ -17,19 +17,6 @@ public class User {
     private long lastSeen;
     @Nullable private String profileImage;
     private String phoneNumber;
-    public Device device;
-
-    public User(){}
-
-    public User(String uuid, String fullName, String email, long dateCreated, long lastSeen, String profileImage, String phoneNumber) {
-        this.uuid = uuid;
-        this.fullName = fullName;
-        this.email = email;
-        this.dateCreated = dateCreated;
-        this.lastSeen = lastSeen;
-        this.profileImage = profileImage;
-        this.phoneNumber = phoneNumber;
-    }
 
 
     public String getUuid() {

@@ -122,10 +122,15 @@ public class RegisterActivity extends BaseView implements RegisterContract.View 
     @Override
     public void startVerifyActivity() {
         Intent intent = new Intent(RegisterActivity.this, VerifyActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 
     private void setUpPreferences() {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);

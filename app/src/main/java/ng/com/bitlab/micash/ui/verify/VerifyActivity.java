@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
@@ -28,6 +29,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.firebase.FirebaseTooManyRequestsException;
 import com.google.firebase.auth.FirebaseAuth;
@@ -96,6 +98,8 @@ public class VerifyActivity extends BaseView implements VerifyContract.View {
         phoneInput.setInputType(InputType.TYPE_CLASS_NUMBER);
         codeInput.setInputType(InputType.TYPE_CLASS_NUMBER);
 
+        showPhoneNumberLayout();
+
         if(Build.VERSION.SDK_INT < 23){
             SMSReceiver.bindListener(new SMSListener() {
                 @Override
@@ -130,11 +134,12 @@ public class VerifyActivity extends BaseView implements VerifyContract.View {
                     SMSReceiver.bindListener(new SMSListener() {
                         @Override
                         public void messageReceived(String code) {
+                            mPresenter.saveVerifyPreferences(Constants.CODE, code);
                             mPresenter.startAutoVerification(code);
                         }
                     });
                 } else {
-                    showToast("MiCash will not be able to automatically verify you.");
+                    showToast("miCash will not be able to automatically verify you.");
                 }
                 break;
         }
@@ -154,18 +159,23 @@ public class VerifyActivity extends BaseView implements VerifyContract.View {
         } else {
             String parsedPhone = mPresenter.parsePhoneNumber(rawPhone);
             mPhone = parsedPhone;
-            mPresenter.startPhoneVerification(parsedPhone);
+            showConfirmDialog(mPhone);
         }
     }
 
     @Override
     @OnClick(R.id.btn_verify)
     public void onVerifyClicked() {
-        String code = codeInput.getText(true).toString().trim();
-        if(!mPresenter.validateCode(code)){
-            codeInput.setError("Please enter 6-digit OTP.");
-        } else {
-            mPresenter.verifyCode(code);
+        if(isConnected) {
+            String code = codeInput.getText(true).toString().trim();
+            if (!mPresenter.validateCode(code)) {
+                codeInput.setError("Please enter 6-digit OTP.");
+            } else {
+                mPresenter.saveVerifyPreferences(Constants.CODE, code);
+                mPresenter.verifyCode(code);
+            }
+        }else {
+            showSnackBar("There is no internet connection.");
         }
     }
 
@@ -185,22 +195,35 @@ public class VerifyActivity extends BaseView implements VerifyContract.View {
 
     }
 
+
     @Override
     @OnClick(R.id.tv_edit_number)
     public void showEditNumberDialog() {
 
-        new MaterialDialog.Builder(this)
+        showPhoneNumberLayout();
+        /*new MaterialDialog.Builder(this)
                 .title("Edit number")
                 .content("Please enter your mobile phone number and click submit.")
+                .positiveText("SUBMIT")
+                .positiveColor(Color.BLUE)
+                .negativeText("CANCEL")
+                .negativeColor(Color.RED)
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        mPhone = dialog.getInputEditText().getText().toString();
+                    }
+                })
                 .inputRangeRes(11, 11, R.color.md_red_500)
                 .inputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_CLASS_NUMBER)
                 .input("Enter phone number", "", new MaterialDialog.InputCallback() {
                     @Override
                     public void onInput(MaterialDialog dialog, CharSequence input) {
                         // Do something
-                        showToast(input.toString());
+                        //showToast(input.toString());
                     }
                 }).show();
+                */
 
     }
 
@@ -215,15 +238,16 @@ public class VerifyActivity extends BaseView implements VerifyContract.View {
     @Override
     public void gotoUploadActivity() {
         Intent i = new Intent(this, UploadActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
     }
 
     @Override
     public String getNoticeString(String phone) {
+
         SpannableStringBuilder sb = new SpannableStringBuilder("We have sent an OTP to "+ phone + ". Please enter the code. miCash will attempt to verify the code automatically.");
         StyleSpan bold = new StyleSpan(android.graphics.Typeface.BOLD);
-
         sb.setSpan(bold, 23, 23 + phone.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
 
         return sb.toString();
@@ -237,6 +261,31 @@ public class VerifyActivity extends BaseView implements VerifyContract.View {
         editor.apply();
     }
 
+    @Override
+    public void showConfirmDialog(final String phone) {
+        new MaterialDialog.Builder(this)
+                .title("Confirm Number")
+                .content("We will send an OTP code to "+phone+". Proceed with this?")
+                .positiveText("YES, CONTINUE")
+                .positiveColor(Color.BLUE)
+                .negativeText("CANCEL")
+                .negativeColor(Color.RED)
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        //request phone code
+                        mPresenter.saveVerifyPreferences(Constants.PHONE, mPhone);
+                        mPresenter.checkNumberAvailability(phone);
+                    }
+                })
+                .onNegative(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
 
     @Override
     protected void onResume() {

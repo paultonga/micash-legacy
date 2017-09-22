@@ -110,10 +110,10 @@ public final class R {
         public static final int _9ssp = 0x7f0802c7;
     }
     public static final class id {
-        public static final int give_us_a_review_landmine_button = 0x7f0d00e5;
-        public static final int give_us_a_review_landmine_main_layout = 0x7f0d00e2;
-        public static final int give_us_a_review_landmine_text_1 = 0x7f0d00e3;
-        public static final int give_us_a_review_landmine_text_2 = 0x7f0d00e4;
+        public static final int give_us_a_review_landmine_button = 0x7f0d00e7;
+        public static final int give_us_a_review_landmine_main_layout = 0x7f0d00e4;
+        public static final int give_us_a_review_landmine_text_1 = 0x7f0d00e5;
+        public static final int give_us_a_review_landmine_text_2 = 0x7f0d00e6;
     }
     public static final class layout {
         public static final int sp_example = 0x7f04007c;

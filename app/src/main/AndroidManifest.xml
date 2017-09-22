@@ -16,33 +16,53 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".common.MainActivity" />
-        <activity android:name=".common.SplashScreenActivity">
-
-        </activity>
-        <activity android:name=".ui.transactions.TransactionsActivity" />
-        <activity android:name=".ui.cards.CardsActivity" />
-        <activity android:name=".ui.guarantor.GuarantorActivity" />
-        <activity android:name=".ui.settings.SettingsActivity" />
         <activity
+            android:screenOrientation="portrait"
+            android:name=".common.MainActivity" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".common.SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ui.transactions.TransactionsActivity" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ui.cards.CardsActivity" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ui.guarantor.GuarantorActivity" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ui.settings.SettingsActivity" />
+        <activity
+            android:screenOrientation="portrait"
             android:name=".ui.intro.IntroActivity"
             android:label="@string/title_activity_intro"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ui.register.RegisterActivity"
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ui.register.RegisterActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent"/>
         <activity
+            android:screenOrientation="portrait"
             android:name=".ui.welcome.WelcomeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_welcome"
             android:theme="@style/FullscreenTheme" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".ui.verify.VerifyActivity"
-            android:theme="@style/AppTheme.WhiteStatusBar" />
-        <activity android:name=".ui.login.LoginActivity"
-            android:theme="@style/AppTheme.ActionBar.Transparent">
-
-
-        </activity>
+            android:theme="@style/AppTheme.WhiteStatusBar"/>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ui.login.LoginActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
 
 
         <meta-data
@@ -50,6 +70,7 @@
             android:value="@string/sendotp_key" />
 
         <activity
+            android:screenOrientation="portrait"
             android:name=".ui.upload.UploadActivity"
             android:theme="@style/AppTheme.WhiteStatusBar" />
 
@@ -59,18 +80,16 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ui.recover.RecoverActivity"
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ui.recover.RecoverActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent"/>
 
-        <activity android:name=".ui.resume.ResumeActivity"
-            android:theme="@style/AppTheme.ActionBar.Transparent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ui.resume.ResumeActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
     </application>
 
 </manifest>

@@ -31,6 +31,7 @@ public class WelcomeActivity extends BaseView {
 
     public void showIntro(View view) {
         Intent i = new Intent(this, IntroActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
 

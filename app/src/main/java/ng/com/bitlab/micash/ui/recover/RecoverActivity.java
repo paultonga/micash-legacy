@@ -65,6 +65,11 @@ public class RecoverActivity extends BaseView implements RecoverContract.View {
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
     public void startLoginActivity() {
         this.finish();
     }

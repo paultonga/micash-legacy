@@ -3,6 +3,7 @@ package ng.com.bitlab.micash.core;
 import android.app.Application;
 import android.content.Context;
 
+
 import ng.com.bitlab.micash.common.FontsOverride;
 
 /**
@@ -13,6 +14,7 @@ public class MiCashApplication extends Application {
 
 
     private static Context context;
+
 
     @Override
     public void onCreate() {
@@ -28,4 +30,5 @@ public class MiCashApplication extends Application {
     public static Context getContext(){
         return context;
     }
+
 }

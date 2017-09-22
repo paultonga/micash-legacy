@@ -18,9 +18,11 @@ import ng.com.bitlab.micash.R;
 public class VerifyActivity_ViewBinding implements Unbinder {
   private VerifyActivity target;
 
-  private View view2131558611;
+  private View view2131558613;
 
-  private View view2131558606;
+  private View view2131558607;
+
+  private View view2131558612;
 
   private View view2131558610;
 
@@ -40,16 +42,17 @@ public class VerifyActivity_ViewBinding implements Unbinder {
     target.codeInput = Utils.findRequiredViewAsType(source, R.id.editTextCode, "field 'codeInput'", MaskedEditText.class);
     view = Utils.findRequiredView(source, R.id.tv_resend, "field 'textViewResend' and method 'onResendCodeClicked'");
     target.textViewResend = Utils.castView(view, R.id.tv_resend, "field 'textViewResend'", TextView.class);
-    view2131558611 = view;
+    view2131558613 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
         target.onResendCodeClicked();
       }
     });
+    target.verifyNotice = Utils.findRequiredViewAsType(source, R.id.tv_verify_notice, "field 'verifyNotice'", TextView.class);
     view = Utils.findRequiredView(source, R.id.btn_request_code, "field 'btnRequestCode' and method 'onRequestCodeClicked'");
     target.btnRequestCode = Utils.castView(view, R.id.btn_request_code, "field 'btnRequestCode'", Button.class);
-    view2131558606 = view;
+    view2131558607 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -58,11 +61,19 @@ public class VerifyActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.btn_verify, "field 'btnVerify' and method 'onVerifyClicked'");
     target.btnVerify = Utils.castView(view, R.id.btn_verify, "field 'btnVerify'", Button.class);
-    view2131558610 = view;
+    view2131558612 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
         target.onVerifyClicked();
+      }
+    });
+    view = Utils.findRequiredView(source, R.id.tv_edit_number, "method 'showEditNumberDialog'");
+    view2131558610 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.showEditNumberDialog();
       }
     });
   }
@@ -79,13 +90,16 @@ public class VerifyActivity_ViewBinding implements Unbinder {
     target.phoneInput = null;
     target.codeInput = null;
     target.textViewResend = null;
+    target.verifyNotice = null;
     target.btnRequestCode = null;
     target.btnVerify = null;
 
-    view2131558611.setOnClickListener(null);
-    view2131558611 = null;
-    view2131558606.setOnClickListener(null);
-    view2131558606 = null;
+    view2131558613.setOnClickListener(null);
+    view2131558613 = null;
+    view2131558607.setOnClickListener(null);
+    view2131558607 = null;
+    view2131558612.setOnClickListener(null);
+    view2131558612 = null;
     view2131558610.setOnClickListener(null);
     view2131558610 = null;
   }

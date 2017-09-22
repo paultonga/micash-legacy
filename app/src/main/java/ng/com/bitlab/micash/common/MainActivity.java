@@ -11,10 +11,18 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 
@@ -24,6 +32,7 @@ import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.ui.cards.CardsActivity;
 import ng.com.bitlab.micash.ui.common.BaseView;
 import ng.com.bitlab.micash.ui.guarantor.GuarantorActivity;
+import ng.com.bitlab.micash.ui.resume.ResumeActivity;
 import ng.com.bitlab.micash.ui.settings.SettingsActivity;
 import ng.com.bitlab.micash.ui.transactions.TransactionsActivity;
 import ng.com.bitlab.micash.utils.Constants;
@@ -37,6 +46,7 @@ import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 
 public class MainActivity extends BaseView {
 
+    private static final String TAG = "miCash";
     @BindView(R.id.viewPager) ViewPager mViewPager;
     @BindView(R.id.tabs) TabLayout mTabLayout;
     @BindView(R.id.toolbar) Toolbar mToolbar;
@@ -76,6 +86,12 @@ public class MainActivity extends BaseView {
         mActivity = this;
         savePreferences(Constants.DONE);
 
+        initializeOnlinePresence();
+
+        lastLogin();
+
+        //dummy();
+
 
         mHeader = new AccountHeaderBuilder()
                 .withActivity(this)
@@ -111,6 +127,34 @@ public class MainActivity extends BaseView {
 
 
         initViewPager();
+
+    }
+
+    private void initializeOnlinePresence(){
+
+        final FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = db.getReference();
+
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+
+        final DatabaseReference onlineRef =  databaseReference.child(".info/connected");
+        final DatabaseReference currentUserRef = databaseReference.child("/presence/" + userId);
+        onlineRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(final DataSnapshot dataSnapshot) {
+                Log.d(TAG, "DataSnapshot:" + dataSnapshot);
+                if (dataSnapshot.getValue(Boolean.class)){
+                    currentUserRef.onDisconnect().removeValue();
+                    currentUserRef.setValue(true);
+                }
+            }
+
+            @Override
+            public void onCancelled(final DatabaseError databaseError) {
+                Log.d(TAG, "DatabaseError:" + databaseError);
+            }
+        });
 
     }
 
@@ -170,11 +214,20 @@ public class MainActivity extends BaseView {
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                 break;
             case Constants.LOGOUT:
-                Toast.makeText(this,"Log out has not been implemented yet", Toast.LENGTH_SHORT).show();
+                FirebaseAuth.getInstance().signOut();
+                startLoginActivity();
+                //Toast.makeText(this,"Log out has not been implemented yet", Toast.LENGTH_SHORT).show();
                 break;
 
         }
 
+    }
+
+    private void startLoginActivity() {
+        Intent intent = new Intent(this, ResumeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
     }
 
     private void savePreferences(String s) {
@@ -183,6 +236,27 @@ public class MainActivity extends BaseView {
 
         editor.putString(Constants.APP_STATE, s);
         editor.apply();
+    }
+
+    private void dummy(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        String phone = sp.getString(Constants.PHONE, null);
+        String code = sp.getString(Constants.CODE, null);
+
+        showToast(phone + " "+ code);
+
+    }
+
+    private void lastLogin(){
+        FirebaseUser u = FirebaseAuth.getInstance().getCurrentUser();
+        final FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference ref = db.getReference();
+
+        ref.child("users").child(u.getUid()).child("lastSeen")
+                .setValue(org.joda.time.DateTime.now().getMillis());
+
+
     }
 
 }

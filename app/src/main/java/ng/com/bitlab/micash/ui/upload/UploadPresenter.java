@@ -23,9 +23,12 @@ import com.google.firebase.storage.UploadTask;
 import com.google.gson.Gson;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import ng.com.bitlab.micash.models.Device;
 import ng.com.bitlab.micash.models.User;
+import ng.com.bitlab.micash.models.Verify;
 import ng.com.bitlab.micash.ui.common.BasePresenter;
 import ng.com.bitlab.micash.utils.Constants;
 
@@ -118,16 +121,19 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
             mUser.setUuid(user.getUid());
             mUser.setFullName(user.getDisplayName());
             mUser.setEmail(user.getEmail());
-            mUser.setPhoneNumber(user.getPhoneNumber());
-            mUser.setProfileImage(user.getPhotoUrl().toString());
+            mUser.setPhoneNumber(getVerify().getPhone());
+            mUser.setProfileImage(getPhotoUrl());
             mUser.setLastSeen(org.joda.time.DateTime.now().getMillis());
             mUser.setDateCreated(org.joda.time.DateTime.now().getMillis());
-            mUser.device = getDevice();
+
 
             final FirebaseDatabase db = FirebaseDatabase.getInstance();
-            DatabaseReference ref = db.getReference("micash/users");
+            final DatabaseReference userRef = db.getReference().child("users");
+            final DatabaseReference deviceRef = db.getReference().child("devices");
+            final DatabaseReference verifyRef = db.getReference().child("verifications");
 
-            ref.setValue(mUser, new DatabaseReference.CompletionListener() {
+
+            userRef.child(mUser.getUuid()).setValue(mUser, new DatabaseReference.CompletionListener() {
                 @Override
                 public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                     if(databaseError != null){
@@ -136,6 +142,8 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
                     } else {
                         Gson gson = new Gson();
                         String json = gson.toJson(mUser);
+                        deviceRef.child(mUser.getUuid()).setValue(getDevice());
+                        verifyRef.child(getVerify().getPhone()).setValue(getVerify());
 
                         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(view.getActivityContext());
                         SharedPreferences.Editor editor = sp.edit();
@@ -144,8 +152,8 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
                         editor.apply();
 
                         view.hideDialog();
-                        view.startMainActivity();
                         view.showToast("Your details have been saved.");
+                        view.startMainActivity();
                     }
                 }
             });
@@ -156,6 +164,7 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
     private Device getDevice() {
         Device d = new Device();
 
+        d.uuid = mUser.getUuid();
         d.brand = Build.BRAND;
         d.fingerprint = Build.FINGERPRINT;
         d.manufacturer = Build.MANUFACTURER;
@@ -165,5 +174,33 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
         d.os = Build.VERSION.CODENAME;
 
         return d;
+    }
+
+    private String getPhotoUrl(){
+        final String defaultUrl = "https://firebasestorage.googleapis.com/v0/b/micash-e8219.appspot.com/o/profile%2Fprofile.png?alt=media&token=36fa184b-72f8-464d-88fe-cb379ead6fcf";
+        FirebaseUser u = FirebaseAuth.getInstance().getCurrentUser();
+        if(u.getPhotoUrl() == null){
+            return defaultUrl;
+        } else{
+            return u.getPhotoUrl().toString();
+        }
+    }
+
+    private Verify getVerify(){
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(view.getActivityContext());
+        String phone = sp.getString(Constants.PHONE, null);
+        String code = sp.getString(Constants.CODE, null);
+
+
+            Verify v = new Verify();
+            v.setPhone(phone);
+            v.setCode(code);
+            v.setDateCreated(org.joda.time.DateTime.now().getMillis());
+            v.setUuid(user.getUid());
+
+            return v;
+
     }
 }

@@ -61,8 +61,8 @@ public abstract class BaseView extends AppCompatActivity implements IBaseVew  {
         if(isTaskRoot()) {
             new AlertDialog.Builder(this)
                     .setIcon(android.R.drawable.ic_dialog_alert)
-                    .setTitle("Closing MiCash")
-                    .setMessage("Are you sure you want to leave the app?")
+                    .setTitle("Alert")
+                    .setMessage("Are you sure you want to close miCash?")
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {

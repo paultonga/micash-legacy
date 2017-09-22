@@ -29,6 +29,8 @@ public interface VerifyContract {
 
         void showEditNumberDialog();
 
+        void showConfirmDialog(String phone);
+
     }
 
     interface Presenter extends IBasePresenter<View> {
@@ -47,6 +49,10 @@ public interface VerifyContract {
         void verifyCode(String code);
 
         void startAutoVerification(String code);
+
+        void saveVerifyPreferences(String k, String v);
+
+        void checkNumberAvailability(final String phone);
 
 
         void resume();

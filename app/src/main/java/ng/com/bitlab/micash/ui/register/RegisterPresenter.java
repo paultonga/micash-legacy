@@ -40,7 +40,7 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View> impl
     @Override
     public void createFirebaseUser(String email, String password, final String name) {
 
-        view.showDialog("Processing");
+        view.showDialog("Creating your account...");
 
         mAuth.createUserWithEmailAndPassword(email,password)
                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -52,7 +52,7 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View> impl
                         }
                         else {
                             view.hideDialog();
-                            view.showToast("We encountered a problem.");
+                            view.showToast(task.getException().getMessage());
                         }
                    }
                });

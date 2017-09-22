@@ -64,7 +64,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                             gotoAppIntro();
                             break;
                         case Constants.START_REGISTER:
-                            gotoRegisterActivity();
+                            gotoLoginActivity();
                             break;
                         case Constants.START_PHONE_VERIFICATION:
                             gotoPhoneVerificationView();
@@ -90,41 +90,52 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     private void gotoAppIntro() {
-        startActivity(new Intent(this, IntroActivity.class));
+        Intent intent = new Intent(this, IntroActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
         finish();
     }
 
     private void gotoPhoneVerificationView() {
         Intent i = new Intent(this, VerifyActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
     }
     
 
     private void gotoRegisterActivity() {
-        startActivity(new Intent(this, RegisterActivity.class));
+        Intent intent = new Intent(this, RegisterActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
         finish();
     }
 
     private void gotoWelcome() {
-        startActivity(new Intent(this, WelcomeActivity.class));
+        Intent intent = new Intent(this, WelcomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
         finish();
     }
 
     private void gotoUploadImageView() {
         Intent i = new Intent(this, UploadActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
     }
 
     private void gotoGetStartedView() {
         Intent i = new Intent(this, UploadActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
     }
 
     private void gotoLoginActivity() {
-        startActivity(new Intent(this, LoginActivity.class));
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
         finish();
     }
 

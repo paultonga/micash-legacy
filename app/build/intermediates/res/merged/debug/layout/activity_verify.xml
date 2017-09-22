@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/iv_logo"
-        android:layout_width="@dimen/_175sdp"
-        android:layout_height="@dimen/_34sdp"
+        android:layout_width="@dimen/_170sdp"
+        android:layout_height="@dimen/_29sdp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/_40sdp"
         android:layout_centerHorizontal="true"
@@ -26,7 +26,7 @@
         android:gravity="center"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_below="@id/iv_logo"
-        android:visibility="visible">
+        android:visibility="gone">
 
 
 
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:textAlignment="center"
-            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_13sdp"
             android:textColor="@color/colorPrimaryText"
             android:text="@string/phone_notice"
             android:textSize="@dimen/_12ssp"/>
@@ -81,18 +81,38 @@
         android:gravity="center"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_below="@id/iv_logo"
-        android:visibility="gone">
+        android:visibility="visible">
+
+
+
+            <TextView
+                android:id="@+id/tv_verify_notice"
+                android:layout_width="@dimen/widgets_width_large"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryText"
+                android:text=""
+                android:textSize="@dimen/_12ssp"/>
+
 
         <TextView
-            android:id="@+id/tv_verify_notice"
+            android:id="@+id/tv_edit_number"
             android:layout_width="@dimen/widgets_width_large"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_11sdp"
             android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tv_verify_notice"
             android:textAlignment="center"
-            android:layout_marginTop="@dimen/_25sdp"
             android:textColor="@color/colorPrimaryText"
-            android:text="@string/verify_notice"
-            android:textSize="@dimen/_12ssp"/>
+            android:text="EDIT NUMBER"
+            android:clickable="true"
+            android:textStyle="bold"
+            android:textSize="@dimen/_11ssp"/>
+
+
+
 
 
         <com.github.reinaldoarrosi.maskededittext.MaskedEditText
@@ -101,7 +121,7 @@
             android:layout_below="@id/tv_verify_notice"
             android:hint="000-000"
             android:backgroundTint="@color/colorPrimaryText"
-            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_45sdp"
             maskededittext:mask="999-999"
             android:id="@+id/editTextCode"
             android:textSize="@dimen/_20ssp"
@@ -123,18 +143,20 @@
             android:layout_marginTop="@dimen/_26sdp" />
 
 
-        <TextView
-            android:id="@+id/tv_resend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Resend OTP"
-            android:textColor="@color/colorPrimaryText"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:textSize="@dimen/_13ssp"
-            android:layout_below="@+id/btn_verify"
-            android:backgroundTint="@color/colorPrimaryText"
-            />
+            <TextView
+                android:id="@+id/tv_resend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resend OTP"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/btn_verify"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/_12ssp"
+                android:backgroundTint="@color/colorPrimaryText"
+                />
+
+
     </RelativeLayout>
 
 
