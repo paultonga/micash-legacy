@@ -28,4 +28,16 @@
     <string name="new_login_notice">Welcome to miCash. Please enter your email and password to login.</string>
     <string name="resume_notice">Welcome <b>%1$s</b>. Please enter your password to login.</string>
     <string name="edit_number"> <u>Edit number</u> </string>
+
+    <string name="terms_and_conditions">These terms and conditions govern your use of miCash app. If you do not agree to all our terms and conditions, please do not use the app. If you do use the app, your conduct indicates that you agree to be bound by the terms.
+        \n\n<b>Indemnity:</b> In order to use the app, you must agree to be legally bound and to abide by the terms and to indemnify and hold miCash harmless from all alleged or actual damages, loss, claims, and expenses relating to any guarantee or representations made by miCash. The use of this app for any reason is deemed to be an agreement of this condition.
+
+        Whilst miCash will endeavour to make this app constantly accessible and functional for your use, it does not warranty or guarantee that the app will be uninterrupted or error-free at anytime. miCash accepts no responsibility for keeping the informations in the app upto date or liability for failure to do so.
+        \n\n<b>Passwords:</b> Passwords must not be disclosed to any person. If you become aware of any unauthorized disclosure of your password, then you must notify us immediately. You will remain liable for all activities carried out under access with your password unless and until you have notified miCash of a password breach and we have acknowledged same.
+        \n\n<b>Validity:</b> If any term, condition or provision of these terms is determined to be unlawful, invalid, void or for any reason unenforceable, the validity and enforceability of the remaining terms, conditions and provisions shall not in any way be affected or impaired thereby.
+        \n\n<b>Other Conditions:</b> When a loan is disbursed to your account, the interest is not calculated in the number of days, rather it is viewed in months;  this means that any loan disbursed on or before the 23rd of any month, the full months interest would be applied. However, loans disbursed after the 23rd of any month, the interest for the remaining number of days of that particular month will be waived, and therefore the interest repayment starts from the next month.
+        \n\nA default fee of double the interest rate the loan was given shall be charged on any outstanding unpaid obligation without recourse to the borrower.
+        \n\nIn the event of default by a borrower, miCash reserves the right at its discretion to transfer the defaulting account/ledger to a third party agency to recover any outstanding debt due to miCash.
+
+    </string>
 </resources>

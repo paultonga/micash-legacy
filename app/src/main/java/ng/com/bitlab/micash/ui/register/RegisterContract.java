@@ -21,6 +21,8 @@ public interface RegisterContract {
 
         void startVerifyActivity();
 
+        void showTermsAndConditions();
+
     }
 
     interface Presenter extends IBasePresenter<View> {

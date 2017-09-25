@@ -1,5 +1,6 @@
 package ng.com.bitlab.micash.ui.register;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -13,14 +14,18 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,6 +61,7 @@ public class RegisterActivity extends BaseView implements RegisterContract.View 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
+
 
         if(!isTaskRoot()) {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -125,6 +131,23 @@ public class RegisterActivity extends BaseView implements RegisterContract.View 
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    @OnClick(R.id.tv_agreement)
+    public void showTermsAndConditions() {
+        final Dialog fullscreenDialog = new Dialog(this, R.style.DialogFullscreen);
+        fullscreenDialog.setContentView(R.layout.dialog_fullscreen);
+        ImageView img_dialog_fullscreen_close = (ImageView) fullscreenDialog.findViewById(R.id.img_dialog_fullscreen_close);
+        TextView tv = (TextView) fullscreenDialog.findViewById(R.id.tv_terms_and_conditions);
+        tv.setMovementMethod(new ScrollingMovementMethod());
+        img_dialog_fullscreen_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fullscreenDialog.dismiss();
+            }
+        });
+        fullscreenDialog.show();
     }
 
     @Override

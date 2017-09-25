@@ -17,6 +17,8 @@ public class RegisterActivity_ViewBinding implements Unbinder {
 
   private View view2131558586;
 
+  private View view2131558587;
+
   @UiThread
   public RegisterActivity_ViewBinding(RegisterActivity target) {
     this(target, target.getWindow().getDecorView());
@@ -38,6 +40,14 @@ public class RegisterActivity_ViewBinding implements Unbinder {
         target.onRegisterClicked();
       }
     });
+    view = Utils.findRequiredView(source, R.id.tv_agreement, "method 'showTermsAndConditions'");
+    view2131558587 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.showTermsAndConditions();
+      }
+    });
   }
 
   @Override
@@ -53,5 +63,7 @@ public class RegisterActivity_ViewBinding implements Unbinder {
 
     view2131558586.setOnClickListener(null);
     view2131558586 = null;
+    view2131558587.setOnClickListener(null);
+    view2131558587 = null;
   }
 }

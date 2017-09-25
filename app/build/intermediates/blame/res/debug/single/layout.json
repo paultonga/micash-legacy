@@ -44,12 +44,12 @@
         "source": "/Users/Paul/.android/build-cache/7c95b3147b2993234f71ff50d993954b11f64b0d/output/res/layout/design_layout_snackbar_include.xml"
     },
     {
-        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
-        "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/layout/abc_action_menu_item_layout.xml"
-    },
-    {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/md_stub_titleframe_lesspadding.xml",
         "source": "/Users/Paul/.android/build-cache/a7888dab087e97b04df37b839d42f21b352f5a39/output/res/layout/md_stub_titleframe_lesspadding.xml"
+    },
+    {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
+        "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/layout/abc_action_menu_item_layout.xml"
     },
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_title_material.xml",
@@ -68,20 +68,20 @@
         "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/layout/notification_template_icon_group.xml"
     },
     {
-        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/fragment_transaction_list.xml",
-        "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/layout/fragment_transaction_list.xml"
-    },
-    {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/activity_recover.xml",
         "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/layout/activity_recover.xml"
     },
     {
-        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
-        "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/layout/abc_screen_simple.xml"
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/fragment_transaction_list.xml",
+        "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/layout/fragment_transaction_list.xml"
     },
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/custom_toolbar.xml",
         "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/layout/custom_toolbar.xml"
+    },
+    {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
+        "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/layout/abc_screen_simple.xml"
     },
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/material_drawer_item_divider.xml",
@@ -104,12 +104,12 @@
         "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/layout/activity_welcome.xml"
     },
     {
-        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/notification_template_custom_big.xml",
-        "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/layout/notification_template_custom_big.xml"
-    },
-    {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
         "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/notification_template_custom_big.xml",
+        "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/layout/notification_template_custom_big.xml"
     },
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
@@ -270,6 +270,10 @@
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/activity_splash_screen.xml",
         "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/layout/activity_splash_screen.xml"
+    },
+    {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/dialog_fullscreen.xml",
+        "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/layout/dialog_fullscreen.xml"
     },
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",

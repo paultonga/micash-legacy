@@ -148,7 +148,7 @@
             android:layout_width="@dimen/_230sdp"
             android:layout_height="wrap_content"
             android:text="@string/register_agreement"
-            android:textColor="@color/whiteText"
+            android:textColor="@drawable/white_text_button_color"
             android:textSize="@dimen/_10ssp"
             android:textAlignment="center"/>
 
