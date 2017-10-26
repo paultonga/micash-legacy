@@ -13,6 +13,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.gson.Gson;
 
+import ng.com.bitlab.micash.common.AppPreference;
+import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.models.Device;
 import ng.com.bitlab.micash.models.User;
 import ng.com.bitlab.micash.ui.common.BasePresenter;
@@ -41,7 +43,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.View> implements
                         if(task.isSuccessful()){
                             view.hideDialog();
                             view.showToast("Login successful.");
-                            saveUserToPreferences(mAuth.getCurrentUser());
+                            //saveUserToPreferences(mAuth.getCurrentUser());
                             view.startMainActivity();
                         } else {
                             view.hideDialog();
@@ -57,7 +59,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.View> implements
         mUser.setFullName(user.getDisplayName());
         mUser.setEmail(user.getEmail());
         mUser.setPhoneNumber(user.getPhoneNumber());
-        mUser.setProfileImage(user.getPhotoUrl().toString());
+        mUser.setProfileImage(user.getPhotoUrl() == null ? Constants.PROFILE_URL : user.getPhotoUrl().toString() );
         mUser.setLastSeen(org.joda.time.DateTime.now().getMillis());
         mUser.setDateCreated(org.joda.time.DateTime.now().getMillis());
         //mUser.device = getDevice();

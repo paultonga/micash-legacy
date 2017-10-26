@@ -91,7 +91,8 @@ public class RegisterActivity extends BaseView implements RegisterContract.View 
     public void onRegisterClicked() {
         if(isConnected) {
             if (validateInputs()) {
-                mPresenter.createFirebaseUser(mEmail, mPassword, mName);
+                //mPresenter.createFirebaseUser(mEmail, mPassword, mName);
+                mPresenter.checkEmail(mEmail, mPassword, mName);
             }
         } else {
             showSnackBar("There's no internet connection.");

@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.gson.Gson;
 
+import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.models.Device;
 import ng.com.bitlab.micash.models.User;
 import ng.com.bitlab.micash.ui.common.BasePresenter;
@@ -38,7 +39,7 @@ public class ResumePresenter extends BasePresenter<ResumeContract.View>
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            saveUserToPreference(mAuth.getCurrentUser());
+                            //saveUserToPreference(mAuth.getCurrentUser());
                             view.hideDialog();
                             view.showToast("Login successful.");
                             view.startMainActivity();
@@ -52,8 +53,9 @@ public class ResumePresenter extends BasePresenter<ResumeContract.View>
 
     @Override
     public User getUserFromPreference() {
+
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(view.getActivityContext());
-        String user = sp.getString(Constants.USER, null);
+        String user = MiCashApplication.getPreference().getUser();
         if (user != null){
             Gson gson = new Gson();
             User u = gson.fromJson(user, User.class);

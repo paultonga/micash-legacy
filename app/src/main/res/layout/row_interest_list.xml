@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_30sdp"
+    android:layout_marginTop="@dimen/_6sdp"
+    android:layout_marginBottom="@dimen/_6sdp"
+    android:layout_marginLeft="@dimen/_15sdp"
+    android:layout_marginRight="@dimen/_6sdp">
+
+    <TextView
+        android:id="@+id/tv_interest_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5% interest per month for 2 months."
+        android:textAllCaps="true"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_11ssp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dip"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/tv_interest_description"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp" />
+
+</RelativeLayout>

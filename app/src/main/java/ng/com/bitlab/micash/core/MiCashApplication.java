@@ -4,6 +4,9 @@ import android.app.Application;
 import android.content.Context;
 
 
+import net.orange_box.storebox.StoreBox;
+
+import ng.com.bitlab.micash.common.AppPreference;
 import ng.com.bitlab.micash.common.FontsOverride;
 
 /**
@@ -14,6 +17,7 @@ public class MiCashApplication extends Application {
 
 
     private static Context context;
+    private static AppPreference mPreferences;
 
 
     @Override
@@ -25,10 +29,14 @@ public class MiCashApplication extends Application {
         FontsOverride.setDefaultFont(this, "SERIF_MEDIUM", "hnmedium.ttf");
 
         context = getApplicationContext();
+
+        mPreferences = StoreBox.create(context, AppPreference.class);
     }
 
     public static Context getContext(){
         return context;
     }
+
+    public static AppPreference getPreference() { return mPreferences; }
 
 }

@@ -23,12 +23,15 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 
 import butterknife.ButterKnife;
 import butterknife.BindView;
 import ng.com.bitlab.micash.R;
+import ng.com.bitlab.micash.core.MiCashApplication;
+import ng.com.bitlab.micash.models.User;
 import ng.com.bitlab.micash.ui.cards.CardsActivity;
 import ng.com.bitlab.micash.ui.common.BaseView;
 import ng.com.bitlab.micash.ui.guarantor.GuarantorActivity;
@@ -90,6 +93,9 @@ public class MainActivity extends BaseView {
 
         lastLogin();
 
+        updateProfile();
+
+
         //dummy();
 
 
@@ -127,6 +133,29 @@ public class MainActivity extends BaseView {
 
 
         initViewPager();
+
+    }
+
+    private void updateProfile() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final AppPreference pref = MiCashApplication.getPreference();
+
+        pref.setName(user.getDisplayName());
+
+        User mUser = new User();
+        mUser.setUuid(user.getUid());
+        mUser.setFullName(user.getDisplayName());
+        mUser.setEmail(user.getEmail());
+        mUser.setPhoneNumber(user.getPhoneNumber());
+        mUser.setProfileImage(user.getPhotoUrl() == null ? Constants.PROFILE_URL:user.getPhotoUrl().toString());
+        mUser.setLastSeen(org.joda.time.DateTime.now().getMillis());
+        mUser.setDateCreated(org.joda.time.DateTime.now().getMillis());
+        //mUser.device = getDevice();
+
+        Gson gson = new Gson();
+        String json = gson.toJson(mUser);
+
+        pref.setUser(json);
 
     }
 

@@ -4,12 +4,12 @@
         "source": "/Users/Paul/.android/build-cache/7c95b3147b2993234f71ff50d993954b11f64b0d/output/res/drawable/design_bottom_navigation_item_background.xml"
     },
     {
-        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/design_password_eye.xml",
-        "source": "/Users/Paul/.android/build-cache/7c95b3147b2993234f71ff50d993954b11f64b0d/output/res/drawable/design_password_eye.xml"
-    },
-    {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
         "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/drawable/abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/design_password_eye.xml",
+        "source": "/Users/Paul/.android/build-cache/7c95b3147b2993234f71ff50d993954b11f64b0d/output/res/drawable/design_password_eye.xml"
     },
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_normal.xml",
@@ -76,6 +76,10 @@
         "source": "/Users/Paul/.android/build-cache/3404f505ad1d548b87251237290c128884c60db6/output/res/drawable/common_google_signin_btn_icon_dark.xml"
     },
     {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/icon_notify.png",
+        "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/drawable/icon_notify.png"
+    },
+    {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/ic_action_home.png",
         "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/drawable/ic_action_home.png"
     },
@@ -116,12 +120,12 @@
         "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/drawable/white_text_button_color.xml"
     },
     {
-        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_focused.xml",
-        "source": "/Users/Paul/.android/build-cache/3404f505ad1d548b87251237290c128884c60db6/output/res/drawable/common_google_signin_btn_text_dark_focused.xml"
-    },
-    {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
         "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/drawable/abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_focused.xml",
+        "source": "/Users/Paul/.android/build-cache/3404f505ad1d548b87251237290c128884c60db6/output/res/drawable/common_google_signin_btn_text_dark_focused.xml"
     },
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
@@ -162,6 +166,10 @@
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
         "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/drawable/abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/icon_phone.png",
+        "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/drawable/icon_phone.png"
     },
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
@@ -216,12 +224,20 @@
         "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/drawable/abc_edit_text_material.xml"
     },
     {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/icon_error.png",
+        "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/drawable/icon_error.png"
+    },
+    {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
         "source": "/Users/Paul/.android/build-cache/9c3ce2594179e544069b6c8a1a9412206e2b1b9e/output/res/drawable/abc_ic_clear_material.xml"
     },
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/md_btn_selected_dark.xml",
         "source": "/Users/Paul/.android/build-cache/a7888dab087e97b04df37b839d42f21b352f5a39/output/res/drawable/md_btn_selected_dark.xml"
+    },
+    {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/icon_success.png",
+        "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/drawable/icon_success.png"
     },
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/md_btn_selected.xml",
@@ -234,6 +250,10 @@
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_disabled.xml",
         "source": "/Users/Paul/.android/build-cache/3404f505ad1d548b87251237290c128884c60db6/output/res/drawable/common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/icon_ledger.png",
+        "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/drawable/icon_ledger.png"
     },
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/back_ico.png",
@@ -256,6 +276,10 @@
         "source": "/Users/Paul/.android/build-cache/3404f505ad1d548b87251237290c128884c60db6/output/res/drawable/common_google_signin_btn_icon_light.xml"
     },
     {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/icon_tick.png",
+        "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/drawable/icon_tick.png"
+    },
+    {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_focused.xml",
         "source": "/Users/Paul/.android/build-cache/3404f505ad1d548b87251237290c128884c60db6/output/res/drawable/common_google_signin_btn_icon_light_focused.xml"
     },
@@ -274,6 +298,10 @@
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/profile.png",
         "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/drawable/profile.png"
+    },
+    {
+        "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/salary.png",
+        "source": "/Users/Paul/AndroidStudioProjects/miCash/app/src/main/res/drawable/salary.png"
     },
     {
         "merged": "/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/res/merged/debug/drawable/back_white.png",

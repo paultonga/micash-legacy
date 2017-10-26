@@ -6,7 +6,6 @@ package ng.com.bitlab.micash.models;
 
 public class Device {
 
-    public String uuid;
     public String brand;
     public String serial;
     public String product;
@@ -15,13 +14,6 @@ public class Device {
     public String fingerprint;
     public String os;
 
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
 
     public String getBrand() {
         return brand;

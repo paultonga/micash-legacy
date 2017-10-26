@@ -26,6 +26,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import ng.com.bitlab.micash.common.AppPreference;
+import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.models.Device;
 import ng.com.bitlab.micash.models.User;
 import ng.com.bitlab.micash.models.Verify;
@@ -53,6 +55,8 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
     public void uploadProfileImage(byte[] data) {
         String imageName = getImageName();
 
+        final AppPreference mPref = MiCashApplication.getPreference();
+
         view.showDialog("Uploading image...");
         mStorage = FirebaseStorage.getInstance();
 
@@ -72,6 +76,7 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                mPref.setProfile(downloadUrl.toString());
                 saveImageToProfile(downloadUrl);
             }
         });
@@ -92,10 +97,11 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
                             Log.d(TAG, "User profile updated.");
                             view.hideDialog();
                             view.showToast("Image saved successfully.");
-                            view.showGetStartedLayout();
+                            //view.showGetStartedLayout();
+                            view.startMainActivity();
                         } else {
                             view.hideDialog();
-                            view.showToast("We encountered an error.");
+                            view.showToast("We encountered an error. Please try again.");
                         }
                     }
                 });
@@ -103,9 +109,9 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
 
     @Override
     public String getImageName() {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if(user != null) {
-            String username = user.getDisplayName();
+        AppPreference mPref = MiCashApplication.getPreference();
+        if(mPref.getName() != null) {
+            String username = mPref.getName();
             return username.replaceAll(" ", "_").toLowerCase() + ".jpg";
         }
         return "anonymous.jpg";
@@ -142,14 +148,14 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
                     } else {
                         Gson gson = new Gson();
                         String json = gson.toJson(mUser);
-                        deviceRef.child(mUser.getUuid()).setValue(getDevice());
-                        verifyRef.child(getVerify().getPhone()).setValue(getVerify());
+                        //deviceRef.child(mUser.getUuid()).setValue(getDevice());
+                        //verifyRef.child(getVerify().getPhone()).setValue(getVerify());
 
-                        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(view.getActivityContext());
-                        SharedPreferences.Editor editor = sp.edit();
+                        //SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(view.getActivityContext());
+                        //SharedPreferences.Editor editor = sp.edit();
 
-                        editor.putString(Constants.USER, json);
-                        editor.apply();
+                        //editor.putString(Constants.USER, json);
+                        //editor.apply();
 
                         view.hideDialog();
                         view.showToast("Your details have been saved.");
@@ -164,7 +170,6 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
     private Device getDevice() {
         Device d = new Device();
 
-        d.uuid = mUser.getUuid();
         d.brand = Build.BRAND;
         d.fingerprint = Build.FINGERPRINT;
         d.manufacturer = Build.MANUFACTURER;
@@ -198,7 +203,6 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
             v.setPhone(phone);
             v.setCode(code);
             v.setDateCreated(org.joda.time.DateTime.now().getMillis());
-            v.setUuid(user.getUid());
 
             return v;
 

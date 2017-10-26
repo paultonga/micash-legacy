@@ -11,6 +11,8 @@ public interface VerifyContract {
 
     interface View extends IBaseVew {
 
+        void startProcessingActivity();
+
         void onRequestCodeClicked();
 
         void onVerifyClicked();

@@ -10,12 +10,22 @@
 
     <ImageView
         android:id="@+id/iv_logo"
-        android:layout_width="@dimen/_170sdp"
-        android:layout_height="@dimen/_29sdp"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_60sdp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/logo_blue"/>
+        android:src="@drawable/icon_phone"/>
+    <TextView
+        android:id="@+id/tv_verification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VERIFICATION"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/iv_logo"
+        android:textStyle="bold"
+        android:textSize="@dimen/_15ssp"/>
 
 
 
@@ -25,7 +35,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="@dimen/_20sdp"
-        android:layout_below="@id/iv_logo"
+        android:layout_below="@id/tv_verification"
         android:visibility="gone">
 
 
@@ -50,7 +60,7 @@
             android:hint="080 1234 56 78"
             android:backgroundTint="@android:color/darker_gray"
             android:layout_marginTop="@dimen/_30sdp"
-            maskededittext:mask="9999 999 99 99"
+            maskededittext:mask="999 9999 99 99"
             android:inputType="phone"
             android:id="@+id/editTextPhone"
             android:textSize="@dimen/_20ssp"
@@ -80,7 +90,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="@dimen/_20sdp"
-        android:layout_below="@id/iv_logo"
+        android:layout_below="@id/tv_verification"
         android:visibility="visible">
 
 
@@ -119,12 +129,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_verify_notice"
-            android:hint="000-000"
+            android:hint="0 0 0 - 0 0 0"
             android:backgroundTint="@color/colorPrimaryText"
             android:layout_marginTop="@dimen/_45sdp"
-            maskededittext:mask="999-999"
+            maskededittext:mask="9 9 9 - 9 9 9"
             android:id="@+id/editTextCode"
-            android:textSize="@dimen/_20ssp"
+            android:textSize="@dimen/_24ssp"
             android:layout_centerHorizontal="true"
             android:textAlignment="center"
             android:textColorHint="@android:color/darker_gray"/>
@@ -147,12 +157,13 @@
                 android:id="@+id/tv_resend"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Resend OTP"
+                android:text="RESEND OTP"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/btn_verify"
                 android:layout_marginTop="@dimen/_12sdp"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
                 android:backgroundTint="@color/colorPrimaryText"
                 />
 

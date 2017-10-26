@@ -33,6 +33,8 @@ public interface RegisterContract {
 
         void updateDisplayName(String name, FirebaseUser user);
 
+        void checkEmail(String email, String password, String name);
+
     }
 
     interface Repository{

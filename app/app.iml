@@ -90,6 +90,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-support" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/pre-dexed" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/reload-dex" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/restart-dex" />
@@ -115,6 +116,7 @@
     <orderEntry type="library" exported="" name="materialize-1.0.2" level="project" />
     <orderEntry type="library" exported="" name="firebase-core-11.0.2" level="project" />
     <orderEntry type="library" exported="" name="sdp-android-1.0.4" level="project" />
+    <orderEntry type="library" exported="" name="storebox-lib-1.4.0" level="project" />
     <orderEntry type="library" exported="" name="guava-18.0" level="project" />
     <orderEntry type="library" exported="" name="firebase-database-11.0.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="exposed-instrumentation-api-publish-0.5" level="project" />
@@ -166,6 +168,7 @@
     <orderEntry type="library" exported="" scope="TEST" name="rules-0.5" level="project" />
     <orderEntry type="library" exported="" name="constraint-layout-solver-1.0.2" level="project" />
     <orderEntry type="library" exported="" name="javax.inject-1" level="project" />
+    <orderEntry type="library" exported="" name="typetools-0.4.6" level="project" />
     <orderEntry type="library" exported="" name="fastadapter-2.5.3" level="project" />
     <orderEntry type="library" exported="" name="firebase-analytics-11.0.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-core-1.3" level="project" />

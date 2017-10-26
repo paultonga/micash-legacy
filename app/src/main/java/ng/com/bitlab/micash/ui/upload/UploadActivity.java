@@ -140,9 +140,10 @@ public class UploadActivity extends BaseView implements
     @Override
     @OnClick(R.id.tv_skip)
     public void showGetStartedLayout() {
-        savePreferences(Constants.GET_STARTED_VIEW);
-        completedLayout.setVisibility(View.VISIBLE);
-        profileImageLayout.setVisibility(View.GONE);
+        //savePreferences(Constants.GET_STARTED_VIEW);
+        startMainActivity();
+        //completedLayout.setVisibility(View.VISIBLE);
+        //profileImageLayout.setVisibility(View.GONE);
 
     }
 

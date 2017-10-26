@@ -22,10 +22,10 @@
     <string name="verify_confirm_notice">We have successfully verified your phone number. Click GET STARTED to continue.</string>
     <string name="phone_notice">Please enter the mobile phone number connected to your bank account here. We will send a 6-digit OTP code to the number.</string>
     <string name="profile_complete_notice">We have successfully created your profile. Click GET STARTED to proceed.</string>
-    <string name="profile_notice">Please touch the image to select a profile image and click SAVE to continue.</string>
+    <string name="profile_notice">We\'ve created your account. Select a profile image by touching the image below and click SAVE.</string>
 
     <string name="sendotp_key">172464Aw7a14zwC59a7dc10</string>
-    <string name="new_login_notice">Welcome to miCash. Please enter your email and password to login.</string>
+    <string name="new_login_notice">Welcome to miCash. Please enter your email and password to login or Register a new account.</string>
     <string name="resume_notice">Welcome <b>%1$s</b>. Please enter your password to login.</string>
     <string name="edit_number"> <u>Edit number</u> </string>
 

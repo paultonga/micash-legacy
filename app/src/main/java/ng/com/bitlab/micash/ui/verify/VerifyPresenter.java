@@ -37,6 +37,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import ng.com.bitlab.micash.common.AppPreference;
+import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.models.Device;
 import ng.com.bitlab.micash.models.Verify;
 import ng.com.bitlab.micash.ui.common.BasePresenter;
@@ -59,6 +61,8 @@ public class VerifyPresenter extends BasePresenter<VerifyContract.View> implemen
     private PhoneAuthProvider.ForceResendingToken mResendToken;
     private String mCode;
 
+    AppPreference mPref;
+
 
     public VerifyPresenter(VerifyContract.View view) {
         this.view = view;
@@ -66,13 +70,6 @@ public class VerifyPresenter extends BasePresenter<VerifyContract.View> implemen
 
     @Override
     public void startAutoVerification(final String code) {
-        view.updateVerificationLayout(code);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                verifyCode(code);
-            }
-        }, 1500);
 
     }
 
@@ -80,10 +77,12 @@ public class VerifyPresenter extends BasePresenter<VerifyContract.View> implemen
     public void startPhoneVerification(String phone) {
 
         view.showDialog("Requesting OTP...");
+        mPref = MiCashApplication.getPreference();
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            mDisplayName = user.getDisplayName();
+        mPref.setPhone(phone);
+
+
+            mDisplayName = mPref.getName();
             mVerification = SendOtpVerification.createSmsVerification
                     (SendOtpVerification
                             .config(phone)
@@ -96,10 +95,7 @@ public class VerifyPresenter extends BasePresenter<VerifyContract.View> implemen
                             .build(), this);
 
             mVerification.initiate();
-        } else {
-            view.hideDialog();
-            view.showToast("Error getting user details.");
-        }
+
 
     }
 
@@ -135,9 +131,13 @@ public class VerifyPresenter extends BasePresenter<VerifyContract.View> implemen
     }
 
     @Override
-    public void verifyCode(String code) {
+    public void verifyCode(final String code) {
+        mPref = MiCashApplication.getPreference();
+        mPref.setCode(code);
+
         view.showDialog("Verifying OTP...");
-        mVerification.verify(code);
+        mVerification.verify(mCode);
+
     }
 
     @Override
@@ -161,14 +161,13 @@ public class VerifyPresenter extends BasePresenter<VerifyContract.View> implemen
     @Override
     public void onVerified(String response) {
         view.hideDialog();
-        view.gotoUploadActivity();
+        //view.gotoUploadActivity();
+        view.startProcessingActivity();
         view.showToast("Your number has been verified.");
     }
 
     @Override
     public void onVerificationFailed(Exception paramException) {
-        clearPreferences(Constants.CODE);
-        clearPreferences(Constants.PHONE);
         view.hideDialog();
         view.showToast(paramException.getMessage());
     }
@@ -183,26 +182,18 @@ public class VerifyPresenter extends BasePresenter<VerifyContract.View> implemen
 
     }
 
-    private void clearPreferences(String key) {
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(view.getActivityContext());
-        SharedPreferences.Editor editor = sp.edit();
-
-        editor.remove(key);
-        editor.apply();
-    }
-
     public void checkNumberAvailability(final String phone) {
 
         view.showDialog("Checking your number...");
 
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
-        Query query = db.child("verifications").child(phone);
+        Query query = db.child("checkPhone").child(phone);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     view.hideDialog();
-                    view.showToast("This number is already in use.");
+                    view.showToast("This phone number is already in use.");
                 } else {
                     view.hideDialog();
                     startPhoneVerification(phone);
@@ -217,15 +208,4 @@ public class VerifyPresenter extends BasePresenter<VerifyContract.View> implemen
         });
     }
 
-    private void saveVerification() {
-
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference usersRef = ref.child("verifications");
-
-        Map<String, Verify> vers = new HashMap<String, Verify>();
-        vers.put("+2349027480903", new Verify("3343dddfd233434", "+2349027480903", 3343432, "345643"));
-        vers.put("+2348062853085", new Verify("3343dddfd233434", "+2348062853085", 3343432, "311234"));
-
-        usersRef.setValue(vers);
-    }
 }

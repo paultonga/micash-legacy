@@ -11,8 +11,7 @@ public class Verify {
     private long dateCreated;
     private String code;
 
-    public Verify(String uuid, String phone, long dateCreated, String code) {
-        this.uuid = uuid;
+    public Verify(String phone, long dateCreated, String code) {
         this.phone = phone;
         this.dateCreated = dateCreated;
         this.code = code;
@@ -22,13 +21,6 @@ public class Verify {
 
     }
 
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
 
     public String getPhone() {
         return phone;

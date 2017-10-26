@@ -1,5 +1,7 @@
 package ng.com.bitlab.micash.ui.common;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.view.View;
 
 /**
@@ -30,4 +32,5 @@ public class BasePresenter<ViewT> implements IBasePresenter<ViewT> {
     public boolean isValidPassword(String password) {
         return (password != null  && password.length() > 6);
     }
+
 }

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/card_view_item_recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:background="@android:color/white"
+    android:foreground="?attr/selectableItemBackground"
+    card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+    card_view:cardElevation="@dimen/card_recycler_elevation">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="14dp">
+
+        <ImageView
+            android:id="@+id/iv_recycler_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/salary"
+            android:transitionName="shareView" />
+
+        <TextView
+            android:id="@+id/tv_recycler_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/iv_recycler_icon"
+            android:text="One Month Advance"
+            android:textStyle="bold"
+            android:textSize="@dimen/_16ssp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tv_recycler_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_recycler_title"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@id/iv_recycler_icon"
+            android:text="N600k maximum obtainable."
+            android:textSize="@dimen/_13sdp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/tv_recycler_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_recycler_amount"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@id/iv_recycler_icon"
+            android:text="This loan is designed to provide one month salary advance."
+            android:textSize="@dimen/_11ssp"
+            android:textStyle="bold"
+            android:lineSpacingExtra="1dp"
+            />
+
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

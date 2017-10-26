@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/white_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ng.com.bitlab.micash.ui.processing.ProcessingActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/processing_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible">
+
+       <com.wang.avi.AVLoadingIndicatorView
+           android:id="@+id/progress"
+           android:layout_width="@dimen/_70sdp"
+           android:layout_height="@dimen/_70sdp"
+           android:layout_centerHorizontal="true"
+           app:indicatorName="BallClipRotateIndicator"
+           app:indicatorColor="@color/colorPrimaryText"/>
+
+        <TextView
+            android:id="@+id/processing_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Processing"
+            android:textSize="@dimen/_20ssp"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_below="@+id/progress"
+            android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/processing_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_200sdp"
+        android:text="Hello there"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/processing_title"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/error_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/error_icon"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/icon_error"
+            android:tint="@color/colorPrimary"
+            />
+
+        <TextView
+            android:id="@+id/error_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oops! An error."
+            android:textSize="@dimen/_20ssp"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_below="@+id/error_icon"
+            android:layout_centerHorizontal="true"
+
+            />
+
+        <TextView
+            android:id="@+id/error_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_200sdp"
+            android:text="Hello there"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/error_title"/>
+
+    </RelativeLayout>
+</RelativeLayout>

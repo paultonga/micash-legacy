@@ -20,7 +20,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 import ng.com.bitlab.micash.R;
+import ng.com.bitlab.micash.common.AppPreference;
 import ng.com.bitlab.micash.common.MainActivity;
+import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.models.User;
 import ng.com.bitlab.micash.ui.common.BaseView;
 import ng.com.bitlab.micash.ui.login.LoginActivity;
@@ -55,12 +57,11 @@ public class ResumeActivity extends BaseView implements ResumeContract.View {
 
     @Override
     public void updateUI(User user) {
+        AppPreference mPref = MiCashApplication.getPreference();
 
         String name = user.getFullName();
-        String email = user.getEmail();
 
-        loginName.setText(name);
-        //loginEmail.setText(email);
+        loginName.setText(mPref.getName());
 
         Picasso.with(this)
                 .load(Uri.parse(user.getProfileImage()))
