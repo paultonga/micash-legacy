@@ -8,15 +8,22 @@ package com.github.reinaldoarrosi.maskededittext;
 
 public final class R {
     public static final class attr {
-        public static final int mask = 0x7f010150;
-        public static final int placeholder = 0x7f010151;
+        public static final int mask = 0x7f03010c;
+        public static final int placeholder = 0x7f030160;
     }
     public static final class string {
-        public static final int app_name = 0x7f070035;
+        public static final int app_name = 0x7f0c0020;
     }
     public static final class styleable {
-        public static final int[] MaskedEditText = { 0x01010220, 0x7f010150, 0x7f010151, 0x7f010152, 0x7f010153, 0x7f010154, 0x7f010155, 0x7f010156, 0x7f010157 };
-        public static final int MaskedEditText_mask = 1;
-        public static final int MaskedEditText_placeholder = 2;
+        public static final int[] MaskedEditText = { 0x01010220, 0x7f03007c, 0x7f03009a, 0x7f03010c, 0x7f03010d, 0x7f03010e, 0x7f030152, 0x7f030160, 0x7f03016e };
+        public static final int MaskedEditText_android_inputType = 0;
+        public static final int MaskedEditText_deleteChar = 1;
+        public static final int MaskedEditText_format = 2;
+        public static final int MaskedEditText_mask = 3;
+        public static final int MaskedEditText_maskIcon = 4;
+        public static final int MaskedEditText_maskIconColor = 5;
+        public static final int MaskedEditText_notMaskedSymbol = 6;
+        public static final int MaskedEditText_placeholder = 7;
+        public static final int MaskedEditText_replacementChar = 8;
     }
 }

@@ -8,28 +8,28 @@ package com.wang.avi;
 
 public final class R {
     public static final class attr {
-        public static final int indicatorColor = 0x7f010051;
-        public static final int indicatorName = 0x7f010050;
-        public static final int maxHeight = 0x7f01004f;
-        public static final int maxWidth = 0x7f01004d;
-        public static final int minHeight = 0x7f01004e;
-        public static final int minWidth = 0x7f01004c;
+        public static final int indicatorColor = 0x7f0300bd;
+        public static final int indicatorName = 0x7f0300be;
+        public static final int maxHeight = 0x7f03011c;
+        public static final int maxWidth = 0x7f03011d;
+        public static final int minHeight = 0x7f03013f;
+        public static final int minWidth = 0x7f030140;
     }
     public static final class string {
-        public static final int app_name = 0x7f070035;
+        public static final int app_name = 0x7f0c0020;
     }
     public static final class style {
-        public static final int AVLoadingIndicatorView = 0x7f0900bd;
-        public static final int AVLoadingIndicatorView_Large = 0x7f0900be;
-        public static final int AVLoadingIndicatorView_Small = 0x7f0900bf;
+        public static final int AVLoadingIndicatorView = 0x7f0d0001;
+        public static final int AVLoadingIndicatorView_Large = 0x7f0d0002;
+        public static final int AVLoadingIndicatorView_Small = 0x7f0d0003;
     }
     public static final class styleable {
-        public static final int[] AVLoadingIndicatorView = { 0x7f01004c, 0x7f01004d, 0x7f01004e, 0x7f01004f, 0x7f010050, 0x7f010051 };
-        public static final int AVLoadingIndicatorView_indicatorColor = 5;
-        public static final int AVLoadingIndicatorView_indicatorName = 4;
-        public static final int AVLoadingIndicatorView_maxHeight = 3;
-        public static final int AVLoadingIndicatorView_maxWidth = 1;
-        public static final int AVLoadingIndicatorView_minHeight = 2;
-        public static final int AVLoadingIndicatorView_minWidth = 0;
+        public static final int[] AVLoadingIndicatorView = { 0x7f0300bd, 0x7f0300be, 0x7f03011c, 0x7f03011d, 0x7f03013f, 0x7f030140 };
+        public static final int AVLoadingIndicatorView_indicatorColor = 0;
+        public static final int AVLoadingIndicatorView_indicatorName = 1;
+        public static final int AVLoadingIndicatorView_maxHeight = 2;
+        public static final int AVLoadingIndicatorView_maxWidth = 3;
+        public static final int AVLoadingIndicatorView_minHeight = 4;
+        public static final int AVLoadingIndicatorView_minWidth = 5;
     }
 }

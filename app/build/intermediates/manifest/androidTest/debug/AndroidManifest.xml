@@ -13,7 +13,7 @@
         android:label="Tests for ng.com.bitlab.micash"
         android:targetPackage="ng.com.bitlab.micash" />
 
-    <application>
+    <application android:debuggable="true" >
         <uses-library android:name="android.test.runner" />
     </application>
 

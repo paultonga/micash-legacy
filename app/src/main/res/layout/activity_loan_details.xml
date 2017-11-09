@@ -60,10 +60,12 @@
                     android:transitionName="shareView" />
 
                 <LinearLayout
+                    android:id="@+id/linear_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_toEndOf="@id/iv_recycler_icon">
+                    android:layout_toEndOf="@id/iv_recycler_icon"
+                    android:layout_toRightOf="@id/iv_recycler_icon">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -89,33 +91,17 @@
                                 android:text="MAX AMOUNT"
                                 android:textSize="@dimen/_8ssp"/>
 
-                            <TextView
-                                android:id="@+id/tv_interest_rate"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="2-5"
-                                android:textStyle="bold"
-                                android:textSize="@dimen/_25ssp"
-                                android:textColor="@android:color/black" />
 
-                            <TextView
-                                android:id="@+id/tv_interest_label"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/tv_interest_rate"
-                                android:layout_marginTop="-3dp"
-                                android:text="MONTHS"
-                                android:textSize="@dimen/_8ssp"/>
 
                     </LinearLayout>
 
                     <View
                         android:layout_width="1dip"
-                        android:layout_height="@dimen/_70sdp"
-                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
                         android:layout_marginBottom="@dimen/_10sdp"
-                        android:layout_marginLeft="@dimen/_18sdp"
-                        android:layout_marginRight="@dimen/_18sdp"
+                        android:layout_marginLeft="@dimen/_27sdp"
+                        android:layout_marginRight="@dimen/_27sdp"
                         android:background="@android:color/darker_gray" />
 
                     <LinearLayout
@@ -124,40 +110,21 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/tv_max_interest"
+                            android:id="@+id/tv_interest_rate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="12.5%"
+                            android:text="2-5"
                             android:textStyle="bold"
                             android:textSize="@dimen/_25ssp"
                             android:textColor="@android:color/black" />
 
                         <TextView
-                            android:id="@+id/tv_max_interest_label"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/tv_max_interest"
-                            android:layout_marginTop="-3dp"
-                            android:layout_marginBottom="@dimen/_8sdp"
-                            android:text="MAX INTEREST"
-                            android:textSize="@dimen/_8ssp"/>
-
-                        <TextView
-                            android:id="@+id/tv_min_interest"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="10.0%"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/_25ssp"
-                            android:textColor="@android:color/black" />
-
-                        <TextView
-                            android:id="@+id/tv_min_interest_label"
+                            android:id="@+id/tv_interest_label"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/tv_interest_rate"
                             android:layout_marginTop="-3dp"
-                            android:text="MIN INTEREST"
+                            android:text="MONTHS"
                             android:textSize="@dimen/_8ssp"/>
 
                     </LinearLayout>
@@ -165,7 +132,19 @@
 
                 </LinearLayout>
 
-
+                <TextView
+                    android:id="@+id/tv_loan_description"
+                    android:layout_width="@dimen/_170sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/linear_layout"
+                    android:layout_toEndOf="@id/iv_recycler_icon"
+                    android:layout_toRightOf="@id/iv_recycler_icon"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:gravity="center"
+                    android:text="This loan is available to bankers in Nigeria"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/_9sdp"/>
 
 
             </RelativeLayout>
@@ -202,6 +181,8 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/interests_recycler_view"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -222,19 +203,8 @@
             android:textColor="@color/blue_button_text_color"
             android:clickable="true"
             android:textStyle="bold"
+            android:textSize="@dimen/_13ssp"
             android:text="REQUEST LOAN"/>
-
-        <TextView
-            android:id="@+id/tv_loan_description"
-            android:layout_width="@dimen/_240sdp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/btn_request_loan"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:gravity="center"
-            android:text="This loan is available to bankers in Nigeria"
-            android:textAllCaps="true"
-            android:textSize="@dimen/_10sdp"/>
 
     </RelativeLayout>
 
