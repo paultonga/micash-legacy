@@ -1289,6 +1289,7 @@
     <string name="define_font_fontawesome">com.mikepenz.fontawesome_typeface_library.FontAwesome</string>
     <string name="define_materialdrawer">year;owner</string>
     <string name="define_materialize">year;owner</string>
+    <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
     <string name="library_AndroidIconics_author">Mike Penz</string>
     <string name="library_AndroidIconics_authorWebsite">http://mikepenz.com/</string>
     <string name="library_AndroidIconics_isOpenSource">true</string>

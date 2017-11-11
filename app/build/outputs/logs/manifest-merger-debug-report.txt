@@ -18,6 +18,7 @@ MERGED from [com.android.support:support-v13:25.3.1] /Users/paul/.gradle/caches/
 MERGED from [com.google.firebase:firebase-auth:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.2.aar/c387b22631fa4d755329fcba61e31501/AndroidManifest.xml:16:1-21:12
 MERGED from [com.google.firebase:firebase-database:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-database-11.0.2.aar/6cfb78a114a90ba7233963177451e75f/AndroidManifest.xml:2:1-4:12
 MERGED from [com.google.firebase:firebase-storage:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-storage-11.0.2.aar/baefa3e8ed3fa14b96a7a7cf359563ab/AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-messaging:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.0.2.aar/f792fcf85d40242c3d84bc8215b0a4d1/AndroidManifest.xml:16:1-30:12
 MERGED from [com.google.firebase:firebase-core:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.2.aar/1edfc4237d2329edd504903e797d6065/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-analytics:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.2.aar/ae9a88f86b4aaacb29b8cb04eaffe16a/AndroidManifest.xml:16:1-35:12
 MERGED from [com.google.android.gms:play-services-base:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.2.aar/05c0b64040a41b2981d6bcc97c592187/AndroidManifest.xml:16:1-21:12
@@ -117,6 +118,8 @@ MERGED from [com.android.support:support-v13:25.3.1] /Users/paul/.gradle/caches/
 MERGED from [com.android.support:support-v13:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v13-25.3.1.aar/4a8ddb80aa158264f445c88dac3bd4b8/AndroidManifest.xml:29:5-20
 MERGED from [com.google.firebase:firebase-auth:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.2.aar/c387b22631fa4d755329fcba61e31501/AndroidManifest.xml:19:5-20:19
 MERGED from [com.google.firebase:firebase-auth:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.2.aar/c387b22631fa4d755329fcba61e31501/AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-messaging:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.0.2.aar/f792fcf85d40242c3d84bc8215b0a4d1/AndroidManifest.xml:19:5-29:19
+MERGED from [com.google.firebase:firebase-messaging:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.0.2.aar/f792fcf85d40242c3d84bc8215b0a4d1/AndroidManifest.xml:19:5-29:19
 MERGED from [com.google.firebase:firebase-core:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.2.aar/1edfc4237d2329edd504903e797d6065/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-core:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.2.aar/1edfc4237d2329edd504903e797d6065/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-analytics:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.2.aar/ae9a88f86b4aaacb29b8cb04eaffe16a/AndroidManifest.xml:24:5-34:19
@@ -345,6 +348,8 @@ MERGED from [com.google.firebase:firebase-database:11.0.2] /Users/paul/.gradle/c
 MERGED from [com.google.firebase:firebase-database:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-database-11.0.2.aar/6cfb78a114a90ba7233963177451e75f/AndroidManifest.xml:3:5-43
 MERGED from [com.google.firebase:firebase-storage:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-storage-11.0.2.aar/baefa3e8ed3fa14b96a7a7cf359563ab/AndroidManifest.xml:3:5-43
 MERGED from [com.google.firebase:firebase-storage:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-storage-11.0.2.aar/baefa3e8ed3fa14b96a7a7cf359563ab/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-messaging:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.0.2.aar/f792fcf85d40242c3d84bc8215b0a4d1/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-messaging:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.0.2.aar/f792fcf85d40242c3d84bc8215b0a4d1/AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-core:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.2.aar/1edfc4237d2329edd504903e797d6065/AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-core:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.2.aar/1edfc4237d2329edd504903e797d6065/AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-analytics:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.2.aar/ae9a88f86b4aaacb29b8cb04eaffe16a/AndroidManifest.xml:17:5-43
@@ -449,6 +454,20 @@ MERGED from [com.android.support:support-compat:25.3.1] /Users/paul/.gradle/cach
 		ADDED from [com.android.support:design:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/8fa97a591110b07a6151d103f06f9534/AndroidManifest.xml:27:9-31
 	android:name
 		ADDED from [com.android.support:design:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/8fa97a591110b07a6151d103f06f9534/AndroidManifest.xml:26:9-47
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.0.2.aar/f792fcf85d40242c3d84bc8215b0a4d1/AndroidManifest.xml:23:9-27:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.0.2.aar/f792fcf85d40242c3d84bc8215b0a4d1/AndroidManifest.xml:23:88-111
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.0.2.aar/f792fcf85d40242c3d84bc8215b0a4d1/AndroidManifest.xml:23:18-87
+intent-filter#com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.0.2.aar/f792fcf85d40242c3d84bc8215b0a4d1/AndroidManifest.xml:24:13-26:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-messaging:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.0.2.aar/f792fcf85d40242c3d84bc8215b0a4d1/AndroidManifest.xml:24:28-51
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.0.2.aar/f792fcf85d40242c3d84bc8215b0a4d1/AndroidManifest.xml:25:17-77
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.0.2.aar/f792fcf85d40242c3d84bc8215b0a4d1/AndroidManifest.xml:25:25-75
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.firebase:firebase-analytics:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.2.aar/ae9a88f86b4aaacb29b8cb04eaffe16a/AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-analytics-impl:11.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.2.aar/da1473255e2d196af8129c438f74b1af/AndroidManifest.xml:22:5-67

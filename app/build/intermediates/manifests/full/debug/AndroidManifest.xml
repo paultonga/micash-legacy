@@ -110,6 +110,17 @@
         <activity android:name="ng.com.bitlab.micash.ui.loans.LoanDetailsActivity" />
         <activity android:name="ng.com.bitlab.micash.ui.processing.ProcessingActivity" />
         <activity android:name="ng.com.bitlab.micash.ui.profile.ProfileActivity" />
+        <!--
+         FirebaseMessagingService performs security checks at runtime,
+             no need for explicit permissions despite exported="true"
+        -->
+        <service
+            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+            android:exported="true" >
+            <intent-filter android:priority="-500" >
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"

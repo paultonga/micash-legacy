@@ -4,7 +4,7 @@ package ng.com.bitlab.micash.models;
  * Created by Paul on 27/09/2017.
  */
 
-public classInterest {
+public class Interest {
 
     private String id;
     private String loan_id;
