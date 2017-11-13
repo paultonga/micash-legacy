@@ -10,18 +10,38 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import ng.com.bitlab.micash.R;
+import ng.com.bitlab.micash.common.MainActivity;
+import ng.com.bitlab.micash.listeners.OnNotificationReceivedListener;
+import ng.com.bitlab.micash.models.Notification;
+
 /**
  * Created by paul on 11/11/17.
  */
 
 public class FirebaseMessageService extends FirebaseMessagingService {
 
+    private static OnNotificationReceivedListener mListener;
+
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
 
         Log.d("Message", "Message received ["+ remoteMessage +"]");
+        storeNotification("",remoteMessage.toString());
+        showNotification(remoteMessage);
 
+    }
+
+    private void storeNotification(String title, String detail){
+        Notification n = new Notification();
+
+        n.save();
+        mListener.OnNotificationReceived("Welcome to miCash","Please add your details to enable you request loans.");
+
+    }
+
+    private void showNotification(RemoteMessage remoteMessage){
         //Create Notification
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -30,8 +50,8 @@ public class FirebaseMessageService extends FirebaseMessagingService {
 
         NotificationCompat.Builder notificationBuilder = (NotificationCompat.Builder) new
                 NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.icon)
-                .setContentTitle("Message")
+                .setSmallIcon(R.drawable.ic)
+                .setContentTitle("miCash")
                 .setContentText(remoteMessage.getNotification().getBody())
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent);
@@ -39,7 +59,5 @@ public class FirebaseMessageService extends FirebaseMessagingService {
         NotificationManager notificationManager = (NotificationManager)
                 getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(1, notificationBuilder.build());
-
-
     }
 }

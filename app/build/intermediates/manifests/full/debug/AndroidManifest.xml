@@ -36,6 +36,19 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="DATABASE"
+            android:value="sugar_micash.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="ng.com.bitlab" />
+
         <activity
             android:name="ng.com.bitlab.micash.common.MainActivity"
             android:screenOrientation="portrait" />
@@ -110,6 +123,22 @@
         <activity android:name="ng.com.bitlab.micash.ui.loans.LoanDetailsActivity" />
         <activity android:name="ng.com.bitlab.micash.ui.processing.ProcessingActivity" />
         <activity android:name="ng.com.bitlab.micash.ui.profile.ProfileActivity" />
+
+        <service
+            android:name="ng.com.bitlab.micash.services.FirebaseMessageService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="ng.com.bitlab.micash.services.FirebaseInstanceIDService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
         <!--
          FirebaseMessagingService performs security checks at runtime,
              no need for explicit permissions despite exported="true"

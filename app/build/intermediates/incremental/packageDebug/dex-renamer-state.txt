@@ -1,7 +1,0 @@
-#Fri Oct 13 00:00:10 WAT 2017
-base.0=/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_9199d3fd2f214b87bf33474c7a3c1b9d0332ec07
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8baee210ff3da102dbadd065b912f3bf1711052d/classes.dex
-base.1=/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8baee210ff3da102dbadd065b912f3bf1711052d
-file.0=/Users/Paul/AndroidStudioProjects/miCash/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_9199d3fd2f214b87bf33474c7a3c1b9d0332ec07/classes.dex
