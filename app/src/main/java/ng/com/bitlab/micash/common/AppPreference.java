@@ -66,6 +66,13 @@ public interface AppPreference {
     @KeyByString("key_profile")
     String getProfile();
 
+    //First launch boolean
+
+    @KeyByString("key_first")
+    void setFirst(String first);
+
+    @KeyByString("key_first")
+    String getFirst();
 
 
     //Clear all preferences

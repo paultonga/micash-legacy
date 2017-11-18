@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -75,6 +78,8 @@ public class MainActivity extends BaseView {
             "Loans", "Ledger", "Notifications", "Profile"
     };
 
+    private AppPreference mPref;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,11 +94,17 @@ public class MainActivity extends BaseView {
         mActivity = this;
         savePreferences(Constants.DONE);
 
+        mPref = MiCashApplication.getPreference();
+
         initializeOnlinePresence();
 
         lastLogin();
 
         updateProfile();
+
+        if(mPref.getFirst() == null){
+            firstLaunch();
+        }
 
 
         //dummy();
@@ -286,6 +297,26 @@ public class MainActivity extends BaseView {
                 .setValue(org.joda.time.DateTime.now().getMillis());
 
 
+    }
+    private void firstLaunch() {
+        FirebaseUser u = FirebaseAuth.getInstance().getCurrentUser();
+        final FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference ref = db.getReference();
+
+        ref.child("firstlaunch").child(u.getUid())
+                .setValue(true)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+
+                            //save first launch to preference
+                            mPref = MiCashApplication.getPreference();
+                            mPref.setFirst(Constants.FIRST);
+
+                        }
+                    }
+                });
     }
 
 }

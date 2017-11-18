@@ -9,8 +9,6 @@ import net.orange_box.storebox.StoreBox;
 
 import ng.com.bitlab.micash.common.AppPreference;
 import ng.com.bitlab.micash.common.FontsOverride;
-import ng.com.bitlab.micash.models.DaoMaster;
-import ng.com.bitlab.micash.models.DaoSession;
 
 
 /**
@@ -22,7 +20,7 @@ public class MiCashApplication extends Application {
 
     private static Context context;
     private static AppPreference mPreferences;
-    private DaoSession mDaoSession;
+
 
 
 

@@ -27,6 +27,8 @@ public class Constants {
     public final static String DONE = "done";
     public final static String USER = "user";
 
+    public final static String FIRST = "first";
+
     public final static String SENDER = "miCash";
 
     public final static String PHONE = "phone";
