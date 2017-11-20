@@ -2,11 +2,15 @@ package ng.com.bitlab.micash.common;
 
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -54,7 +58,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 
-public class MainActivity extends BaseView implements OnNotificationReceivedListener{
+public class MainActivity extends BaseView {
 
     private static final String TAG = "miCash";
     @BindView(R.id.viewPager) ViewPager mViewPager;
@@ -151,7 +155,17 @@ public class MainActivity extends BaseView implements OnNotificationReceivedList
 
         initViewPager();
 
+        IntentFilter intentFilter = new IntentFilter("com.ng.bitlab.micash.CUSTOM_EVENT");
+        LocalBroadcastManager.getInstance(this).registerReceiver(onMessage, intentFilter);
+
     }
+
+    private BroadcastReceiver onMessage = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            showToast("Notification received!");
+        }
+    };
 
     private void updateProfile() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -327,8 +341,4 @@ public class MainActivity extends BaseView implements OnNotificationReceivedList
                 });
     }
 
-    @Override
-    public void OnNotificationReceived(String title, String detail) {
-        showToast(title + ": " + detail);
-    }
 }

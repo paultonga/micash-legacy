@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -12,6 +13,7 @@ import com.google.firebase.messaging.RemoteMessage;
 
 import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.common.MainActivity;
+import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.listeners.OnNotificationReceivedListener;
 import ng.com.bitlab.micash.models.Notification;
 
@@ -21,7 +23,6 @@ import ng.com.bitlab.micash.models.Notification;
 
 public class FirebaseMessageService extends FirebaseMessagingService {
 
-    private static OnNotificationReceivedListener mListener;
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -30,13 +31,26 @@ public class FirebaseMessageService extends FirebaseMessagingService {
         Log.d("Message", "Message received ["+ remoteMessage +"]");
         String title = remoteMessage.getNotification().getTitle();
         String detail = remoteMessage.getNotification().getBody();
-        //mListener.OnNotificationReceived(title, detail);
+
+        storeNotification(title, detail);
         showNotification(remoteMessage);
+        broadcastIntent();
+
+    }
+
+    private void broadcastIntent() {
+
+        Intent intent = new Intent();
+        intent.setAction("com.ng.bitlab.micash.CUSTOM_EVENT");
+        LocalBroadcastManager.getInstance(MiCashApplication.getContext())
+                .sendBroadcast(intent);
 
     }
 
     private void storeNotification(String title, String detail){
 
+        Notification notification = new Notification(title,detail,org.joda.time.DateTime.now().getMillis());
+        notification.save();
 
     }
 

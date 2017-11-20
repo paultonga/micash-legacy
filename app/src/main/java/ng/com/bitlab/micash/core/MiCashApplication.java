@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 
 
+import com.orm.SugarApp;
+
 import net.orange_box.storebox.StoreBox;
 
 
@@ -15,7 +17,7 @@ import ng.com.bitlab.micash.common.FontsOverride;
  * Created by Paul on 12/06/2017.
  */
 
-public class MiCashApplication extends Application {
+public class MiCashApplication extends SugarApp {
 
 
     private static Context context;
@@ -27,6 +29,8 @@ public class MiCashApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+
         FontsOverride.setDefaultFont(this, "SERIF", "hnlight.ttf");
         FontsOverride.setDefaultFont(this, "SERIF_BOLD", "hnbold.ttf");
         FontsOverride.setDefaultFont(this, "SERIF_THIN", "hnthin.ttf");
@@ -41,6 +45,10 @@ public class MiCashApplication extends Application {
         return context;
     }
 
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+    }
 
     public static AppPreference getPreference() { return mPreferences; }
 
