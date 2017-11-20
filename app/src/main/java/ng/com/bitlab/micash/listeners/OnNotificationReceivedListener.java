@@ -1,5 +1,7 @@
 package ng.com.bitlab.micash.listeners;
 
+import ng.com.bitlab.micash.models.Notification;
+
 /**
  * Created by paul on 11/13/17.
  */

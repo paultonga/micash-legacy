@@ -26,6 +26,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.FirebaseInstanceIdService;
 import com.google.gson.Gson;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
@@ -34,6 +36,8 @@ import butterknife.ButterKnife;
 import butterknife.BindView;
 import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.core.MiCashApplication;
+import ng.com.bitlab.micash.listeners.OnNotificationReceivedListener;
+import ng.com.bitlab.micash.models.Notification;
 import ng.com.bitlab.micash.models.User;
 import ng.com.bitlab.micash.ui.cards.CardsActivity;
 import ng.com.bitlab.micash.ui.common.BaseView;
@@ -50,7 +54,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 
-public class MainActivity extends BaseView {
+public class MainActivity extends BaseView implements OnNotificationReceivedListener{
 
     private static final String TAG = "miCash";
     @BindView(R.id.viewPager) ViewPager mViewPager;
@@ -102,9 +106,11 @@ public class MainActivity extends BaseView {
 
         updateProfile();
 
-        if(mPref.getFirst() == null){
-            firstLaunch();
-        }
+        firstLaunch();
+
+        //String token = FirebaseInstanceId.getInstance().getToken();
+
+        //showToast(token);
 
 
         //dummy();
@@ -302,16 +308,18 @@ public class MainActivity extends BaseView {
         FirebaseUser u = FirebaseAuth.getInstance().getCurrentUser();
         final FirebaseDatabase db = FirebaseDatabase.getInstance();
         DatabaseReference ref = db.getReference();
+        //mPref = MiCashApplication.getPreference();
+        String token = FirebaseInstanceId.getInstance().getToken();
 
         ref.child("firstlaunch").child(u.getUid())
-                .setValue(true)
+                .child("token")
+                .setValue(token)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
 
                             //save first launch to preference
-                            mPref = MiCashApplication.getPreference();
                             mPref.setFirst(Constants.FIRST);
 
                         }
@@ -319,4 +327,8 @@ public class MainActivity extends BaseView {
                 });
     }
 
+    @Override
+    public void OnNotificationReceived(String title, String detail) {
+        showToast(title + ": " + detail);
+    }
 }

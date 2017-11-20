@@ -74,6 +74,13 @@ public interface AppPreference {
     @KeyByString("key_first")
     String getFirst();
 
+    //Device token
+    @KeyByString("key_token")
+    void setToken(String first);
+
+    @KeyByString("key_token")
+    String getToken();
+
 
     //Clear all preferences
     @ClearMethod

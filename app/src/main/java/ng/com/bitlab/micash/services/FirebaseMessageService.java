@@ -28,16 +28,15 @@ public class FirebaseMessageService extends FirebaseMessagingService {
         super.onMessageReceived(remoteMessage);
 
         Log.d("Message", "Message received ["+ remoteMessage +"]");
-        storeNotification("",remoteMessage.toString());
+        String title = remoteMessage.getNotification().getTitle();
+        String detail = remoteMessage.getNotification().getBody();
+        //mListener.OnNotificationReceived(title, detail);
         showNotification(remoteMessage);
 
     }
 
     private void storeNotification(String title, String detail){
-        Notification n = new Notification();
 
-        n.save();
-        mListener.OnNotificationReceived("Welcome to miCash","Please add your details to enable you request loans.");
 
     }
 
