@@ -116,7 +116,7 @@ public final class R {
         public static final int give_us_a_review_landmine_text_2 = 0x7f08006f;
     }
     public static final class layout {
-        public static final int sp_example = 0x7f0a0083;
-        public static final int ssp_example = 0x7f0a0084;
+        public static final int sp_example = 0x7f0a0084;
+        public static final int ssp_example = 0x7f0a0085;
     }
 }

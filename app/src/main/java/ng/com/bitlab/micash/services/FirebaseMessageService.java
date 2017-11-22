@@ -49,7 +49,11 @@ public class FirebaseMessageService extends FirebaseMessagingService {
 
     private void storeNotification(String title, String detail){
 
-        Notification notification = new Notification(title,detail,org.joda.time.DateTime.now().getMillis());
+        Notification notification = new Notification(title,
+                detail,
+                org.joda.time.DateTime.now().getMillis(),
+                false,
+                "welcome");
         notification.save();
 
     }

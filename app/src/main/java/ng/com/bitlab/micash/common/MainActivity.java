@@ -155,17 +155,8 @@ public class MainActivity extends BaseView {
 
         initViewPager();
 
-        IntentFilter intentFilter = new IntentFilter("com.ng.bitlab.micash.CUSTOM_EVENT");
-        LocalBroadcastManager.getInstance(this).registerReceiver(onMessage, intentFilter);
-
     }
 
-    private BroadcastReceiver onMessage = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            showToast("Notification received!");
-        }
-    };
 
     private void updateProfile() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

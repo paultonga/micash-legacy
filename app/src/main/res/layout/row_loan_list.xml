@@ -9,7 +9,7 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="4dp"
     android:background="@android:color/white"
-    android:foreground="?attr/selectableItemBackground"
+    android:foreground="?android:attr/selectableItemBackground"
     card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
     card_view:cardElevation="@dimen/card_recycler_elevation">
 
