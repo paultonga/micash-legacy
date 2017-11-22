@@ -26,13 +26,13 @@
             android:layout_height="wrap_content"
             android:text="miCash"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/_13ssp"/>
+            android:textSize="@dimen/_14ssp"/>
 
         <TextView
             android:id="@+id/notification_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/_11ssp"
+            android:textSize="@dimen/_12ssp"
             android:textColor="@android:color/black"
             android:text="Welcome to miCash. Please update your details and request loans."/>
 

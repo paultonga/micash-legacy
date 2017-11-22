@@ -18,13 +18,13 @@ import ng.com.bitlab.micash.R;
 public class VerifyActivity_ViewBinding implements Unbinder {
   private VerifyActivity target;
 
-  private View view2131231049;
+  private View view2131231050;
 
   private View view2131230760;
 
   private View view2131230765;
 
-  private View view2131231035;
+  private View view2131231036;
 
   @UiThread
   public VerifyActivity_ViewBinding(VerifyActivity target) {
@@ -42,7 +42,7 @@ public class VerifyActivity_ViewBinding implements Unbinder {
     target.codeInput = Utils.findRequiredViewAsType(source, R.id.editTextCode, "field 'codeInput'", MaskedEditText.class);
     view = Utils.findRequiredView(source, R.id.tv_resend, "field 'textViewResend' and method 'onResendCodeClicked'");
     target.textViewResend = Utils.castView(view, R.id.tv_resend, "field 'textViewResend'", TextView.class);
-    view2131231049 = view;
+    view2131231050 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -69,7 +69,7 @@ public class VerifyActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.tv_edit_number, "method 'showEditNumberDialog'");
-    view2131231035 = view;
+    view2131231036 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -94,13 +94,13 @@ public class VerifyActivity_ViewBinding implements Unbinder {
     target.btnRequestCode = null;
     target.btnVerify = null;
 
-    view2131231049.setOnClickListener(null);
-    view2131231049 = null;
+    view2131231050.setOnClickListener(null);
+    view2131231050 = null;
     view2131230760.setOnClickListener(null);
     view2131230760 = null;
     view2131230765.setOnClickListener(null);
     view2131230765 = null;
-    view2131231035.setOnClickListener(null);
-    view2131231035 = null;
+    view2131231036.setOnClickListener(null);
+    view2131231036 = null;
   }
 }

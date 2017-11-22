@@ -1,6 +1,8 @@
 package ng.com.bitlab.micash.ui.notifications;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -56,13 +58,16 @@ public class NotificationsListAdapter extends RecyclerView.Adapter<Notifications
                 holder.time.setTypeface(holder.time.getTypeface(), Typeface.BOLD);
             } else {
                 holder.title.setText(n.getTitle());
-                holder.title.setTypeface(holder.title.getTypeface(), Typeface.NORMAL);
+                holder.title.setTypeface(holder.detail.getTypeface(), Typeface.NORMAL);
+
+                //holder.title.setTextColor(Color.parseColor("#A9A9A9"));
 
                 holder.detail.setText(n.getDetail());
                 holder.detail.setTypeface(holder.detail.getTypeface(), Typeface.NORMAL);
 
                 holder.time.setText(ng.com.bitlab.micash.utils.Formatter.TimeFormatter(n.getDateSent()));
                 holder.time.setTypeface(holder.time.getTypeface(), Typeface.NORMAL);
+
             }
 
         }
@@ -98,6 +103,7 @@ public class NotificationsListAdapter extends RecyclerView.Adapter<Notifications
             selectedPosition = getLayoutPosition();
             Notification n = mNotifications.get(selectedPosition);
             n.setRead(true);
+            n.save();
             notifyDataSetChanged();
 
         }
