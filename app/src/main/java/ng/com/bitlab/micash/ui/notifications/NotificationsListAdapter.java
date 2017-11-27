@@ -45,33 +45,44 @@ public class NotificationsListAdapter extends RecyclerView.Adapter<Notifications
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        if(mNotifications != null){
+
+        if(mNotifications != null) {
             Notification n = mNotifications.get(position);
-            if(!n.isRead()){
-                holder.title.setText(n.getTitle());
-                holder.title.setTypeface(holder.title.getTypeface(), Typeface.BOLD);
+            holder.title.setText(n.getTitle());
+            holder.detail.setText(n.getDetail());
+            holder.time.setText(ng.com.bitlab.micash.utils.Formatter.TimeFormatter(n.getDateSent()));
 
-                holder.detail.setText(n.getDetail());
-                holder.detail.setTypeface(holder.detail.getTypeface(), Typeface.BOLD);
-
-                holder.time.setText(ng.com.bitlab.micash.utils.Formatter.TimeFormatter(n.getDateSent()));
-                holder.time.setTypeface(holder.time.getTypeface(), Typeface.BOLD);
+            if (n.isRead()) {
+                holder.title.setTextColor(Color.parseColor("#696969"));
+                holder.detail.setTextColor(Color.parseColor("#696969"));
+                //holder.title.setTypeface(holder.detail.getTypeface(), Typeface.NORMAL);
+                //holder.detail.setTypeface(holder.detail.getTypeface(), Typeface.NORMAL);
+                //holder.time.setTypeface(holder.time.getTypeface(), Typeface.NORMAL);
             } else {
-                holder.title.setText(n.getTitle());
-                holder.title.setTypeface(holder.detail.getTypeface(), Typeface.NORMAL);
-
-                //holder.title.setTextColor(Color.parseColor("#A9A9A9"));
-
-                holder.detail.setText(n.getDetail());
-                holder.detail.setTypeface(holder.detail.getTypeface(), Typeface.NORMAL);
-
-                holder.time.setText(ng.com.bitlab.micash.utils.Formatter.TimeFormatter(n.getDateSent()));
-                holder.time.setTypeface(holder.time.getTypeface(), Typeface.NORMAL);
+                if (shouldHighlightSelectedItem) {
+                    if (selectedPosition == position) {
+                        holder.title.setTextColor(Color.parseColor("#696969"));
+                        holder.detail.setTextColor(Color.parseColor("#696969"));
+                        //holder.title.setTypeface(holder.detail.getTypeface(), Typeface.NORMAL);
+                        //holder.detail.setTypeface(holder.detail.getTypeface(), Typeface.NORMAL);
+                        //holder.time.setTypeface(holder.time.getTypeface(), Typeface.NORMAL);
+                    } else {
+                        holder.title.setTextColor(Color.parseColor("#000000"));
+                        holder.detail.setTextColor(Color.parseColor("#000000"));
+                        //holder.title.setTypeface(holder.title.getTypeface(), Typeface.BOLD);
+                        //holder.detail.setTypeface(holder.detail.getTypeface(), Typeface.BOLD);
+                        //holder.time.setTypeface(holder.time.getTypeface(), Typeface.BOLD);
+                    }
+                } else {
+                    holder.title.setTextColor(Color.parseColor("#000000"));
+                    holder.detail.setTextColor(Color.parseColor("#000000"));
+                    //holder.title.setTypeface(holder.title.getTypeface(), Typeface.BOLD);
+                    //holder.detail.setTypeface(holder.detail.getTypeface(), Typeface.BOLD);
+                    //holder.time.setTypeface(holder.time.getTypeface(), Typeface.BOLD);
+                }
 
             }
-
         }
-
     }
 
     @Override

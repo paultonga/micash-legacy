@@ -184,6 +184,11 @@ public class VerifyPresenter extends BasePresenter<VerifyContract.View> implemen
 
     public void checkNumberAvailability(final String phone) {
 
+        mPref = MiCashApplication.getPreference();
+
+        mPref.setPhone(phone);
+
+
         view.showDialog("Checking your number...");
 
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();

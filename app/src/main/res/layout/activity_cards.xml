@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +8,7 @@
     tools:context="ng.com.bitlab.micash.ui.cards.CardsActivity">
 
     <android.support.design.widget.AppBarLayout
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="8dp">
@@ -24,13 +25,56 @@
     </android.support.design.widget.AppBarLayout>
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="551dp"
-        android:text="Payment Settings"
-        android:textSize="38sp"
-        android:gravity="center"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp" />
+    <RelativeLayout
+        android:id="@+id/empty_ledger_list"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="visible">
 
-</android.support.constraint.ConstraintLayout>
+        <ImageView
+            android:id="@+id/iv_error_icon"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/tv_error_title"
+            android:src="@drawable/ic_credit"
+            android:tint="@color/colorPrimary"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            android:id="@+id/tv_error_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_error_detail"
+            android:text="No Details"
+            android:textStyle="bold"
+            android:textSize="@dimen/_18ssp"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/tv_error_detail"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:text="You have not added any banking details."
+            android:textStyle="normal"
+            android:textSize="@dimen/_11ssp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+        <Button
+            android:id="@+id/add_banking_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/square_add_button"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_below="@+id/tv_error_detail"
+            android:text="Add"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

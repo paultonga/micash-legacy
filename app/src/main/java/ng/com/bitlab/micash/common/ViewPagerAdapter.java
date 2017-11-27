@@ -20,21 +20,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         String title = "";
 
-        /*switch(position){
-            case 0:
-                title = "Loans";
-                break;
-            case 1:
-                title = "Ledger";
-                break;
-            case 2:
-                title = "Notifications";
-                break;
-            default:
-                title = "";
-                break;
-
-        }*/
         return title;
     }
 
@@ -56,9 +41,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
             case 2:
                 selectedFragment = new NotificationsListFragment();
                 break;
-            case 3:
-                selectedFragment = new ProfileFragment();
-                break;
             default:
                 selectedFragment = new LoansListFragment();
         }
@@ -67,6 +49,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return 3;
     }
 }

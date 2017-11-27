@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_dialog_fullscreen"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_dialog_fullscreen_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="12dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:padding="4dp"
+                android:src="@drawable/ic_close_white_24dp"
+                android:tint="@color/colorPrimaryText"
+                android:layout_marginLeft="12dp" />
+
+            <TextView
+                style="@style/Base.DialogWindowTitle.AppCompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="Add Employment Details"
+                android:textColor="@color/colorPrimaryText" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/employment_details"
+        android:layout_below="@+id/card_dialog_fullscreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <RelativeLayout
+            android:id="@+id/employment_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingRight="@dimen/_12sdp">
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/employment_status_spinner"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/banker_checkbox"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="wrap_content"
+                android:buttonTint="@android:color/black"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_below="@+id/employment_status_spinner"
+                android:text="I work in a bank."/>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/employment_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/text_label"
+                android:layout_below="@+id/banker_checkbox">
+
+                <EditText
+                    android:textColor="@android:color/black"
+                    android:id="@+id/input_business_name"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:hint="Office or Business Name"
+                    android:inputType="textPersonName"
+                    android:textSize="@dimen/_13ssp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/employment_address_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/text_label"
+                android:layout_below="@+id/employment_name_layout">
+
+                <EditText
+                    android:id="@+id/input_business_address"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:hint="Address"
+                    android:inputType="text"
+                    android:textSize="@dimen/_13ssp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/employment_city_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/text_label"
+                android:layout_below="@+id/employment_address_layout">
+
+                <EditText
+                    android:id="@+id/input_business_city"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:hint="City/Town"
+                    android:inputType="text"
+                    android:textSize="@dimen/_13ssp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/employment_bank_branch_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/employment_city_layout"
+                android:theme="@style/text_label"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/input_bank_branch"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:hint="Bank Branch"
+                    android:inputType="textPostalAddress"
+                    android:textSize="@dimen/_13ssp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <Spinner
+                android:id="@+id/employment_state_spinner"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                android:layout_below="@+id/employment_bank_branch_layout"/>
+
+
+        </RelativeLayout>
+        <Button
+            android:id="@+id/save_continue_button"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/employment_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/btn_blue_small"
+            android:textColor="@color/blue_button_text_color"
+            android:textStyle="bold"
+            android:text="Save and Continue"/>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

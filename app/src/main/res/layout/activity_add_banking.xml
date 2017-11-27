@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/root_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_background"
+    tools:context="ng.com.bitlab.micash.ui.addEmployment.AddEmploymentActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:theme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_below="@+id/app_bar_layout"
+        android:paddingLeft="@dimen/_15sdp"
+        android:paddingRight="@dimen/_15sdp"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/bank_name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/text_label"
+            android:layout_below="@+id/employment_name_layout">
+
+            <EditText
+                android:id="@+id/input_bank_name"
+                android:layout_width="@dimen/_280sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:hint="Bank Name"
+                android:inputType="text"
+                android:textSize="@dimen/_13ssp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/bank_account_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/text_label"
+            android:layout_below="@+id/employment_name_layout">
+
+            <EditText
+                android:id="@+id/input_bank_account"
+                android:layout_width="@dimen/_280sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:hint="Account Number (10 Digits)"
+                android:inputType="text"
+                android:textSize="@dimen/_13ssp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/bank_bvn_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/text_label"
+            android:layout_below="@+id/employment_name_layout">
+
+            <EditText
+                android:id="@+id/input_bank_bvn"
+                android:layout_width="@dimen/_280sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:hint="Bank Verification Number (BVN)"
+                android:inputType="text"
+                android:textSize="@dimen/_13ssp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:text="Card details for repayment"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@android:color/black" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10ssp"
+            android:text="Please note that if you don't repay the loan at due time, the amount will be withdrawn from your account."/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/card_name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/text_label"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_below="@+id/employment_name_layout">
+
+            <EditText
+                android:id="@+id/input_card_name"
+                android:layout_width="@dimen/_280sdp"
+                android:layout_height="wrap_content"
+                android:hint="Card Name"
+                android:inputType="text"
+                android:textSize="@dimen/_13ssp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/card_number_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/text_label"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_below="@+id/employment_name_layout">
+
+            <ng.com.bitlab.micash.utils.CreditCardEditText
+                android:id="@+id/card_number_input"
+                android:layout_width="@dimen/_280sdp"
+                android:layout_height="wrap_content"
+                android:hint="Card Number"
+                android:maxLength="19"
+                android:inputType="number"
+                android:textSize="@dimen/_13ssp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/card_validity_layout"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:theme="@style/text_label"
+                android:layout_below="@+id/employment_name_layout">
+
+                <ng.com.bitlab.micash.utils.CreditCardEditText
+                    android:id="@+id/card_validity_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Expiry"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:textSize="@dimen/_13ssp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/card_cvc_layout"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:theme="@style/text_label"
+                android:layout_below="@+id/employment_name_layout">
+
+                <ng.com.bitlab.micash.utils.CreditCardEditText
+                    android:id="@+id/card_cvc_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="CVC"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textSize="@dimen/_13ssp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/banking_save_continue_button"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/btn_blue_small"
+            android:textColor="@color/blue_button_text_color"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:text="Save and Continue"/>
+
+
+
+    </LinearLayout>
+</RelativeLayout>

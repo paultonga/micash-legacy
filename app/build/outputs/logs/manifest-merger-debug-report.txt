@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-114:12
-INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-114:12
-INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-114:12
-INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-114:12
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-134:12
+INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-134:12
+INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-134:12
+INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-134:12
 MERGED from [de.hdodenhof:circleimageview:2.1.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/758731cd9f298846fb2ca0562286d25c/AndroidManifest.xml:2:1-11:12
 MERGED from [com.msg91.sendotp.library:library:3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/library-3.1.aar/a2c5942e73f3920a2d0bb79bd44a80cf/AndroidManifest.xml:2:1-17:12
 MERGED from [com.mikepenz:materialdrawer:5.9.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/materialdrawer-5.9.2.aar/742be3651072fd300a1c95964f49069c/AndroidManifest.xml:2:1-12:12
@@ -11,8 +11,8 @@ MERGED from [com.afollestad.material-dialogs:core:0.9.4.5] /Users/paul/.gradle/c
 MERGED from [cc.cloudist.acplibrary:library:1.2.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/library-1.2.1.aar/df380865e69e853cc69eeac6ff5301cb/AndroidManifest.xml:2:1-12:12
 MERGED from [com.github.pinball83:masked-edittext:1.0.3] /Users/paul/.gradle/caches/transforms-1/files-1.1/masked-edittext-1.0.3.aar/e36059fe84bf4370101c22d601defdf4/AndroidManifest.xml:2:1-16:12
 MERGED from [me.zhanghai.android.materialprogressbar:library:1.4.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/library-1.4.1.aar/582ec0b4c05d2909b929a1e2bf461b48/AndroidManifest.xml:6:1-16:12
-MERGED from [com.android.support:design:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/f0d460e286bc2aa57d8af8fd4db1a50f/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/1cf1eb0baaacccf9b513da5adeaafea2/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:design:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/9f0f9ef99fe005a8c350c1b09df08152/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:appcompat-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/c9027444e6bda9930ad2e7673622cbee/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/7b27f45f9ca3e3b72b50de97f47b3615/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-v13:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v13-25.3.1.aar/ba1c38ac696c621b73ad1791f6e22bd4/AndroidManifest.xml:17:1-31:12
 MERGED from [com.google.firebase:firebase-auth:11.0.4] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.4.aar/2a38e38647cc5d857a3f3bfef678eb25/AndroidManifest.xml:16:1-21:12
@@ -29,41 +29,42 @@ MERGED from [com.google.firebase:firebase-common:11.0.4] /Users/paul/.gradle/cac
 MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /Users/paul/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.4.aar/30d489813c06ab49e415fb5c1472352d/AndroidManifest.xml:2:1-5:12
 MERGED from [com.google.firebase:firebase-storage-common:11.0.4] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-11.0.4.aar/df2bd35ceced19fb4cf82c2da454c5e5/AndroidManifest.xml:2:1-4:12
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/paul/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/5201f6587cef27107638f056af9c4e6b/AndroidManifest.xml:16:1-23:12
-MERGED from [com.android.support:transition:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/259bb5c3578fab14433edcb887873aff/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/a60f54ef429ba39933a605a6c3795f48/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:transition:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/29e084f80aad32b619775b3a9456f9fe/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/2c87fef50ed82de28476db2a49fd8454/AndroidManifest.xml:17:1-31:12
 MERGED from [com.jakewharton:butterknife:8.6.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/butterknife-8.6.0.aar/4f780c10958986843c2a969ee648ecee/AndroidManifest.xml:2:1-7:12
 MERGED from [com.mikepenz:fontawesome-typeface:4.4.0.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.4.0.1.aar/80ad70e9b340a05ed21e61788ee30a67/AndroidManifest.xml:2:1-12:12
 MERGED from [com.intuit.ssp:ssp-android:1.0.4] /Users/paul/.gradle/caches/transforms-1/files-1.1/ssp-android-1.0.4.aar/99108d569e1367b4ef5354f953277cce/AndroidManifest.xml:2:1-11:12
 MERGED from [com.intuit.sdp:sdp-android:1.0.4] /Users/paul/.gradle/caches/transforms-1/files-1.1/sdp-android-1.0.4.aar/2c5e309642b92aed43c104feddb675d2/AndroidManifest.xml:2:1-11:12
 MERGED from [com.wang.avi:library:2.1.3] /Users/paul/.gradle/caches/transforms-1/files-1.1/library-2.1.3.aar/c036f5f6f33b0e964825eac7aaf34cb2/AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.reinaldoarrosi:maskededittext:1.1.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/maskededittext-1.1.0.aar/0bbbff15a6bf19b348e7f90ebb53db3f/AndroidManifest.xml:2:1-13:12
-MERGED from [com.android.support:cardview-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/4cc55e39f2a96b466967e62c2f11cb22/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:cardview-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/97c4490f60fe7e587e0ea0fca9fb04da/AndroidManifest.xml:17:1-28:12
 MERGED from [com.github.satyan:sugar:1.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/sugar-1.3.1.aar/848e273d3360e3c43ed38faa03ba5471/AndroidManifest.xml:2:1-14:12
-MERGED from [com.android.support:support-fragment:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/6be9ffb8b436a8d9549e31415adca379/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-media-compat:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/912fce84fe623b167e4269b6d38d5217/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/6bf76b3c8ec562d970deb53659cf2039/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/809636bef0421516e560807fa2d1803c/AndroidManifest.xml:17:1-26:12
-MERGED from [com.android.support:support-core-ui:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/afc508024990ae351aa23325a6752458/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/87ae9c3302520ae4eaa39aee86f5d950/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/c4b92b8aa5f83e5e3495c9724b5a45c5/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-compat:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/93acda52bff21efbd8aa8b6d66927516/AndroidManifest.xml:17:1-31:12
+MERGED from [com.craftman.cardform:cardform:0.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardform-0.0.2.aar/4a83f41454bd3bbed5301c337b77e818/AndroidManifest.xml:2:1-17:12
+MERGED from [com.android.support:animated-vector-drawable:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/f649c8b47f9e5072b89c6b07ad7d6807/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/50b94badc6ee5e98c7b29b6811fc8f98/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:recyclerview-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/dce45c596c5ef9728604f6ff0b8911e2/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-fragment:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/74ff1545977b078ffbeb7ff5580b703f/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/d7ec3822852e88760e8894ecb0d79cff/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/8e6d1ad36e162b37ed7b07b13633418c/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/99fcb881f0a486a03294016e227d76e0/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/b2ce2fba6bde64bf40d199c719303882/AndroidManifest.xml:17:1-31:12
 MERGED from [com.mikepenz:materialize:1.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/materialize-1.0.2.aar/8b21f2fe4399a8fca2c5cdc452c4df9b/AndroidManifest.xml:2:1-12:12
 MERGED from [com.mikepenz:iconics-core:2.8.5] /Users/paul/.gradle/caches/transforms-1/files-1.1/iconics-core-2.8.5.aar/6f1faf55bf3f59a93323bc0a9f271e20/AndroidManifest.xml:2:1-12:12
 MERGED from [com.mikepenz:fastadapter:2.5.3] /Users/paul/.gradle/caches/transforms-1/files-1.1/fastadapter-2.5.3.aar/a5563d609a96fb36a3fa032f100be653/AndroidManifest.xml:2:1-12:12
-INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-114:12
-INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-114:12
-INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-114:12
+INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-134:12
+INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-134:12
+INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-134:12
 	package
 		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:3:5-35
 		INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-114:12
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-134:12
 		INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-114:12
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:1-134:12
 		INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:2:11-69
@@ -100,7 +101,7 @@ ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest
 	android:name
 		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:9:22-67
 application
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:11:5-112:19
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:11:5-132:19
 MERGED from [de.hdodenhof:circleimageview:2.1.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/758731cd9f298846fb2ca0562286d25c/AndroidManifest.xml:9:5-20
 MERGED from [de.hdodenhof:circleimageview:2.1.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/758731cd9f298846fb2ca0562286d25c/AndroidManifest.xml:9:5-20
 MERGED from [com.msg91.sendotp.library:library:3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/library-3.1.aar/a2c5942e73f3920a2d0bb79bd44a80cf/AndroidManifest.xml:11:5-15:19
@@ -109,10 +110,10 @@ MERGED from [com.afollestad.material-dialogs:core:0.9.4.5] /Users/paul/.gradle/c
 MERGED from [com.afollestad.material-dialogs:core:0.9.4.5] /Users/paul/.gradle/caches/transforms-1/files-1.1/core-0.9.4.5.aar/fdd492bde58f93e29598abdd38ad5a9e/AndroidManifest.xml:13:5-20
 MERGED from [com.github.pinball83:masked-edittext:1.0.3] /Users/paul/.gradle/caches/transforms-1/files-1.1/masked-edittext-1.0.3.aar/e36059fe84bf4370101c22d601defdf4/AndroidManifest.xml:11:5-14:19
 MERGED from [com.github.pinball83:masked-edittext:1.0.3] /Users/paul/.gradle/caches/transforms-1/files-1.1/masked-edittext-1.0.3.aar/e36059fe84bf4370101c22d601defdf4/AndroidManifest.xml:11:5-14:19
-MERGED from [com.android.support:design:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/f0d460e286bc2aa57d8af8fd4db1a50f/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:design:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/f0d460e286bc2aa57d8af8fd4db1a50f/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/1cf1eb0baaacccf9b513da5adeaafea2/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/1cf1eb0baaacccf9b513da5adeaafea2/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:design:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/9f0f9ef99fe005a8c350c1b09df08152/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:design:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/9f0f9ef99fe005a8c350c1b09df08152/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/c9027444e6bda9930ad2e7673622cbee/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/c9027444e6bda9930ad2e7673622cbee/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/7b27f45f9ca3e3b72b50de97f47b3615/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/7b27f45f9ca3e3b72b50de97f47b3615/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-v13:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v13-25.3.1.aar/ba1c38ac696c621b73ad1791f6e22bd4/AndroidManifest.xml:29:5-20
@@ -137,30 +138,34 @@ MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /Users/paul/.gra
 MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /Users/paul/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.4.aar/30d489813c06ab49e415fb5c1472352d/AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/paul/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/5201f6587cef27107638f056af9c4e6b/AndroidManifest.xml:19:5-21:19
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/paul/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/5201f6587cef27107638f056af9c4e6b/AndroidManifest.xml:19:5-21:19
-MERGED from [com.android.support:transition:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/259bb5c3578fab14433edcb887873aff/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:transition:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/259bb5c3578fab14433edcb887873aff/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-v4:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/a60f54ef429ba39933a605a6c3795f48/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-v4:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/a60f54ef429ba39933a605a6c3795f48/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:transition:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/29e084f80aad32b619775b3a9456f9fe/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/29e084f80aad32b619775b3a9456f9fe/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/2c87fef50ed82de28476db2a49fd8454/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/2c87fef50ed82de28476db2a49fd8454/AndroidManifest.xml:25:5-29:19
 MERGED from [com.github.reinaldoarrosi:maskededittext:1.1.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/maskededittext-1.1.0.aar/0bbbff15a6bf19b348e7f90ebb53db3f/AndroidManifest.xml:11:5-53
 MERGED from [com.github.reinaldoarrosi:maskededittext:1.1.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/maskededittext-1.1.0.aar/0bbbff15a6bf19b348e7f90ebb53db3f/AndroidManifest.xml:11:5-53
-MERGED from [com.android.support:cardview-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/4cc55e39f2a96b466967e62c2f11cb22/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:cardview-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/4cc55e39f2a96b466967e62c2f11cb22/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:cardview-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/97c4490f60fe7e587e0ea0fca9fb04da/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:cardview-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/97c4490f60fe7e587e0ea0fca9fb04da/AndroidManifest.xml:22:5-26:19
 MERGED from [com.github.satyan:sugar:1.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/sugar-1.3.1.aar/848e273d3360e3c43ed38faa03ba5471/AndroidManifest.xml:11:5-12:19
 MERGED from [com.github.satyan:sugar:1.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/sugar-1.3.1.aar/848e273d3360e3c43ed38faa03ba5471/AndroidManifest.xml:11:5-12:19
-MERGED from [com.android.support:support-fragment:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/6be9ffb8b436a8d9549e31415adca379/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/6be9ffb8b436a8d9549e31415adca379/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/912fce84fe623b167e4269b6d38d5217/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/912fce84fe623b167e4269b6d38d5217/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/6bf76b3c8ec562d970deb53659cf2039/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/6bf76b3c8ec562d970deb53659cf2039/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/afc508024990ae351aa23325a6752458/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/afc508024990ae351aa23325a6752458/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/87ae9c3302520ae4eaa39aee86f5d950/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/87ae9c3302520ae4eaa39aee86f5d950/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/c4b92b8aa5f83e5e3495c9724b5a45c5/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/c4b92b8aa5f83e5e3495c9724b5a45c5/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-compat:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/93acda52bff21efbd8aa8b6d66927516/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/93acda52bff21efbd8aa8b6d66927516/AndroidManifest.xml:29:5-20
+MERGED from [com.craftman.cardform:cardform:0.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardform-0.0.2.aar/4a83f41454bd3bbed5301c337b77e818/AndroidManifest.xml:11:5-15:19
+MERGED from [com.craftman.cardform:cardform:0.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardform-0.0.2.aar/4a83f41454bd3bbed5301c337b77e818/AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.support:animated-vector-drawable:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/f649c8b47f9e5072b89c6b07ad7d6807/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/f649c8b47f9e5072b89c6b07ad7d6807/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/50b94badc6ee5e98c7b29b6811fc8f98/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/50b94badc6ee5e98c7b29b6811fc8f98/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/dce45c596c5ef9728604f6ff0b8911e2/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/dce45c596c5ef9728604f6ff0b8911e2/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-fragment:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/74ff1545977b078ffbeb7ff5580b703f/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/74ff1545977b078ffbeb7ff5580b703f/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/d7ec3822852e88760e8894ecb0d79cff/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/d7ec3822852e88760e8894ecb0d79cff/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/8e6d1ad36e162b37ed7b07b13633418c/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/8e6d1ad36e162b37ed7b07b13633418c/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/99fcb881f0a486a03294016e227d76e0/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/99fcb881f0a486a03294016e227d76e0/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/b2ce2fba6bde64bf40d199c719303882/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/b2ce2fba6bde64bf40d199c719303882/AndroidManifest.xml:25:5-29:19
 	android:supportsRtl
 		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:17:9-35
 	android:label
@@ -176,197 +181,221 @@ MERGED from [com.android.support:support-compat:25.3.1] /Users/paul/.gradle/cach
 	android:name
 		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:12:9-47
 meta-data#DATABASE
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:20:9-78
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:19:9-21:47
 	android:value
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:20:44-75
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:21:13-44
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:20:20-43
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:20:13-36
 meta-data#VERSION
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:21:9-63
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:22:9-24:33
 	android:value
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:21:43-60
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:24:13-30
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:21:20-42
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:23:13-35
 meta-data#QUERY_LOG
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:22:9-68
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:25:9-27:36
 	android:value
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:22:45-65
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:27:13-33
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:22:20-44
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:26:13-37
 meta-data#DOMAIN_PACKAGE_NAME
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:23:9-87
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:28:9-30:45
 	android:value
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:23:55-84
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:30:13-42
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:23:20-54
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:29:13-47
 activity#ng.com.bitlab.micash.common.MainActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:25:9-27:52
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:32:9-34:52
 	android:screenOrientation
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:27:13-49
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:34:13-49
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:26:13-48
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:33:13-48
 activity#ng.com.bitlab.micash.common.SplashScreenActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:28:9-36:20
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:35:9-43:20
 	android:screenOrientation
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:30:13-49
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:37:13-49
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:29:13-56
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:36:13-56
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:31:13-35:29
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:38:13-42:29
 action#android.intent.action.MAIN
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:32:17-69
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:39:17-69
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:32:25-66
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:39:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:34:17-77
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:41:17-77
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:34:27-74
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:41:27-74
 activity#ng.com.bitlab.micash.ui.transactions.TransactionsActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:37:9-39:52
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:44:9-46:52
 	android:screenOrientation
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:39:13-49
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:46:13-49
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:38:13-65
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:45:13-65
 activity#ng.com.bitlab.micash.ui.cards.CardsActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:40:9-42:52
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:47:9-49:52
 	android:screenOrientation
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:42:13-49
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:49:13-49
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:41:13-51
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:48:13-51
 activity#ng.com.bitlab.micash.ui.guarantor.GuarantorActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:43:9-45:52
-	android:screenOrientation
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:45:13-49
-	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:44:13-59
-activity#ng.com.bitlab.micash.ui.settings.SettingsActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:46:9-48:52
-	android:screenOrientation
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:48:13-49
-	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:47:13-57
-activity#ng.com.bitlab.micash.ui.intro.IntroActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:49:9-53:47
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:50:9-52:52
 	android:screenOrientation
 		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:52:13-49
-	android:label
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:51:13-57
-	android:theme
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:53:13-44
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:50:13-51
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:51:13-59
+activity#ng.com.bitlab.micash.ui.settings.SettingsActivity
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:53:9-55:52
+	android:screenOrientation
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:55:13-49
+	android:name
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:54:13-57
+activity#ng.com.bitlab.micash.ui.intro.IntroActivity
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:56:9-60:47
+	android:screenOrientation
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:59:13-49
+	android:label
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:58:13-57
+	android:theme
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:60:13-44
+	android:name
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:57:13-51
 activity#ng.com.bitlab.micash.ui.register.RegisterActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:54:9-57:69
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:61:9-64:69
 	android:screenOrientation
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:56:13-49
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:63:13-49
 	android:theme
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:57:13-66
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:64:13-66
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:55:13-57
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:62:13-57
 activity#ng.com.bitlab.micash.ui.welcome.WelcomeActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:58:9-63:54
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:65:9-70:54
 	android:screenOrientation
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:62:13-49
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:69:13-49
 	android:label
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:61:13-59
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:68:13-59
 	android:configChanges
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:60:13-74
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:67:13-74
 	android:theme
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:63:13-51
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:70:13-51
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:59:13-55
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:66:13-55
 activity#ng.com.bitlab.micash.ui.verify.VerifyActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:64:9-67:62
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:71:9-74:62
 	android:screenOrientation
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:66:13-49
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:73:13-49
 	android:theme
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:67:13-59
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:74:13-59
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:65:13-53
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:72:13-53
 activity#ng.com.bitlab.micash.ui.login.LoginActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:68:9-71:69
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:75:9-78:69
 	android:screenOrientation
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:70:13-49
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:77:13-49
 	android:theme
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:71:13-66
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:78:13-66
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:69:13-51
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:76:13-51
 meta-data#sendotp.key
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:73:9-75:51
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:80:9-82:51
 	android:value
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:75:13-48
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:82:13-48
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:74:13-39
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:81:13-39
 activity#ng.com.bitlab.micash.ui.upload.UploadActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:77:9-80:62
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:84:9-87:62
 	android:screenOrientation
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:79:13-49
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:86:13-49
 	android:theme
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:80:13-59
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:87:13-59
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:78:13-53
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:85:13-53
 receiver#ng.com.bitlab.micash.utils.SMSReceiver
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:82:9-86:20
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:89:9-93:20
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:82:19-52
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:89:19-52
 intent-filter#android.provider.Telephony.SMS_RECEIVED
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:83:13-85:29
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:90:13-92:29
 action#android.provider.Telephony.SMS_RECEIVED
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:84:17-82
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:91:17-82
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:84:25-79
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:91:25-79
 activity#ng.com.bitlab.micash.ui.recover.RecoverActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:88:9-91:69
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:95:9-98:69
 	android:screenOrientation
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:90:13-49
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:97:13-49
 	android:theme
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:91:13-66
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:98:13-66
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:89:13-55
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:96:13-55
 activity#ng.com.bitlab.micash.ui.resume.ResumeActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:92:9-95:69
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:99:9-102:69
 	android:screenOrientation
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:94:13-49
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:101:13-49
 	android:theme
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:95:13-66
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:102:13-66
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:93:13-53
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:100:13-53
 activity#ng.com.bitlab.micash.ui.loans.LoanDetailsActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:96:9-66
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:103:9-66
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:96:19-63
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:103:19-63
 activity#ng.com.bitlab.micash.ui.processing.ProcessingActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:97:9-70
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:104:9-70
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:97:19-67
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:104:19-67
 activity#ng.com.bitlab.micash.ui.profile.ProfileActivity
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:98:9-73
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:105:9-64
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:98:19-61
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:105:19-61
 service#ng.com.bitlab.micash.services.FirebaseMessageService
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:100:9-104:19
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:107:9-113:19
 	android:exported
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:100:66-90
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:109:13-37
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:100:18-65
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:108:13-60
 intent-filter#com.google.firebase.MESSAGING_EVENT
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:101:13-103:29
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:110:13-112:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:102:17-78
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:111:17-78
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:102:25-75
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:111:25-75
 service#ng.com.bitlab.micash.services.FirebaseInstanceIDService
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:106:9-110:19
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:114:9-120:19
 	android:exported
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:106:69-93
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:116:13-37
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:106:18-68
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:115:13-63
 intent-filter#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:107:13-109:29
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:117:13-119:29
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:108:17-80
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:118:17-80
 	android:name
-		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:108:25-77
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:118:25-77
+activity#ng.com.bitlab.micash.ui.profile.TestActivity
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:122:9-124:62
+	android:theme
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:124:13-59
+	android:name
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:123:13-52
+activity#ng.com.bitlab.micash.ui.addContact.AddContactActivity
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:125:9-127:69
+	android:theme
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:127:13-66
+	android:name
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:126:13-61
+activity#ng.com.bitlab.micash.ui.addEmployment.AddEmploymentActivity
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:128:9-130:69
+	android:theme
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:130:13-66
+	android:name
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:129:13-67
+activity#ng.com.bitlab.micash.ui.addBanking.AddBankingActivity
+ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:131:9-124
+	android:theme
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:131:19-72
+	android:name
+		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml:131:74-122
 uses-sdk
 INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
@@ -385,10 +414,10 @@ MERGED from [com.github.pinball83:masked-edittext:1.0.3] /Users/paul/.gradle/cac
 MERGED from [com.github.pinball83:masked-edittext:1.0.3] /Users/paul/.gradle/caches/transforms-1/files-1.1/masked-edittext-1.0.3.aar/e36059fe84bf4370101c22d601defdf4/AndroidManifest.xml:7:5-9:41
 MERGED from [me.zhanghai.android.materialprogressbar:library:1.4.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/library-1.4.1.aar/582ec0b4c05d2909b929a1e2bf461b48/AndroidManifest.xml:12:5-14:41
 MERGED from [me.zhanghai.android.materialprogressbar:library:1.4.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/library-1.4.1.aar/582ec0b4c05d2909b929a1e2bf461b48/AndroidManifest.xml:12:5-14:41
-MERGED from [com.android.support:design:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/f0d460e286bc2aa57d8af8fd4db1a50f/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:design:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/f0d460e286bc2aa57d8af8fd4db1a50f/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/1cf1eb0baaacccf9b513da5adeaafea2/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/1cf1eb0baaacccf9b513da5adeaafea2/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:design:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/9f0f9ef99fe005a8c350c1b09df08152/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/9f0f9ef99fe005a8c350c1b09df08152/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/c9027444e6bda9930ad2e7673622cbee/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/c9027444e6bda9930ad2e7673622cbee/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/7b27f45f9ca3e3b72b50de97f47b3615/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/7b27f45f9ca3e3b72b50de97f47b3615/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:support-v13:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v13-25.3.1.aar/ba1c38ac696c621b73ad1791f6e22bd4/AndroidManifest.xml:21:5-23:55
@@ -421,10 +450,10 @@ MERGED from [com.google.firebase:firebase-storage-common:11.0.4] /Users/paul/.gr
 MERGED from [com.google.firebase:firebase-storage-common:11.0.4] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-11.0.4.aar/df2bd35ceced19fb4cf82c2da454c5e5/AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/paul/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/5201f6587cef27107638f056af9c4e6b/AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/paul/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/5201f6587cef27107638f056af9c4e6b/AndroidManifest.xml:17:5-43
-MERGED from [com.android.support:transition:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/259bb5c3578fab14433edcb887873aff/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/259bb5c3578fab14433edcb887873aff/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/a60f54ef429ba39933a605a6c3795f48/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/a60f54ef429ba39933a605a6c3795f48/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:transition:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/29e084f80aad32b619775b3a9456f9fe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/29e084f80aad32b619775b3a9456f9fe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/2c87fef50ed82de28476db2a49fd8454/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/2c87fef50ed82de28476db2a49fd8454/AndroidManifest.xml:21:5-23:54
 MERGED from [com.jakewharton:butterknife:8.6.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/butterknife-8.6.0.aar/4f780c10958986843c2a969ee648ecee/AndroidManifest.xml:5:5-43
 MERGED from [com.jakewharton:butterknife:8.6.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/butterknife-8.6.0.aar/4f780c10958986843c2a969ee648ecee/AndroidManifest.xml:5:5-43
 MERGED from [com.mikepenz:fontawesome-typeface:4.4.0.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.4.0.1.aar/80ad70e9b340a05ed21e61788ee30a67/AndroidManifest.xml:8:5-10:41
@@ -437,26 +466,28 @@ MERGED from [com.wang.avi:library:2.1.3] /Users/paul/.gradle/caches/transforms-1
 MERGED from [com.wang.avi:library:2.1.3] /Users/paul/.gradle/caches/transforms-1/files-1.1/library-2.1.3.aar/c036f5f6f33b0e964825eac7aaf34cb2/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.reinaldoarrosi:maskededittext:1.1.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/maskededittext-1.1.0.aar/0bbbff15a6bf19b348e7f90ebb53db3f/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.reinaldoarrosi:maskededittext:1.1.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/maskededittext-1.1.0.aar/0bbbff15a6bf19b348e7f90ebb53db3f/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:cardview-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/4cc55e39f2a96b466967e62c2f11cb22/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:cardview-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/4cc55e39f2a96b466967e62c2f11cb22/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/97c4490f60fe7e587e0ea0fca9fb04da/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/97c4490f60fe7e587e0ea0fca9fb04da/AndroidManifest.xml:20:5-43
 MERGED from [com.github.satyan:sugar:1.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/sugar-1.3.1.aar/848e273d3360e3c43ed38faa03ba5471/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.satyan:sugar:1.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/sugar-1.3.1.aar/848e273d3360e3c43ed38faa03ba5471/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-fragment:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/6be9ffb8b436a8d9549e31415adca379/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/6be9ffb8b436a8d9549e31415adca379/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/912fce84fe623b167e4269b6d38d5217/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/912fce84fe623b167e4269b6d38d5217/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-utils:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/6bf76b3c8ec562d970deb53659cf2039/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/6bf76b3c8ec562d970deb53659cf2039/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/809636bef0421516e560807fa2d1803c/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/809636bef0421516e560807fa2d1803c/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-core-ui:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/afc508024990ae351aa23325a6752458/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/afc508024990ae351aa23325a6752458/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/87ae9c3302520ae4eaa39aee86f5d950/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/87ae9c3302520ae4eaa39aee86f5d950/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/c4b92b8aa5f83e5e3495c9724b5a45c5/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/c4b92b8aa5f83e5e3495c9724b5a45c5/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-compat:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/93acda52bff21efbd8aa8b6d66927516/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/93acda52bff21efbd8aa8b6d66927516/AndroidManifest.xml:21:5-23:58
+MERGED from [com.craftman.cardform:cardform:0.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardform-0.0.2.aar/4a83f41454bd3bbed5301c337b77e818/AndroidManifest.xml:7:5-9:41
+MERGED from [com.craftman.cardform:cardform:0.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardform-0.0.2.aar/4a83f41454bd3bbed5301c337b77e818/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:animated-vector-drawable:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/f649c8b47f9e5072b89c6b07ad7d6807/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/f649c8b47f9e5072b89c6b07ad7d6807/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/50b94badc6ee5e98c7b29b6811fc8f98/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-vector-drawable:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/50b94badc6ee5e98c7b29b6811fc8f98/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/dce45c596c5ef9728604f6ff0b8911e2/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/dce45c596c5ef9728604f6ff0b8911e2/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-fragment:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/74ff1545977b078ffbeb7ff5580b703f/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/74ff1545977b078ffbeb7ff5580b703f/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/d7ec3822852e88760e8894ecb0d79cff/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/d7ec3822852e88760e8894ecb0d79cff/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/8e6d1ad36e162b37ed7b07b13633418c/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/8e6d1ad36e162b37ed7b07b13633418c/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/99fcb881f0a486a03294016e227d76e0/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/99fcb881f0a486a03294016e227d76e0/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/b2ce2fba6bde64bf40d199c719303882/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/b2ce2fba6bde64bf40d199c719303882/AndroidManifest.xml:21:5-23:58
 MERGED from [com.mikepenz:materialize:1.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/materialize-1.0.2.aar/8b21f2fe4399a8fca2c5cdc452c4df9b/AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:materialize:1.0.2] /Users/paul/.gradle/caches/transforms-1/files-1.1/materialize-1.0.2.aar/8b21f2fe4399a8fca2c5cdc452c4df9b/AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:iconics-core:2.8.5] /Users/paul/.gradle/caches/transforms-1/files-1.1/iconics-core-2.8.5.aar/6f1faf55bf3f59a93323bc0a9f271e20/AndroidManifest.xml:8:5-10:41
@@ -476,37 +507,35 @@ INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManif
 		ADDED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/paul/AndroidStudioProjects/miCash/app/src/main/AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/f0d460e286bc2aa57d8af8fd4db1a50f/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/1cf1eb0baaacccf9b513da5adeaafea2/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/1cf1eb0baaacccf9b513da5adeaafea2/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-v13:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v13-25.3.1.aar/ba1c38ac696c621b73ad1791f6e22bd4/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-v13:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v13-25.3.1.aar/ba1c38ac696c621b73ad1791f6e22bd4/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:transition:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/259bb5c3578fab14433edcb887873aff/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:transition:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/259bb5c3578fab14433edcb887873aff/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-v4:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/a60f54ef429ba39933a605a6c3795f48/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-v4:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/a60f54ef429ba39933a605a6c3795f48/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:cardview-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/4cc55e39f2a96b466967e62c2f11cb22/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:cardview-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/4cc55e39f2a96b466967e62c2f11cb22/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-fragment:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/6be9ffb8b436a8d9549e31415adca379/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/6be9ffb8b436a8d9549e31415adca379/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/912fce84fe623b167e4269b6d38d5217/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/912fce84fe623b167e4269b6d38d5217/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/6bf76b3c8ec562d970deb53659cf2039/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/6bf76b3c8ec562d970deb53659cf2039/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/809636bef0421516e560807fa2d1803c/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/809636bef0421516e560807fa2d1803c/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-core-ui:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/afc508024990ae351aa23325a6752458/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/afc508024990ae351aa23325a6752458/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/87ae9c3302520ae4eaa39aee86f5d950/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/87ae9c3302520ae4eaa39aee86f5d950/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/c4b92b8aa5f83e5e3495c9724b5a45c5/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/c4b92b8aa5f83e5e3495c9724b5a45c5/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-compat:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/93acda52bff21efbd8aa8b6d66927516/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/93acda52bff21efbd8aa8b6d66927516/AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:design:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/9f0f9ef99fe005a8c350c1b09df08152/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/c9027444e6bda9930ad2e7673622cbee/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/c9027444e6bda9930ad2e7673622cbee/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:transition:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/29e084f80aad32b619775b3a9456f9fe/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/29e084f80aad32b619775b3a9456f9fe/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/2c87fef50ed82de28476db2a49fd8454/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/2c87fef50ed82de28476db2a49fd8454/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:cardview-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/97c4490f60fe7e587e0ea0fca9fb04da/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:cardview-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/97c4490f60fe7e587e0ea0fca9fb04da/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/f649c8b47f9e5072b89c6b07ad7d6807/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/f649c8b47f9e5072b89c6b07ad7d6807/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/50b94badc6ee5e98c7b29b6811fc8f98/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/50b94badc6ee5e98c7b29b6811fc8f98/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/dce45c596c5ef9728604f6ff0b8911e2/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/dce45c596c5ef9728604f6ff0b8911e2/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-fragment:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/74ff1545977b078ffbeb7ff5580b703f/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/74ff1545977b078ffbeb7ff5580b703f/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/d7ec3822852e88760e8894ecb0d79cff/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/d7ec3822852e88760e8894ecb0d79cff/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/8e6d1ad36e162b37ed7b07b13633418c/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/8e6d1ad36e162b37ed7b07b13633418c/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/99fcb881f0a486a03294016e227d76e0/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/99fcb881f0a486a03294016e227d76e0/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/b2ce2fba6bde64bf40d199c719303882/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/b2ce2fba6bde64bf40d199c719303882/AndroidManifest.xml:26:9-28:38
 	android:value
-		ADDED from [com.android.support:design:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/f0d460e286bc2aa57d8af8fd4db1a50f/AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:design:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/9f0f9ef99fe005a8c350c1b09df08152/AndroidManifest.xml:28:13-35
 	android:name
-		ADDED from [com.android.support:design:25.3.1] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/f0d460e286bc2aa57d8af8fd4db1a50f/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:25.4.0] /Users/paul/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/9f0f9ef99fe005a8c350c1b09df08152/AndroidManifest.xml:27:13-51
 service#com.google.firebase.messaging.FirebaseMessagingService
 ADDED from [com.google.firebase:firebase-messaging:11.0.4] /Users/paul/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.0.4.aar/3c269cf72b7ea665b48231b8bb4b9f91/AndroidManifest.xml:23:9-27:19
 	android:exported

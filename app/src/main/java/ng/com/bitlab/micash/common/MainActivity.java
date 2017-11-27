@@ -46,6 +46,7 @@ import ng.com.bitlab.micash.models.User;
 import ng.com.bitlab.micash.ui.cards.CardsActivity;
 import ng.com.bitlab.micash.ui.common.BaseView;
 import ng.com.bitlab.micash.ui.guarantor.GuarantorActivity;
+import ng.com.bitlab.micash.ui.profile.ProfileActivity;
 import ng.com.bitlab.micash.ui.resume.ResumeActivity;
 import ng.com.bitlab.micash.ui.settings.SettingsActivity;
 import ng.com.bitlab.micash.ui.transactions.TransactionsActivity;
@@ -57,6 +58,8 @@ import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
+
+import java.util.List;
 
 public class MainActivity extends BaseView {
 
@@ -71,19 +74,18 @@ public class MainActivity extends BaseView {
     Drawer mDrawer = null;
 
     private int[] activeIcons = {
-            R.drawable.ic_loan_white,
+            R.drawable.ic_money_white,
             R.drawable.ic_ledger_white,
             R.drawable.ic_notification_white,
-            R.drawable.ic_user_white
     };
     private int[] inactiveIcons = {
-            R.drawable.ic_loan_dark,
-            R.drawable.ic_ledger_dark,
-            R.drawable.ic_notification_dark,
-            R.drawable.ic_user_dark
+            R.drawable.ic_money_black,
+            R.drawable.ic_ledger_black,
+            R.drawable.ic_notification_dark
+            ,
     };
     private String[] tabTitles = {
-            "Loans", "Ledger", "Notifications", "Profile"
+            "Loans", "Ledger", "Notifications"
     };
 
     private AppPreference mPref;
@@ -106,18 +108,15 @@ public class MainActivity extends BaseView {
 
         initializeOnlinePresence();
 
-        lastLogin();
+        lastLogin(); //d();
 
         updateProfile();
 
-        firstLaunch();
-
-        //String token = FirebaseInstanceId.getInstance().getToken();
-
-        //showToast(token);
+        if(mPref.getFirst() == null){
+            firstLaunch();
+        }
 
 
-        //dummy();
 
 
         mHeader = new AccountHeaderBuilder()
@@ -131,12 +130,12 @@ public class MainActivity extends BaseView {
                 .withToolbar(mToolbar)
                 .withAccountHeader(mHeader)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName("Home").withIcon(FontAwesome.Icon.faw_shopping_cart).withIdentifier(Constants.HOME),
-                        new PrimaryDrawerItem().withName("Transactions").withIcon(FontAwesome.Icon.faw_bar_chart).withIdentifier(Constants.TRANSACTIONS),
-                        new PrimaryDrawerItem().withName("Cards").withIcon(FontAwesome.Icon.faw_cog).withIdentifier(Constants.CARDS),
-                        new PrimaryDrawerItem().withName("Guarantor Requests").withIcon(FontAwesome.Icon.faw_cog).withIdentifier(Constants.GUARANTOR),
-                        new PrimaryDrawerItem().withName("Settings").withIcon(FontAwesome.Icon.faw_credit_card).withIdentifier(Constants.SETTINGS),
-                        new PrimaryDrawerItem().withName("Logout").withIcon(FontAwesome.Icon.faw_credit_card).withIdentifier(Constants.LOGOUT)
+                        new PrimaryDrawerItem().withName("Home").withIcon(FontAwesome.Icon.faw_home).withIdentifier(Constants.HOME),
+                        new PrimaryDrawerItem().withName("Profile").withIcon(FontAwesome.Icon.faw_user).withIdentifier(Constants.PROFILE),
+                        new PrimaryDrawerItem().withName("Banking Details").withIcon(FontAwesome.Icon.faw_credit_card).withIdentifier(Constants.BANKING),
+                        new PrimaryDrawerItem().withName("Guarantor Requests").withIcon(FontAwesome.Icon.faw_shield).withIdentifier(Constants.GUARANTOR),
+                        new PrimaryDrawerItem().withName("Transactions").withIcon(FontAwesome.Icon.faw_list).withIdentifier(Constants.TRANSACTIONS),
+                        new PrimaryDrawerItem().withName("Logout").withIcon(FontAwesome.Icon.faw_sign_out).withIdentifier(Constants.LOGOUT)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -240,10 +239,9 @@ public class MainActivity extends BaseView {
     }
 
     private void setTabIcons() {
-        mTabLayout.getTabAt(0).setIcon(R.drawable.ic_loan_white);
-        mTabLayout.getTabAt(1).setIcon(R.drawable.ic_ledger_dark);
+        mTabLayout.getTabAt(0).setIcon(R.drawable.ic_money_white);
+        mTabLayout.getTabAt(1).setIcon(R.drawable.ic_ledger_black);
         mTabLayout.getTabAt(2).setIcon(R.drawable.ic_notification_dark);
-        mTabLayout.getTabAt(3).setIcon(R.drawable.ic_user_dark);
     }
 
     private void onTouchDrawer(long identifier) {
@@ -251,18 +249,18 @@ public class MainActivity extends BaseView {
             case Constants.HOME:
                 //
                 break;
-            case Constants.TRANSACTIONS:
-                startActivity(new Intent(MainActivity.this, TransactionsActivity.class));
+            case Constants.PROFILE:
+                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                 break;
-            case Constants.CARDS:
+            case Constants.BANKING:
                 startActivity(new Intent(MainActivity.this, CardsActivity.class));
                 break;
             case Constants.GUARANTOR:
                 startActivity(new Intent(MainActivity.this, GuarantorActivity.class));
                 break;
-            case Constants.SETTINGS:
+            case Constants.TRANSACTIONS:
                 //Go to checkout page
-                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                startActivity(new Intent(MainActivity.this, TransactionsActivity.class));
                 break;
             case Constants.LOGOUT:
                 FirebaseAuth.getInstance().signOut();
@@ -330,6 +328,15 @@ public class MainActivity extends BaseView {
                         }
                     }
                 });
+    }
+
+    private void d() {
+        List<Notification> n = Notification.listAll(Notification.class);
+
+        for(Notification notif: n){
+            notif.setRead(false);
+            notif.save();
+        }
     }
 
 }

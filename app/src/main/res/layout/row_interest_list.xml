@@ -6,7 +6,7 @@
     android:layout_height="@dimen/_30sdp"
     android:layout_marginTop="@dimen/_6sdp"
     android:layout_marginBottom="@dimen/_6sdp"
-    android:layout_marginLeft="@dimen/_15sdp"
+    android:layout_marginLeft="@dimen/_13sdp"
     android:layout_marginRight="@dimen/_6sdp">
 
     <TextView

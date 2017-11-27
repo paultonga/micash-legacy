@@ -7,10 +7,10 @@ package ng.com.bitlab.micash.utils;
 public class Constants {
 
     public final static int HOME = 1;
-    public final static int TRANSACTIONS = 2;
-    public final static int CARDS = 3;
+    public final static int PROFILE = 2;
+    public final static int BANKING = 3;
     public final static int GUARANTOR = 4;
-    public final static int SETTINGS = 5;
+    public final static int TRANSACTIONS = 5;
     public final static int LOGOUT = 6;
 
 
@@ -33,5 +33,12 @@ public class Constants {
 
     public final static String PHONE = "phone";
     public final static String CODE = "code";
+
+    public final static String PROFILE_SAVED = "profile_saved";
+    public final static String BANKIING_SAVED = "banking_saved";
+
+    public final static String USER_ID = "user_id";
+
+
 
 }

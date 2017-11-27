@@ -16,11 +16,18 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <meta-data android:name="DATABASE" android:value="sugar_micash.db" />
-        <meta-data android:name="VERSION" android:value="2" />
-        <meta-data android:name="QUERY_LOG" android:value="true" />
-        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="ng.com.bitlab" />
+        <meta-data
+            android:name="DATABASE"
+            android:value="sugar_micash.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="2" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="ng.com.bitlab" />
 
         <activity
             android:name=".common.MainActivity"
@@ -95,20 +102,33 @@
             android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity android:name=".ui.loans.LoanDetailsActivity" />
         <activity android:name=".ui.processing.ProcessingActivity" />
-        <activity android:name=".ui.profile.ProfileActivity"></activity>
+        <activity android:name=".ui.profile.ProfileActivity" />
 
-        <service android:name=".services.FirebaseMessageService" android:exported="false">
+        <service
+            android:name=".services.FirebaseMessageService"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-        <service android:name=".services.FirebaseInstanceIDService" android:exported="false">
+        <service
+            android:name=".services.FirebaseInstanceIDService"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
+        <activity
+            android:name=".ui.profile.TestActivity"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+        <activity
+            android:name=".ui.addContact.AddContactActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
+        <activity
+            android:name=".ui.addEmployment.AddEmploymentActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
+        <activity android:theme="@style/AppTheme.ActionBar.Transparent"  android:name=".ui.addBanking.AddBankingActivity"/>
     </application>
 
 </manifest>

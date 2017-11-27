@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -21,12 +21,45 @@
     </android.support.design.widget.AppBarLayout>
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:id="@+id/empty_ledger_list"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:text="List of Transactions"
-        android:textSize="38sp"
-        android:gravity="center"/>
+        android:layout_centerInParent="true"
+        android:visibility="visible">
+
+    <ImageView
+        android:id="@+id/iv_error_icon"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/tv_error_title"
+        android:src="@drawable/ic_transactions"
+        android:tint="@color/colorPrimary"
+        android:background="@android:color/transparent"/>
+
+    <TextView
+        android:id="@+id/tv_error_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_error_detail"
+        android:text="No Transactions"
+        android:textStyle="bold"
+        android:textSize="@dimen/_18ssp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/tv_error_detail"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        android:text="You have not carried out any transactions."
+        android:textStyle="normal"
+        android:textSize="@dimen/_11ssp"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

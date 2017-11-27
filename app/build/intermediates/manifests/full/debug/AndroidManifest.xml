@@ -140,8 +140,24 @@
             </intent-filter>
         </service>
 
+        <activity
+            android:name="ng.com.bitlab.micash.ui.profile.TestActivity"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+        <activity
+            android:name="ng.com.bitlab.micash.ui.addContact.AddContactActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
+        <activity
+            android:name="ng.com.bitlab.micash.ui.addEmployment.AddEmploymentActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
+        <activity
+            android:name="ng.com.bitlab.micash.ui.addBanking.AddBankingActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
+
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="25.4.0" />
         <!--
-         FirebaseMessagingService performs security checks at runtime,
+ FirebaseMessagingService performs security checks at runtime,
              no need for explicit permissions despite exported="true"
         -->
         <service

@@ -86,6 +86,36 @@ public interface AppPreference {
     @ClearMethod
     void clear();
 
+    //Request Loan Check
+    @KeyByString("key_saved")
+    void setProfileSaved(String saved);
+
+    @KeyByString("key_saved")
+    String getProfileSaved();
+
+    @KeyByString("key_saved")
+    void setBankingSaved(String saved);
+
+    @KeyByString("key_saved")
+    String getBankingSaved();
+
+    //if Contact Detauls are save
+    @KeyByString("key_saved")
+    void setBContactSaved(String saved);
+
+    @KeyByString("key_saved")
+    String getContactSaved();
+
+    //if Employment saved
+    @KeyByString("key_saved")
+    void setEmploymentSaved(String saved);
+
+    @KeyByString("key_saved")
+    String getEmploymentSaved();
+
+
+
+
 
 
 
