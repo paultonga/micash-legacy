@@ -44,6 +44,7 @@
             android:foreground="?attr/selectableItemBackground"
             card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
             card_view:cardElevation="@dimen/card_recycler_elevation">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -110,7 +111,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/tv_interest_rate"
+                            android:id="@+id/tv_loan_period"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="2-5"
@@ -122,7 +123,7 @@
                             android:id="@+id/tv_interest_label"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/tv_interest_rate"
+                            android:layout_below="@id/tv_loan_period"
                             android:layout_marginTop="-3dp"
                             android:text="MONTHS"
                             android:textSize="@dimen/_8ssp"/>
@@ -144,7 +145,7 @@
                     android:gravity="center"
                     android:text="This loan is available to bankers in Nigeria"
                     android:textAllCaps="true"
-                    android:textSize="@dimen/_10sdp"/>
+                    android:textSize="@dimen/_11sdp"/>
 
 
             </RelativeLayout>

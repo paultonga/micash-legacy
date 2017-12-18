@@ -8,21 +8,25 @@
     android:background="@drawable/white_background"
     tools:context="ng.com.bitlab.micash.ui.profile.TestActivity">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/employment_address_layout"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/custom_toolbar"
+            android:id="@+id/toolbar"/>
+    </android.support.design.widget.AppBarLayout>
+
+
+
+
+
+    <AutoCompleteTextView
+        android:id="@+id/test"
+        android:hint="Enter Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/text_label">
+        android:layout_below="@+id/app_bar_layout"/>
 
-        <EditText
-            android:id="@+id/input_business_address"
-            android:layout_width="@dimen/_250sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_10sdp"
-            android:hint="Address"
-            android:inputType="text"
-            android:textSize="@dimen/_13ssp"/>
-
-    </android.support.design.widget.TextInputLayout>
 
 </RelativeLayout>

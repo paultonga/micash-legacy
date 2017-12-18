@@ -8,14 +8,14 @@ package com.github.reinaldoarrosi.maskededittext;
 
 public final class R {
     public static final class attr {
-        public static final int mask = 0x7f04010c;
-        public static final int placeholder = 0x7f040160;
+        public static final int mask = 0x7f040118;
+        public static final int placeholder = 0x7f04016d;
     }
     public static final class string {
-        public static final int app_name = 0x7f0d0020;
+        public static final int app_name = 0x7f0e0020;
     }
     public static final class styleable {
-        public static final int[] MaskedEditText = { 0x01010220, 0x7f04007c, 0x7f04009a, 0x7f04010c, 0x7f04010d, 0x7f04010e, 0x7f040152, 0x7f040160, 0x7f04016e };
+        public static final int[] MaskedEditText = { 0x01010220, 0x7f040084, 0x7f0400a2, 0x7f040118, 0x7f040119, 0x7f04011a, 0x7f04015f, 0x7f04016d, 0x7f04017b };
         public static final int MaskedEditText_android_inputType = 0;
         public static final int MaskedEditText_deleteChar = 1;
         public static final int MaskedEditText_format = 2;

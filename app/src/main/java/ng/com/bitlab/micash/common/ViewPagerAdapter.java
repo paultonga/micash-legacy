@@ -3,7 +3,11 @@ package ng.com.bitlab.micash.common;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
 
+import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.ui.ledger.LedgerListFragment;
 import ng.com.bitlab.micash.ui.loans.LoansListFragment;
 import ng.com.bitlab.micash.ui.notifications.NotificationsListFragment;
@@ -51,4 +55,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return 3;
     }
+
+
+
 }

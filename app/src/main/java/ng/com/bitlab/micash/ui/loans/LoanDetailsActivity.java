@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -30,6 +31,7 @@ import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.data.SampleLoansData;
 import ng.com.bitlab.micash.models.Interest;
 import ng.com.bitlab.micash.models.Loan;
+import ng.com.bitlab.micash.ui.addBanking.AddBankingActivity;
 import ng.com.bitlab.micash.ui.addEmployment.AddEmploymentActivity;
 import ng.com.bitlab.micash.utils.Formatter;
 
@@ -43,6 +45,7 @@ public class LoanDetailsActivity extends AppCompatActivity {
     @BindView(R.id.interests_recycler_view) RecyclerView mRecyclerView;
     @BindView(R.id.tv_loan_description) TextView loanDescription;
     @BindView(R.id.tv_recycler_title) TextView loanAmount;
+    @BindView(R.id.tv_loan_period) TextView loanPeriod;
     @BindView(R.id.iv_recycler_icon) ImageView loanIcon;
 
     @Override
@@ -78,6 +81,7 @@ public class LoanDetailsActivity extends AppCompatActivity {
             mLoan = getLoan(loan_id);
             title = mLoan.getTitle();
             loanDescription.setText(mLoan.getDescription());
+            loanPeriod.setText(getLoanPeriod(loan_id));
             loanAmount.setText(Formatter.numberFormat((long)mLoan.getMaximum()));
             Picasso.with(this)
                     .load(mLoan.getIcon_url())
@@ -107,6 +111,11 @@ public class LoanDetailsActivity extends AppCompatActivity {
         return loans.getLoan(loan_id);
     }
 
+    public String getLoanPeriod(String loan_id){
+        SampleLoansData loans = new SampleLoansData();
+        return loans.getLoanPeriodString(loan_id);
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -119,18 +128,24 @@ public class LoanDetailsActivity extends AppCompatActivity {
     public void onRequestLoanClicked(){
 
         if(mPref.getEmploymentSaved() == null ||
-                mPref.getContactSaved() == null ||
                 mPref.getBankingSaved() == null) {
             showInfoDialog();
         } else {
-            //presenter will request loan
+            //startActivity(new Intent(this, AddBankingActivity.class));
+            startRequestActivity();
         }
+    }
+
+    private void startRequestActivity(){
+        Intent i = new Intent(this, AddBankingActivity.class);
+        i.putExtra("loan", mLoan.getId());
+        startActivity(i);
     }
 
     private void showInfoDialog() {
         new MaterialDialog.Builder(this)
                 .title("Details not Saved")
-                .content("You need to enter your employment, contact and baking details before requesting loans. Please click CONTINUE to enter your details.")
+                .content("You need to enter your employment and contact details before requesting loans. Please click CONTINUE to enter your details.")
                 .positiveText("CONTINUE")
                 .positiveColor(Color.BLUE)
                 .negativeText("CANCEL")

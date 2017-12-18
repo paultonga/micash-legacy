@@ -28,34 +28,6 @@
         android:padding="@dimen/_8sdp"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/tv_details_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Personal"
-                android:textAllCaps="true"
-                android:textSize="@dimen/_11ssp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="EDIT"
-                android:clickable="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"/>
-
-            <View
-                android:id="@+id/line1"
-                android:layout_width="match_parent"
-                android:layout_height="2dip"
-                android:layout_below="@+id/tv_details_title"
-                android:layout_marginTop="@dimen/_1sdp"
-                android:background="@android:color/darker_gray" />
 
             <RelativeLayout
                 android:layout_width="@dimen/_290sdp"
@@ -88,7 +60,7 @@
                         android:id="@+id/tv_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Paul Audu Tonga"
+                        android:text=""
                         android:textSize="@dimen/_14ssp"
                         android:layout_marginBottom="-2dp"
                         android:textColor="@android:color/black"/>
@@ -97,13 +69,13 @@
                         android:id="@+id/tv_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="paul.yhwh@gmail.com" />
+                        android:text="" />
 
                     <TextView
                         android:id="@+id/tv_phone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="2349027480903" />
+                        android:text="" />
 
                 </LinearLayout>
 
@@ -111,7 +83,6 @@
 
         </RelativeLayout>
 
-        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/employment_layoutx"
@@ -123,7 +94,7 @@
             android:id="@+id/tv_employment_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Employment"
+            android:text="PERSONAL DETAILS"
             android:textAllCaps="true"
             android:textSize="@dimen/_11ssp"
             android:textStyle="bold"/>
@@ -153,7 +124,7 @@
                 android:background="@drawable/square_add_button"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_11ssp"
-                android:text="Add Details"
+                android:text="Add"
                 android:layout_margin="@dimen/_50sdp"
                 android:visibility="gone"/>
 
@@ -178,9 +149,10 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/_10ssp"
                         android:textColor="@android:color/black"
-                        android:text="EMPLOYMENT STATUS"/>
+                        android:text="STATUS"/>
 
                     <TextView
+                        android:id="@+id/tv_status"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -200,9 +172,10 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/_10ssp"
                         android:textColor="@android:color/black"
-                        android:text="OFFICE/BUSINESS NAME"/>
+                        android:text="OFFICE"/>
 
                     <TextView
+                        android:id="@+id/tv_office_name"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -226,6 +199,7 @@
                         android:text="ADDRESS"/>
 
                     <TextView
+                        android:id="@+id/tv_office_address"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -245,13 +219,14 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/_10ssp"
                         android:textColor="@android:color/black"
-                        android:text="BANK BRANCH"/>
+                        android:text="MONTHLY INCOME"/>
 
                     <TextView
+                        android:id="@+id/tv_income"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="Bosso Road Branch"
+                        android:text="N230,000.00"
                         android:textColor="@android:color/black"/>
 
                 </LinearLayout>
@@ -259,29 +234,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_3sdp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/_10ssp"
-                        android:textColor="@android:color/black"
-                        android:text="CITY"/>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:text="Bida"
-                        android:textColor="@android:color/black"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_3sdp">
+                    android:layout_marginBottom="@dimen/_12sdp">
 
                     <TextView
                         android:layout_width="0dp"
@@ -292,10 +245,34 @@
                         android:text="STATE"/>
 
                     <TextView
+                        android:id="@+id/tv_state"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="Niger State"
+                        android:textColor="@android:color/black"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_3sdp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@android:color/black"
+                        android:text="RESIDENTIAL ADDRESS"/>
+
+                    <TextView
+                        android:id="@+id/tv_residential"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Block A20 Federal Poly Staff Quarters, Bida Niger State"
                         android:textColor="@android:color/black"/>
 
                 </LinearLayout>
@@ -308,133 +285,6 @@
             </LinearLayout>
 
         </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/contact_layoutx"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:visibility="visible">
-
-        <TextView
-            android:id="@+id/tv_contact_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Contact"
-            android:textAllCaps="true"
-            android:textSize="@dimen/_11ssp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/tv_edit_contact"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="EDIT"
-            android:clickable="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"/>
-
-        <View
-            android:id="@+id/line2"
-            android:layout_width="match_parent"
-            android:layout_height="2dip"
-            android:layout_below="@+id/tv_contact_title"
-            android:layout_marginTop="@dimen/_1sdp"
-            android:background="@android:color/darker_gray" />
-
-        <Button
-            android:id="@+id/add_contact_button"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="@dimen/_25sdp"
-            android:layout_centerInParent="true"
-            android:background="@drawable/square_add_button"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/_11ssp"
-            android:text="Add Details"
-            android:layout_margin="@dimen/_50sdp"
-            android:visibility="gone"/>
-
-        <LinearLayout
-            android:id="@+id/contact_layout"
-            android:layout_width="@dimen/_290sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:layout_below="@+id/line2"
-            android:layout_centerHorizontal="true"
-            android:visibility="visible"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_3sdp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/_10ssp"
-                    android:textColor="@android:color/black"
-                    android:text="RESIDENTIAL ADDRESS"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Block A20 Federal Poly Staff Quarters"
-                    android:textColor="@android:color/black"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_3sdp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/_10ssp"
-                    android:textColor="@android:color/black"
-                    android:text="CITY"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Bida"
-                    android:textColor="@android:color/black"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_3sdp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/_10ssp"
-                    android:textColor="@android:color/black"
-                    android:text="STATE"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Niger State"
-                    android:textColor="@android:color/black"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-        </RelativeLayout>
-
-
-
 
     </LinearLayout>
     

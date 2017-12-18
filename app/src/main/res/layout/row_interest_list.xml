@@ -16,14 +16,16 @@
         android:text="5% interest per month for 2 months."
         android:textAllCaps="true"
         android:textColor="@android:color/black"
+        android:layout_centerVertical="true"
         android:textSize="@dimen/_11ssp"/>
 
-    <View
+    <!-- <View
         android:layout_width="match_parent"
         android:layout_height="0.5dip"
         android:background="@android:color/darker_gray"
         android:layout_below="@+id/tv_interest_description"
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginBottom="@dimen/_5sdp" />
+        -->
 
 </RelativeLayout>

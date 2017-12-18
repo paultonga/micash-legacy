@@ -79,7 +79,7 @@ public class VerifyPresenter extends BasePresenter<VerifyContract.View> implemen
         view.showDialog("Requesting OTP...");
         mPref = MiCashApplication.getPreference();
 
-        mPref.setPhone(phone);
+        //mPref.setPhone(phone);
 
 
             mDisplayName = mPref.getName();
@@ -186,7 +186,7 @@ public class VerifyPresenter extends BasePresenter<VerifyContract.View> implemen
 
         mPref = MiCashApplication.getPreference();
 
-        mPref.setPhone(phone);
+        //mPref.setPhone(phone);
 
 
         view.showDialog("Checking your number...");

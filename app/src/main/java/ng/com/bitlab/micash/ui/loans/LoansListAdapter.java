@@ -69,6 +69,7 @@ public class LoansListAdapter extends RecyclerView.Adapter<LoansListAdapter.View
             if (shouldHighlightSelectedLoans){
                 if (selectedPosition == position){
                     holder.cardView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorPrimaryLight));
+                    holder.cardView.setBackgroundColor(Color.WHITE);
                 }else {
                     holder.cardView.setBackgroundColor(Color.WHITE);
                 }

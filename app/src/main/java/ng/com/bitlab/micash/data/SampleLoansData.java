@@ -30,7 +30,7 @@ public class SampleLoansData {
 
         Loan loan2 = new Loan("bankers",
                 "Banker's Loan",
-                600000,
+                1000000,
                 "This loan is available to bankers in Nigeria",
                 "https://firebasestorage.googleapis.com/v0/b/micash-e8219.appspot.com/o/icons%2Fbankers.png?alt=media&token=fdd8966e-6b48-46f4-b5e2-305107a46e3d");
         loans.add(loan2);
@@ -64,51 +64,55 @@ public class SampleLoansData {
 
         //Bankers
         Interest interest1 = new Interest("bankers1",
-                "bankers", 1, 10, "10% interest after 1 month.");
+                "bankers", 1, 10, "10% if repaid within a month");
         interests.add(interest1);
 
         Interest interest2 = new Interest("bankers2",
-                "bankers", 2, 5, "5% interest per month for 2 months.");
+                "bankers", 2, 5, "5% flat per month if repaid in 2 months");
         interests.add(interest2);
 
         Interest interest3 = new Interest("bankers3",
-                "bankers", 3, 4.5, "4.5% interest per month for 3 months.");
+                "bankers", 3, 5, "5% flat per month if repaid in 3 months");
         interests.add(interest3);
 
         //miCash Plus
         Interest interest4 = new Interest("plus2",
-                "plus", 2, 5, "5% interest per month for 2 months.");
+                "plus", 2, 5, "5% flat per month if repaid in 2 months");
         interests.add(interest4);
 
         Interest interest5 = new Interest("plus3",
-                "plus", 3, 4.5, "4.5% interest per month for 3 months.");
+                "plus", 3, 5, "5% flat per month if repaid in 3 months");
         interests.add(interest5);
 
         Interest interest6 = new Interest("plus4",
-                "plus", 4, 4.5, "4.5% interest per month for 4 months.");
+                "plus", 4, 4.5, "4.5% flat per month if repaid in 4 months");
         interests.add(interest6);
 
         Interest interest7 = new Interest("plus5",
-                "plus", 5, 4.5, "4.5% interest per month for 5 months.");
+              "plus", 5, 4.5, "4.5% flat per month if repaid in 5 months");
         interests.add(interest7);
 
         //One Month Advance
         Interest interest8 = new Interest("onemonth1",
-                "onemonth", 1, 10, "10% interest after 1 month.");
+                "onemonth", 1, 10, "10% flat if repaid within a month");
         interests.add(interest8);
 
         //School Fees
         Interest interest9 = new Interest("school1",
-                "school", 1, 4, "4% interest after 1 month.");
+                "school", 1, 4.5, "4.5% flat if repaid within a month");
         interests.add(interest9);
 
         Interest interest10 = new Interest("school2",
-                "school", 2, 4, "4% interest per month for 2 months.");
+                "school", 2, 4.5, "4.5% flat per month if repaid in 2 months");
         interests.add(interest10);
 
         Interest interest11 = new Interest("school3",
-                "school", 3, 3.5, "3.5% interest per month for 3 months.");
+                "school", 3, 4, "4% flat per month if repaid in 3 months");
         interests.add(interest11);
+
+        Interest interest12 = new Interest("school3",
+                "school", 4, 4, "4% flat per month if repaid in 4 months");
+        interests.add(interest12);
 
 
         return interests;
@@ -134,6 +138,30 @@ public class SampleLoansData {
             }
         }
         return loan;
+    }
+
+    public String getLoanPeriodString(String loan_id){
+        List<Interest> interests = getInterestForLoan(loan_id);
+
+
+        int max = 0; int min = 1000;
+
+        for(Interest i: interests){
+            if (i.getMonths() > max)
+                max = i.getMonths();
+
+            if(i.getMonths() < min)
+                min = i.getMonths();
+        }
+
+        if (max == min){
+            return "0-1";
+        } else if (max == 0 && min == 1000) {
+            return " - ";
+        }
+        else {
+            return  min + "-" + max;
+        }
     }
 
 }

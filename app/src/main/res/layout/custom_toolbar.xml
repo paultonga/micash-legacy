@@ -33,11 +33,11 @@
            >
 
            <ImageView
-               android:layout_width="24dp"
-               android:layout_height="22dp"
-               android:src="@drawable/ic_chat_white"
-               android:layout_marginTop="20dp"
-
+               android:visibility="gone"
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:src="@drawable/ic_speech"
+               android:layout_marginTop="15dp"
                android:layout_marginRight="3dp"
                android:paddingRight="3dp"
                android:paddingTop="2dp"

@@ -2,6 +2,7 @@ package ng.com.bitlab.micash.common;
 
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -13,13 +14,18 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -31,7 +37,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.FirebaseInstanceIdService;
 import com.google.gson.Gson;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
@@ -40,15 +45,15 @@ import butterknife.ButterKnife;
 import butterknife.BindView;
 import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.core.MiCashApplication;
-import ng.com.bitlab.micash.listeners.OnNotificationReceivedListener;
+import ng.com.bitlab.micash.models.Guarantor;
 import ng.com.bitlab.micash.models.Notification;
 import ng.com.bitlab.micash.models.User;
 import ng.com.bitlab.micash.ui.cards.CardsActivity;
 import ng.com.bitlab.micash.ui.common.BaseView;
 import ng.com.bitlab.micash.ui.guarantor.GuarantorActivity;
+import ng.com.bitlab.micash.ui.message.ThreadActivity;
 import ng.com.bitlab.micash.ui.profile.ProfileActivity;
 import ng.com.bitlab.micash.ui.resume.ResumeActivity;
-import ng.com.bitlab.micash.ui.settings.SettingsActivity;
 import ng.com.bitlab.micash.ui.transactions.TransactionsActivity;
 import ng.com.bitlab.micash.utils.Constants;
 
@@ -58,7 +63,11 @@ import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
+import com.rahimlis.badgedtablayout.BadgedTabLayout;
 
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 public class MainActivity extends BaseView {
@@ -73,17 +82,18 @@ public class MainActivity extends BaseView {
     Activity mActivity;
     Drawer mDrawer = null;
 
+    public int badgeCount = 0;
+
     private int[] activeIcons = {
-            R.drawable.ic_money_white,
-            R.drawable.ic_ledger_white,
-            R.drawable.ic_notification_white,
-    };
+            R.drawable.ic_wallet_white,
+            R.drawable.ic_lists_white,
+            R.drawable.ic_bells_white};
+
     private int[] inactiveIcons = {
-            R.drawable.ic_money_black,
-            R.drawable.ic_ledger_black,
-            R.drawable.ic_notification_dark
-            ,
-    };
+        R.drawable.ic_wallet,
+        R.drawable.ic_lists,
+        R.drawable.ic_bells};
+
     private String[] tabTitles = {
             "Loans", "Ledger", "Notifications"
     };
@@ -108,7 +118,7 @@ public class MainActivity extends BaseView {
 
         initializeOnlinePresence();
 
-        lastLogin(); //d();
+        lastLogin(); d();
 
         updateProfile();
 
@@ -135,6 +145,7 @@ public class MainActivity extends BaseView {
                         new PrimaryDrawerItem().withName("Banking Details").withIcon(FontAwesome.Icon.faw_credit_card).withIdentifier(Constants.BANKING),
                         new PrimaryDrawerItem().withName("Guarantor Requests").withIcon(FontAwesome.Icon.faw_shield).withIdentifier(Constants.GUARANTOR),
                         new PrimaryDrawerItem().withName("Transactions").withIcon(FontAwesome.Icon.faw_list).withIdentifier(Constants.TRANSACTIONS),
+                        new PrimaryDrawerItem().withName("Terms and Conditions").withIcon(FontAwesome.Icon.faw_paragraph).withIdentifier(Constants.TERMS),
                         new PrimaryDrawerItem().withName("Logout").withIcon(FontAwesome.Icon.faw_sign_out).withIdentifier(Constants.LOGOUT)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -151,10 +162,38 @@ public class MainActivity extends BaseView {
                 .withSavedInstance(savedInstanceState)
                 .build();
 
+        IntentFilter intentFilter = new IntentFilter("com.ng.bitlab.micash.CUSTOM_EVENT");
+        LocalBroadcastManager.getInstance(this).registerReceiver(onMessage, intentFilter);
+
+
 
         initViewPager();
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_chat, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.actions_chat){
+            startActivity(new Intent(this, ThreadActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    private BroadcastReceiver onMessage = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            checkNotifications();
+        }
+    };
 
 
     private void updateProfile() {
@@ -221,14 +260,16 @@ public class MainActivity extends BaseView {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
-                tab.setIcon(activeIcons[position]);
+                tab.setCustomView(null);
+                tab.setCustomView(setUpTabView(position, true));
                 mTitle.setText(tabTitles[position]);
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
-                tab.setIcon(inactiveIcons[position]);
+                tab.setCustomView(null);
+                tab.setCustomView(setUpTabView(position, false));
             }
 
         });
@@ -239,9 +280,51 @@ public class MainActivity extends BaseView {
     }
 
     private void setTabIcons() {
-        mTabLayout.getTabAt(0).setIcon(R.drawable.ic_money_white);
-        mTabLayout.getTabAt(1).setIcon(R.drawable.ic_ledger_black);
-        mTabLayout.getTabAt(2).setIcon(R.drawable.ic_notification_dark);
+        for(int i=0; i < 3; i++){
+            TabLayout.Tab t = mTabLayout.getTabAt(i);
+            if(t.getCustomView() != null)
+                t.setCustomView(null);
+            if(i == 0) {
+                t.setCustomView(setUpTabView(i, true));
+            }else if(i == 2 && hasNotification() > 0){
+                showBadge(hasNotification());
+            }
+            else {
+                t.setCustomView(setUpTabView(i, false));
+            }
+        }
+    }
+
+    private View setUpTabView (int position, boolean isActive){
+        View v = LayoutInflater.from(this).inflate(R.layout.badged_tab, null);
+        ImageView icon = (ImageView) v.findViewById(R.id.icon);
+
+        if(isActive){
+            icon.setImageResource(activeIcons[position]);
+        }
+        else {
+            icon.setImageResource(inactiveIcons[position]);
+        }
+        return v;
+    }
+
+    private int hasNotification() {
+        List<Notification> result = Notification.find(Notification.class, "is_read = ?", "0");
+        return  result == null ? 0 : result.size();
+    }
+
+    private void showBadge(int count){
+        View v = LayoutInflater.from(this).inflate(R.layout.badged_tab, null);
+        ImageView icon = (ImageView) v.findViewById(R.id.icon);
+        TextView badge = (TextView) v.findViewById(R.id.badge);
+        LinearLayout badgeContainer = (LinearLayout) v.findViewById(R.id.badgeCotainer);
+
+        badge.setText(String.valueOf(count));
+        badgeContainer.setVisibility(View.VISIBLE);
+        icon.setImageResource(R.drawable.ic_bells);
+
+        mTabLayout.getTabAt(2).setCustomView(null);
+        mTabLayout.getTabAt(2).setCustomView(v);
     }
 
     private void onTouchDrawer(long identifier) {
@@ -259,14 +342,14 @@ public class MainActivity extends BaseView {
                 startActivity(new Intent(MainActivity.this, GuarantorActivity.class));
                 break;
             case Constants.TRANSACTIONS:
-                //Go to checkout page
                 startActivity(new Intent(MainActivity.this, TransactionsActivity.class));
                 break;
             case Constants.LOGOUT:
                 FirebaseAuth.getInstance().signOut();
                 startLoginActivity();
-                //Toast.makeText(this,"Log out has not been implemented yet", Toast.LENGTH_SHORT).show();
                 break;
+            case Constants.TERMS:
+                startTermsAndConditions();
 
         }
 
@@ -330,13 +413,59 @@ public class MainActivity extends BaseView {
                 });
     }
 
-    private void d() {
-        List<Notification> n = Notification.listAll(Notification.class);
-
-        for(Notification notif: n){
-            notif.setRead(false);
-            notif.save();
+    private void checkNotifications(){
+        if(hasNotification() > 0) {
+            showBadge(hasNotification());
         }
+    }
+
+    private void d(){
+        Guarantor g = new Guarantor();
+        g.setInstanceID(FirebaseInstanceId.getInstance().getToken());
+        g.setUuid(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        g.setEmail(getMD5(FirebaseAuth.getInstance().getCurrentUser().getEmail()));
+
+        FirebaseDatabase.getInstance().getReference()
+                .child("tokens")
+                .child(g.getEmail())
+                .setValue(g);
+    }
+
+    private void startTermsAndConditions(){
+        final Dialog fullscreenDialog = new Dialog(this, R.style.DialogFullscreen);
+        fullscreenDialog.setContentView(R.layout.dialog_fullscreen);
+        ImageView img_dialog_fullscreen_close = (ImageView) fullscreenDialog.findViewById(R.id.img_dialog_fullscreen_close);
+        TextView tv = (TextView) fullscreenDialog.findViewById(R.id.tv_terms_and_conditions);
+        tv.setMovementMethod(new ScrollingMovementMethod());
+        img_dialog_fullscreen_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fullscreenDialog.dismiss();
+            }
+        });
+        fullscreenDialog.show();
+    }
+
+    private static String getMD5(String email) {
+
+        StringBuffer _sb = new StringBuffer();
+
+        try {
+
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(email.getBytes());
+
+            byte byteData[] = md.digest();
+
+            for(int i = 0; i<byteData.length; i++){
+                _sb.append(Integer.toString((byteData[i] & 0xff)+0x100, 16).substring(1));
+            }
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        return _sb.toString();
     }
 
 }

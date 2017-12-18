@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/root_layout"
+<RelativeLayout android:id="@+id/root_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/white_background"
-    tools:context="ng.com.bitlab.micash.ui.addEmployment.AddEmploymentActivity">
+    tools:context="ng.com.bitlab.micash.ui.addEmployment.AddEmploymentActivity"
+    xmlns:card_view="http://schemas.android.com/tools">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar_layout"
@@ -24,181 +24,443 @@
     </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/bank_layout"
+        android:layout_width="@dimen/_280sdp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:layout_below="@+id/app_bar_layout"
-        android:paddingLeft="@dimen/_15sdp"
-        android:paddingRight="@dimen/_15sdp"
+        android:paddingLeft="@dimen/_3sdp"
+        android:paddingRight="@dimen/_3sdp"
         android:orientation="vertical"
+        android:visibility="visible"
         android:layout_centerHorizontal="true">
 
+
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/bank_name_layout"
+            android:id="@+id/request_amount_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/text_label"
-            android:layout_below="@+id/employment_name_layout">
+            android:layout_marginBottom="-5dp"
+            android:theme="@style/text_label">
 
             <EditText
-                android:id="@+id/input_bank_name"
-                android:layout_width="@dimen/_280sdp"
+                android:id="@+id/input_request_amount"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:hint="Bank Name"
-                android:inputType="text"
+                android:hint="Requested Amount (₦)"
+                android:maxLength="9"
+                android:inputType="numberDecimal"
                 android:textSize="@dimen/_13ssp"/>
 
         </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/bank_account_layout"
+
+        <com.satsuware.usefulviews.LabelledSpinner
+            android:id="@+id/select_interest_spinner"
+            android:layout_width="match_parent"
+            app:labelText="Interest Rate"
+            app:spinnerEntries="@array/interests"
+            app:widgetColor="@android:color/black"
+            android:textSize="@dimen/_13ssp"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:layout_height="wrap_content"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/top_card_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/text_label"
-            android:layout_below="@+id/employment_name_layout">
-
-            <EditText
-                android:id="@+id/input_bank_account"
-                android:layout_width="@dimen/_280sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:hint="Account Number (10 Digits)"
-                android:inputType="text"
-                android:textSize="@dimen/_13ssp"/>
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/bank_bvn_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/text_label"
-            android:layout_below="@+id/employment_name_layout">
-
-            <EditText
-                android:id="@+id/input_bank_bvn"
-                android:layout_width="@dimen/_280sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_15sdp"
-                android:hint="Bank Verification Number (BVN)"
-                android:inputType="text"
-                android:textSize="@dimen/_13ssp"/>
-
-        </android.support.design.widget.TextInputLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAllCaps="true"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:text="Card details for repayment"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dip"
-            android:background="@android:color/black" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/_10ssp"
-            android:text="Please note that if you don't repay the loan at due time, the amount will be withdrawn from your account."/>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/card_name_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/text_label"
-            android:layout_marginBottom="@dimen/_8sdp"
-            android:layout_below="@+id/employment_name_layout">
-
-            <EditText
-                android:id="@+id/input_card_name"
-                android:layout_width="@dimen/_280sdp"
-                android:layout_height="wrap_content"
-                android:hint="Card Name"
-                android:inputType="text"
-                android:textSize="@dimen/_13ssp"/>
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/card_number_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/text_label"
-            android:layout_marginBottom="@dimen/_8sdp"
-            android:layout_below="@+id/employment_name_layout">
-
-            <ng.com.bitlab.micash.utils.CreditCardEditText
-                android:id="@+id/card_number_input"
-                android:layout_width="@dimen/_280sdp"
-                android:layout_height="wrap_content"
-                android:hint="Card Number"
-                android:maxLength="19"
-                android:inputType="number"
-                android:textSize="@dimen/_13ssp"/>
-
-        </android.support.design.widget.TextInputLayout>
+            android:layout_marginBottom="3dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:background="@android:color/white"
+            android:foreground="?attr/selectableItemBackground"
+            card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+            card_view:cardElevation="@dimen/card_recycler_elevation">
 
         <LinearLayout
-            android:layout_width="@dimen/_280sdp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_8sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:layout_gravity="center_vertical"
             android:orientation="horizontal">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/card_validity_layout"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:theme="@style/text_label"
-                android:layout_below="@+id/employment_name_layout">
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
 
-                <ng.com.bitlab.micash.utils.CreditCardEditText
-                    android:id="@+id/card_validity_input"
+                <TextView
+                    android:id="@+id/loan_repay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Expiry"
-                    android:inputType="number"
-                    android:maxLength="5"
-                    android:textSize="@dimen/_13ssp"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="₦0"/>
 
-            </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="normal"
+                    android:textAlignment="center"
+                    android:text="MONTHLY"/>
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/card_cvc_layout"
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dip"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:theme="@style/text_label"
-                android:layout_below="@+id/employment_name_layout">
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
 
-                <ng.com.bitlab.micash.utils.CreditCardEditText
-                    android:id="@+id/card_cvc_input"
+                <TextView
+                    android:id="@+id/loan_period"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="CVC"
-                    android:inputType="number"
-                    android:maxLength="3"
-                    android:textSize="@dimen/_13ssp"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="0 months"/>
 
-            </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="normal"
+                    android:textAlignment="center"
+                    android:text="PERIOD"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="1dip"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:background="@android:color/darker_gray" />
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/loan_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="₦0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_10ssp"
+                    android:text="TOTAL"/>
+
+            </LinearLayout>
 
         </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <RelativeLayout
+            android:id="@+id/select_account_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_8sdp">
+
+            <com.satsuware.usefulviews.LabelledSpinner
+                android:id="@+id/select_account_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:labelText="Select Account"
+                android:textSize="@dimen/_13ssp"
+                android:backgroundTint="@android:color/black"
+                app:spinnerEntries="@array/account">
+
+            </com.satsuware.usefulviews.LabelledSpinner>
+
+            <TextView
+                android:id="@+id/tv_enter_new_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USE NEW ACCOUNT"
+                android:layout_marginTop="-10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:layout_below="@+id/select_account_spinner"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/enter_account_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/bank_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/text_label"
+                android:layout_below="@+id/employment_name_layout">
+
+                <EditText
+                    android:id="@+id/input_bank_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:hint="Bank"
+                    android:inputType="textPersonName"
+                    android:textSize="@dimen/_13ssp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/bank_account_layout"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/text_label">
+
+                    <EditText
+                        android:id="@+id/input_bank_account"
+                        android:layout_width="@dimen/_280sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:hint="Number (10 Digits)"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:textSize="@dimen/_13ssp"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/bank_bvn_layout"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/text_label"
+                    android:layout_below="@+id/employment_name_layout">
+
+                    <EditText
+                        android:id="@+id/input_bank_bvn"
+                        android:layout_width="@dimen/_280sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:hint="BVN"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:textSize="@dimen/_13ssp"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/guarantor_name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/text_label">
+
+            <EditText
+                android:id="@+id/guarantor_name"
+                android:layout_width="@dimen/_280sdp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_13ssp"
+                android:inputType="textEmailAddress"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:hint="Enter Guarantor's Email"/>
+
+
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/banking_save_continue_button"
             android:layout_width="@dimen/_200sdp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginBottom="@dimen/_10sdp"
             android:background="@drawable/btn_blue_small"
             android:textColor="@color/blue_button_text_color"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
-            android:text="Save and Continue"/>
-
-
+            android:text="SUBMIT REQUEST"/>
 
     </LinearLayout>
+
+    <RelativeLayout
+    android:id="@+id/processing_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:visibility="gone">
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/progress"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_70sdp"
+        android:layout_centerHorizontal="true"
+        app:indicatorName="BallClipRotateIndicator"
+        app:indicatorColor="@color/colorPrimaryText"/>
+
+    <TextView
+        android:id="@+id/processing_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Processing"
+        android:textSize="@dimen/_20ssp"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_below="@+id/progress"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/processing_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_200sdp"
+        android:text="Hello there"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/processing_title"/>
+
+</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/success_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/success_icon"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/icon_tick"
+            android:tint="@color/colorPrimary"
+            />
+
+        <TextView
+            android:id="@+id/success_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Request Successful"
+            android:textSize="@dimen/_20ssp"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_below="@+id/success_icon"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/success_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your request has been submitted successfully. We'll process it as soon as your guarantor approves."
+            android:textSize="@dimen/_13ssp"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_below="@+id/success_title"/>
+
+        <Button
+            android:id="@+id/done_button"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/success_detail"
+            android:background="@drawable/square_add_button"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_11ssp"
+            android:text="DONE"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/error_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/error_icon"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/icon_error"
+            android:tint="@color/colorPrimary"
+            />
+
+        <TextView
+            android:id="@+id/error_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We encountered an error!."
+            android:textSize="@dimen/_14ssp"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_below="@+id/error_icon"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_centerHorizontal="true"
+            />
+        <Button
+            android:id="@+id/try_again_button"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/error_title"
+            android:background="@drawable/square_add_button"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_11ssp"
+            android:text="CLOSE"
+            />
+    </RelativeLayout>
+
+
 </RelativeLayout>

@@ -21,7 +21,7 @@
             android:value="sugar_micash.db" />
         <meta-data
             android:name="VERSION"
-            android:value="2" />
+            android:value="5" />
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />
@@ -121,14 +121,19 @@
 
         <activity
             android:name=".ui.profile.TestActivity"
-            android:theme="@style/AppTheme.WhiteStatusBar" />
+            android:theme="@style/AppTheme.WhiteStatusBar">
+
+        </activity>
         <activity
             android:name=".ui.addContact.AddContactActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity
             android:name=".ui.addEmployment.AddEmploymentActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent" />
-        <activity android:theme="@style/AppTheme.ActionBar.Transparent"  android:name=".ui.addBanking.AddBankingActivity"/>
+        <activity
+            android:name=".ui.addBanking.AddBankingActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
+        <activity android:name=".ui.message.ThreadActivity" />
     </application>
 
 </manifest>

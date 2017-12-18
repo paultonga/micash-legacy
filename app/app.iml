@@ -113,6 +113,7 @@
     <orderEntry type="library" name="com.intuit.sdp:sdp-android-1.0.4" level="project" />
     <orderEntry type="library" name="com.msg91.sendotp.library:library-3.1" level="project" />
     <orderEntry type="library" name="joda-time:joda-time:2.9.9@jar" level="project" />
+    <orderEntry type="library" name="com.jakewharton:butterknife-annotations:8.7.0@jar" level="project" />
     <orderEntry type="library" name="com.android.support.constraint:constraint-layout-solver:1.0.2@jar" level="project" />
     <orderEntry type="library" name="com.google.guava:guava:18.0@jar" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-iid-11.0.4" level="project" />
@@ -123,11 +124,15 @@
     <orderEntry type="library" name="com.android.support:support-fragment-25.4.0" level="project" />
     <orderEntry type="library" scope="TEST" name="com.google.code.findbugs:jsr305:2.0.1@jar" level="project" />
     <orderEntry type="library" name="com.afollestad.material-dialogs:core-0.9.4.5" level="project" />
+    <orderEntry type="library" name="com.jakewharton:butterknife-8.7.0" level="project" />
     <orderEntry type="library" scope="TEST" name="org.hamcrest:hamcrest-core:1.3@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="com.android.support.test.espresso:espresso-core-2.2.2" level="project" />
     <orderEntry type="library" name="net.jodah:typetools:0.4.6@jar" level="project" />
     <orderEntry type="library" name="com.android.support:animated-vector-drawable-25.4.0" level="project" />
+    <orderEntry type="library" name="com.aldoapps:autoformatedittext-0.9.3" level="project" />
+    <orderEntry type="library" name="com.github.faranjit:currency-edittext-1.0.1" level="project" />
     <orderEntry type="library" name="cc.cloudist.acplibrary:library-1.2.1" level="project" />
+    <orderEntry type="library" name="com.github.blackcat27:CurrencyEditText-2.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="com.android.support.test:rules-0.5" level="project" />
     <orderEntry type="library" name="com.google.android.gms:play-services-tasks-11.0.4" level="project" />
     <orderEntry type="library" name="com.squareup:javapoet:1.8.0@jar" level="project" />
@@ -136,7 +141,6 @@
     <orderEntry type="library" name="com.mikepenz:iconics-core-2.8.5" level="project" />
     <orderEntry type="library" name="com.android.support:appcompat-v7-25.4.0" level="project" />
     <orderEntry type="library" name="com.github.pinball83:masked-edittext-1.0.3" level="project" />
-    <orderEntry type="library" name="com.craftman.cardform:cardform-0.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="com.android.support.test.espresso:espresso-idling-resource-2.2.2" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-common-11.0.4" level="project" />
     <orderEntry type="library" name="com.squareup.picasso:picasso:2.5.2@jar" level="project" />
@@ -144,7 +148,9 @@
     <orderEntry type="library" name="com.google.firebase:firebase-analytics-impl-11.0.4" level="project" />
     <orderEntry type="library" name="com.intuit.ssp:ssp-android-1.0.4" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-auth-11.0.4" level="project" />
+    <orderEntry type="library" name="com.github.rahimlis:badgedtablayout-v1.1" level="project" />
     <orderEntry type="library" name="com.google.android.gms:play-services-base-11.0.4" level="project" />
+    <orderEntry type="library" name="com.satsuware.lib:usefulviews-2.3.6" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-database-11.0.4" level="project" />
     <orderEntry type="library" scope="TEST" name="junit:junit:4.12@jar" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-storage-11.0.4" level="project" />
@@ -167,7 +173,6 @@
     <orderEntry type="library" name="com.google.firebase:firebase-analytics-11.0.4" level="project" />
     <orderEntry type="library" name="com.android.support:support-media-compat-25.4.0" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-database-connection-11.0.4" level="project" />
-    <orderEntry type="library" name="com.jakewharton:butterknife-8.6.0" level="project" />
     <orderEntry type="library" name="com.mikepenz:fastadapter-2.5.3" level="project" />
     <orderEntry type="library" name="com.android.support:design-25.4.0" level="project" />
     <orderEntry type="library" name="com.android.support:transition-25.4.0" level="project" />
@@ -179,7 +184,6 @@
     <orderEntry type="library" name="com.jakewharton:butterknife-compiler:8.6.0@jar" level="project" />
     <orderEntry type="library" name="com.wang.avi:library-2.1.3" level="project" />
     <orderEntry type="library" name="com.android.support:support-vector-drawable-25.4.0" level="project" />
-    <orderEntry type="library" name="com.jakewharton:butterknife-annotations:8.6.0@jar" level="project" />
     <orderEntry type="library" name="com.android.support:recyclerview-v7-25.4.0" level="project" />
     <orderEntry type="library" name="android-android-25" level="project" />
   </component>

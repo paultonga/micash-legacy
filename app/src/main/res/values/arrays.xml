@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="account">
+        <item>"2027147076 - First Bank"</item>
+    </string-array>
+
+    <string-array name="interests">
+        <item>"10% if repaid within a month"</item>
+        <item>"5% flat per month if repaid in 2 months"</item>
+        <item>"5% flat per month if repaid in 3 months"</item>
+    </string-array>
+</resources>

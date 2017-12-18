@@ -7,7 +7,7 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="register_notice">Please enter your full name and mobile phone number as it is in your bank account details.</string>
-    <string name="register_agreement">By clicking Register, we assume you have read and agreed to our <u>Terms and Conditions</u></string>
+    <string name="register_agreement">I have read and agreed to the <u>Terms and Conditions</u></string>
     <string name="hint_email_address">Email Address</string>
     <string name="hint_enter_mobile">Phone Number</string>
     <string name="hint_name">Your Name</string>
@@ -42,16 +42,14 @@
     </string>
 
     <string-array name="employment_status_array">
-        <item>Select Employment Status</item>
-        <item>Employed</item>
-        <item>Unemployed</item>
-        <item>Business/Self-employed</item>
-        <item>Retired</item>
+        <item>Choose One</item>
+        <item>Banker</item>
+        <item>Public Servant</item>
+        <item>Business</item>
         <item>Student</item>
     </string-array>
 
     <string-array name="states_array">
-        <item>Select State</item>
         <item>Abuja</item>
         <item>Abia</item>
         <item>Adamawa</item>

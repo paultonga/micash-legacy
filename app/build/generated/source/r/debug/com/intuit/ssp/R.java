@@ -110,13 +110,13 @@ public final class R {
         public static final int _9ssp = 0x7f0702bb;
     }
     public static final class id {
-        public static final int give_us_a_review_landmine_button = 0x7f090099;
-        public static final int give_us_a_review_landmine_main_layout = 0x7f09009a;
-        public static final int give_us_a_review_landmine_text_1 = 0x7f09009b;
-        public static final int give_us_a_review_landmine_text_2 = 0x7f09009c;
+        public static final int give_us_a_review_landmine_button = 0x7f090095;
+        public static final int give_us_a_review_landmine_main_layout = 0x7f090096;
+        public static final int give_us_a_review_landmine_text_1 = 0x7f090097;
+        public static final int give_us_a_review_landmine_text_2 = 0x7f090098;
     }
     public static final class layout {
-        public static final int sp_example = 0x7f0b008c;
-        public static final int ssp_example = 0x7f0b008e;
+        public static final int sp_example = 0x7f0b0090;
+        public static final int ssp_example = 0x7f0b0091;
     }
 }

@@ -26,6 +26,7 @@ import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.MultiAutoCompleteTextView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,6 +54,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 import ng.com.bitlab.micash.R;
+import ng.com.bitlab.micash.common.AppPreference;
 import ng.com.bitlab.micash.common.MainActivity;
 import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.ui.common.BaseView;
@@ -82,6 +84,8 @@ public class VerifyActivity extends BaseView implements VerifyContract.View {
     private FirebaseAuth mAuth;
     final int PERMISSION_REQUEST_CODE = 123;
 
+    AppPreference mPref;
+
 
     static VerifyContract.Presenter mPresenter;
 
@@ -99,6 +103,8 @@ public class VerifyActivity extends BaseView implements VerifyContract.View {
         mPresenter = new VerifyPresenter(this);
         phoneInput.setInputType(InputType.TYPE_CLASS_NUMBER);
         codeInput.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+        mPref = MiCashApplication.getPreference();
 
         showPhoneNumberLayout();
 
@@ -255,6 +261,7 @@ public class VerifyActivity extends BaseView implements VerifyContract.View {
 
     @Override
     public void showConfirmDialog(final String phone) {
+        mPref.setPhone(phone);
         new MaterialDialog.Builder(this)
                 .title("Confirm Number")
                 .content("We will send an OTP code to "+phone+". Proceed with this?")

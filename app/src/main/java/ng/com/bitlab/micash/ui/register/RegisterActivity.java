@@ -16,6 +16,7 @@ import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -43,6 +44,7 @@ public class RegisterActivity extends BaseView implements RegisterContract.View 
     @BindView(R.id.editTextPassword) EditText passwordEditText;
     @BindView(R.id.editTextName) EditText nameEditText;
     @BindView(R.id.editTextEmail) EditText emailEditText;
+    @BindView(R.id.check_agreement) CheckBox agreementCheck;
 
     String mEmail;
     String mPassword;
@@ -90,9 +92,13 @@ public class RegisterActivity extends BaseView implements RegisterContract.View 
     @OnClick(R.id.btn_register)
     public void onRegisterClicked() {
         if(isConnected) {
-            if (validateInputs()) {
-                //mPresenter.createFirebaseUser(mEmail, mPassword, mName);
-                mPresenter.checkEmail(mEmail, mPassword, mName);
+            if(agreementCheck.isChecked()){
+                if (validateInputs()) {
+                    //mPresenter.createFirebaseUser(mEmail, mPassword, mName);
+                    mPresenter.checkEmail(mEmail, mPassword, mName);
+                }
+            } else {
+                showSnackBar("You must agree to terms and conditions first.");
             }
         } else {
             showSnackBar("There's no internet connection.");
