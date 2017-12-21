@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.msg91.sendotp.library:library-3.1">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-3.1.aar/a2c5942e73f3920a2d0bb79bd44a80cf/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-3.1.aar/a2c5942e73f3920a2d0bb79bd44a80cf/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-3.1.aar/d146b982bcfa2b3cc1efff93d339753a/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-3.1.aar/d146b982bcfa2b3cc1efff93d339753a/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
