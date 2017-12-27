@@ -14,10 +14,28 @@ public class Request {
     private String amount;
     private long date_created;
     private String guarantor;
+    private boolean isApproved;
+    private boolean isGuaranteed;
 
 
 
     public Request() {
+    }
+
+    public boolean isApproved() {
+        return isApproved;
+    }
+
+    public void setApproved(boolean approved) {
+        isApproved = approved;
+    }
+
+    public boolean isGuaranteed() {
+        return isGuaranteed;
+    }
+
+    public void setGuaranteed(boolean guaranteed) {
+        isGuaranteed = guaranteed;
     }
 
     public Bank getBank() {

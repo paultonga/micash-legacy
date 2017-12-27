@@ -72,7 +72,7 @@ public class FirebaseMessageService extends FirebaseMessagingService {
         NotificationCompat.Builder notificationBuilder = (NotificationCompat.Builder) new
                 NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.ic)
-                .setContentTitle("miCash")
+                .setContentTitle("miCash - "+remoteMessage.getNotification().getTitle())
                 .setContentText(remoteMessage.getNotification().getBody())
                 .setAutoCancel(true)
                 .setSound(alarmSound)

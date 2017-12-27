@@ -18,7 +18,7 @@ public class RegisterActivity_ViewBinding implements Unbinder {
 
   private View view2131296315;
 
-  private View view2131296649;
+  private View view2131296653;
 
   @UiThread
   public RegisterActivity_ViewBinding(RegisterActivity target) {
@@ -43,7 +43,7 @@ public class RegisterActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.tv_agreement, "method 'showTermsAndConditions'");
-    view2131296649 = view;
+    view2131296653 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -66,7 +66,7 @@ public class RegisterActivity_ViewBinding implements Unbinder {
 
     view2131296315.setOnClickListener(null);
     view2131296315 = null;
-    view2131296649.setOnClickListener(null);
-    view2131296649 = null;
+    view2131296653.setOnClickListener(null);
+    view2131296653 = null;
   }
 }

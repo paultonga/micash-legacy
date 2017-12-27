@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/card_view_item_recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:background="@android:color/white"
+    android:foreground="?android:attr/selectableItemBackground"
+    card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+    card_view:cardElevation="@dimen/card_recycler_elevation">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="14dp">
+
+        <ImageView
+            android:id="@+id/iv_guarantor_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/salary"
+            android:transitionName="shareView" />
+
+
+            <TextView
+                android:id="@+id/tv_guarantee_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="One Month Advance"
+                android:textSize="@dimen/_13ssp"
+                android:layout_toEndOf="@id/iv_guarantor_icon"
+                android:layout_toRightOf="@id/iv_guarantor_icon"
+                android:textColor="@android:color/black" />
+
+
+        <TextView
+            android:id="@+id/tv_time_ago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_guarantee_title"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@id/iv_guarantor_icon"
+            android:text="3 hours ago"
+            android:textSize="@dimen/_11ssp"
+            android:textStyle="bold"
+            android:lineSpacingExtra="1dp"
+            android:layout_toRightOf="@id/iv_guarantor_icon" />
+
+        <TextView
+            android:id="@+id/tv_decision"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_time_ago"
+            android:layout_below="@+id/tv_guarantee_title"
+            android:layout_toRightOf="@+id/tv_time_ago"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:text="UNDECIDED"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_red_light"
+            android:layout_marginStart="@dimen/_8sdp" />
+
+
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

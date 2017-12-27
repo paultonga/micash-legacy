@@ -151,6 +151,8 @@ public class AddBankingPresenter extends BasePresenter<AddBankingContract.View> 
         guarantee.setRequester_name(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
         guarantee.setRequester_uuid(FirebaseAuth.getInstance().getCurrentUser().getUid());
         guarantee.setDate_created(DateTime.now().getMillis());
+        guarantee.setDecided(false);
+        guarantee.setApproved(false);
 
         mRepository.sendGuarantorRequest(guarantor, guarantee, new FirebaseDataListener() {
             @Override
@@ -180,6 +182,8 @@ public class AddBankingPresenter extends BasePresenter<AddBankingContract.View> 
                     req.setDate_created(DateTime.now().getMillis());
                     req.setToken(FirebaseInstanceId.getInstance().getToken());
                     req.setUser_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    req.setApproved(false);
+                    req.setGuaranteed(false);
                     requestLoan(req);
                 } else {
                     view.showErrorLayout(de.getMessage());
