@@ -1,6 +1,12 @@
 package ng.com.bitlab.micash.ui.guarantor;
 
+import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +21,8 @@ import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.listeners.OnGuaranteeSelectedListener;
 import ng.com.bitlab.micash.models.Guarantee;
 import ng.com.bitlab.micash.models.Guarantor;
+import ng.com.bitlab.micash.utils.CustomTypefaceSpan;
+import ng.com.bitlab.micash.utils.Formatter;
 
 /**
  * Created by Paul Tonga on 21/12/2017.
@@ -23,10 +31,12 @@ import ng.com.bitlab.micash.models.Guarantor;
 public class GuarantorListAdapter extends RecyclerView.Adapter<GuarantorListAdapter.ViewHolder> {
 
     public List<Guarantee> mGuarantees;
+    private Context mContext;
     OnGuaranteeSelectedListener mListener;
 
-    public GuarantorListAdapter(List<Guarantee> mGuarantees) {
+    public GuarantorListAdapter(List<Guarantee> mGuarantees, Context mContext) {
         this.mGuarantees = mGuarantees;
+        this.mContext = mContext;
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -39,18 +49,34 @@ public class GuarantorListAdapter extends RecyclerView.Adapter<GuarantorListAdap
     public void onBindViewHolder(ViewHolder holder, int position) {
         if(mGuarantees != null){
             Guarantee g = mGuarantees.get(position);
+            String s = g.getRequester_name() + " has requested " +
+                    "you to guarantee a loan request of " + Formatter.getCurrencyText(g.getAmount()) +
+                    ".";
+            Typeface boldFont = Typeface.createFromAsset(mContext.getAssets(), "hnbold.ttf");
+            SpannableStringBuilder ss = new SpannableStringBuilder(s);
+            ss.setSpan(new CustomTypefaceSpan(boldFont), 0, g.getRequester_name().length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
             holder.tv_decision.setText(getDecisionText(g.isDecided(), g.isApproved()));
-            holder.tv_title.setText(getTitleText(g.getRequester_name(), g.getAmount()));
+            holder.tv_title.setText(ss);
         }
 
     }
 
     private String getTitleText(String requester_name, String amount) {
-        return null;
+
+        String s = requester_name + " has requested " +
+                "you to guarantee a loan request of " + Formatter.getCurrencyText(amount) +
+                ".";
+        Typeface boldFont = Typeface.createFromAsset(mContext.getAssets(), "hnbold.ttf");
+        SpannableStringBuilder ss = new SpannableStringBuilder(s);
+        ss.setSpan(new CustomTypefaceSpan(boldFont), 0, requester_name.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+
+        return ss.toString();
     }
 
     private String getDecisionText(boolean decided, boolean approved) {
-        return null;
+        return "UNDECIDED";
     }
 
     public void refreshData(List<Guarantee> guarantees){

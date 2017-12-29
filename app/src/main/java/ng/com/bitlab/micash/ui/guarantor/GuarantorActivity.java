@@ -49,7 +49,7 @@ public class GuarantorActivity extends AppCompatActivity implements GuarantorCon
 
         List<Guarantee> temp = new ArrayList<>();
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this);
-        mAdapter = new GuarantorListAdapter(temp);
+        mAdapter = new GuarantorListAdapter(temp, this);
         mRecycler.setLayoutManager(lm);
         mRecycler.setAdapter(mAdapter);
     }

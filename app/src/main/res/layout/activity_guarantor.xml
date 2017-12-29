@@ -8,6 +8,7 @@
     tools:context="ng.com.bitlab.micash.ui.guarantor.GuarantorActivity">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -92,6 +93,7 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/app_bar_layout"
         android:visibility="gone">
 
     </android.support.v7.widget.RecyclerView>

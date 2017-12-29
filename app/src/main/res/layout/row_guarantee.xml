@@ -35,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:text="One Month Advance"
                 android:textSize="@dimen/_13ssp"
+                android:textStyle="normal"
                 android:layout_toEndOf="@id/iv_guarantor_icon"
                 android:layout_toRightOf="@id/iv_guarantor_icon"
                 android:textColor="@android:color/black" />
