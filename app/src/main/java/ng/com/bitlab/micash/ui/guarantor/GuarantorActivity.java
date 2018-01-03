@@ -1,5 +1,8 @@
 package ng.com.bitlab.micash.ui.guarantor;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,6 +10,9 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.RelativeLayout;
+
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +22,11 @@ import butterknife.ButterKnife;
 import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.listeners.OnGuaranteeSelectedListener;
 import ng.com.bitlab.micash.models.Guarantee;
+import ng.com.bitlab.micash.ui.addEmployment.AddEmploymentActivity;
+import ng.com.bitlab.micash.ui.common.BaseView;
+import ng.com.bitlab.micash.ui.loans.LoanDetailsActivity;
 
-public class GuarantorActivity extends AppCompatActivity implements GuarantorContract.View, OnGuaranteeSelectedListener {
+public class GuarantorActivity extends BaseView implements GuarantorContract.View, OnGuaranteeSelectedListener {
 
     @BindView(R.id.empty_layout) RelativeLayout emptyLayout;
     @BindView(R.id.loading_layout) RelativeLayout loadingLayout;
@@ -49,7 +58,7 @@ public class GuarantorActivity extends AppCompatActivity implements GuarantorCon
 
         List<Guarantee> temp = new ArrayList<>();
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this);
-        mAdapter = new GuarantorListAdapter(temp, this);
+        mAdapter = new GuarantorListAdapter(temp, this, this);
         mRecycler.setLayoutManager(lm);
         mRecycler.setAdapter(mAdapter);
     }
@@ -85,5 +94,37 @@ public class GuarantorActivity extends AppCompatActivity implements GuarantorCon
     @Override
     public void OnGuaranteeSelected(Guarantee guarantee) {
         //show dialog to accept or decline guarantor request
+        showConfirmDialog(guarantee);
+    }
+
+    private void showConfirmDialog(Guarantee guarantee){
+        new MaterialDialog.Builder(this)
+                .title("Guarantee Request from "+guarantee.getRequester_name())
+                .content("Clicking GUARANTEE means that you know requester and can be held as a surety in case the requester fails to repay.")
+                .neutralText("Cancel")
+                .positiveText("GUARANTEE")
+                .positiveColor(Color.BLUE)
+                .negativeText("DECLINE")
+                .negativeColor(Color.RED)
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        //approve loan
+                        mPresenter.approveRequest();
+                    }
+                })
+                .onNegative(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        mPresenter.rejectRequest();
+                    }
+                })
+                .onNeutral(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
     }
 }

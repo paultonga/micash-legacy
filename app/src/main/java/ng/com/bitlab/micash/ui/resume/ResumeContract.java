@@ -17,6 +17,8 @@ public interface ResumeContract {
 
         void onLoginClicked();
 
+        void onForgotPasswordClicked();
+
         void onNewLoginClicked();
 
         void onRegisterClicked();

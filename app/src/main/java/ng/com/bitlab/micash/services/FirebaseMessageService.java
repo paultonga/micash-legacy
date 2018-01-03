@@ -18,6 +18,8 @@ import ng.com.bitlab.micash.common.MainActivity;
 import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.listeners.OnNotificationReceivedListener;
 import ng.com.bitlab.micash.models.Notification;
+import ng.com.bitlab.micash.ui.guarantor.GuarantorActivity;
+import ng.com.bitlab.micash.ui.message.ThreadActivity;
 
 /**
  * Created by paul on 11/11/17.
@@ -33,9 +35,10 @@ public class FirebaseMessageService extends FirebaseMessagingService {
         Log.d("Message", "Message received ["+ remoteMessage +"]");
         String title = remoteMessage.getNotification().getTitle();
         String detail = remoteMessage.getNotification().getBody();
+        String identifier = remoteMessage.getData().get("identifier");
 
         storeNotification(title, detail);
-        showNotification(remoteMessage);
+        showNotification(remoteMessage, identifier);
         broadcastIntent();
 
     }
@@ -60,9 +63,9 @@ public class FirebaseMessageService extends FirebaseMessagingService {
 
     }
 
-    private void showNotification(RemoteMessage remoteMessage){
+    private void showNotification(RemoteMessage remoteMessage, String identifier){
         //Create Notification
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = getUserIntent(identifier);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 1,
                 intent, PendingIntent.FLAG_ONE_SHOT);
@@ -81,5 +84,21 @@ public class FirebaseMessageService extends FirebaseMessagingService {
         NotificationManager notificationManager = (NotificationManager)
                 getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(1, notificationBuilder.build());
+    }
+
+    private Intent getUserIntent(String identifier) {
+
+        switch (identifier){
+            case "":
+                return new Intent(MiCashApplication.getContext(), MainActivity.class);
+            case "welcome":
+                return new Intent(MiCashApplication.getContext(), MainActivity.class);
+            case "guarantee":
+                return new Intent(MiCashApplication.getContext(), GuarantorActivity.class);
+            case "message":
+                return new Intent(MiCashApplication.getContext(), ThreadActivity.class);
+            default:
+                return new Intent(MiCashApplication.getContext(), MainActivity.class);
+        }
     }
 }

@@ -46,10 +46,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_guarantee_title"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:layout_toEndOf="@id/iv_guarantor_icon"
             android:text="3 hours ago"
-            android:textSize="@dimen/_11ssp"
+            android:textSize="@dimen/_8ssp"
             android:textStyle="bold"
             android:lineSpacingExtra="1dp"
             android:layout_toRightOf="@id/iv_guarantor_icon" />
@@ -61,14 +61,15 @@
             android:layout_toEndOf="@+id/tv_time_ago"
             android:layout_below="@+id/tv_guarantee_title"
             android:layout_toRightOf="@+id/tv_time_ago"
-            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:paddingLeft="@dimen/_5sdp"
             android:paddingRight="@dimen/_5sdp"
             android:text="UNDECIDED"
-            android:textSize="@dimen/_11ssp"
+            android:textSize="@dimen/_9ssp"
             android:textColor="@android:color/white"
             android:background="@android:color/holo_red_light"
-            android:layout_marginStart="@dimen/_8sdp" />
+            android:layout_marginStart="@dimen/_20sdp" />
 
 
 

@@ -43,9 +43,8 @@ public class ProfilePresenter implements ProfileContract.Presenter {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(dataSnapshot != null){
                     User u = dataSnapshot.getValue(User.class);
-                    Log.d("mphone", u.getPhoneNumber());
+                    //Log.d("mphone", u.getPhoneNumber());
                     view.setPhoneNumber(u.getPhoneNumber());
-
                 }else {
                     view.setPhoneNumber("");
                 }

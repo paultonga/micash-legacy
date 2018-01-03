@@ -20,7 +20,7 @@ public class CardsPresenter implements CardsContract.Presenter {
     @Override
     public void loadData() {
         List<BankRecord> accountRecord = BankRecord.listAll(BankRecord.class);
-        if(accountRecord == null){
+        if(accountRecord == null || accountRecord.isEmpty()){
             view.showEmptyLayout();
         } else {
             view.showCards(accountRecord);

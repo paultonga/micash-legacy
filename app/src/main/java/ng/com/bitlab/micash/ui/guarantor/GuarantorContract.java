@@ -4,6 +4,8 @@ import java.util.List;
 
 import ng.com.bitlab.micash.listeners.FirebaseDataListener;
 import ng.com.bitlab.micash.models.Guarantee;
+import ng.com.bitlab.micash.ui.common.IBasePresenter;
+import ng.com.bitlab.micash.ui.common.IBaseVew;
 
 /**
  * Created by Paul Tonga on 21/12/2017.
@@ -11,7 +13,7 @@ import ng.com.bitlab.micash.models.Guarantee;
 
 public interface GuarantorContract {
 
-    interface View {
+    interface View extends IBaseVew {
 
         void showLoadingLayout();
 
@@ -21,7 +23,7 @@ public interface GuarantorContract {
 
     }
 
-    interface Presenter {
+    interface Presenter extends IBasePresenter<View> {
 
         void fetchGuarantorRequests();
 

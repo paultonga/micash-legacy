@@ -4,9 +4,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.text.Spannable;
-import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
-import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +18,6 @@ import butterknife.ButterKnife;
 import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.listeners.OnGuaranteeSelectedListener;
 import ng.com.bitlab.micash.models.Guarantee;
-import ng.com.bitlab.micash.models.Guarantor;
 import ng.com.bitlab.micash.utils.CustomTypefaceSpan;
 import ng.com.bitlab.micash.utils.Formatter;
 
@@ -32,10 +29,11 @@ public class GuarantorListAdapter extends RecyclerView.Adapter<GuarantorListAdap
 
     public List<Guarantee> mGuarantees;
     private Context mContext;
-    OnGuaranteeSelectedListener mListener;
+    private OnGuaranteeSelectedListener mListener;
 
-    public GuarantorListAdapter(List<Guarantee> mGuarantees, Context mContext) {
+    public GuarantorListAdapter(List<Guarantee> mGuarantees, OnGuaranteeSelectedListener mListener, Context mContext) {
         this.mGuarantees = mGuarantees;
+        this.mListener = mListener;
         this.mContext = mContext;
     }
     @Override
@@ -49,20 +47,18 @@ public class GuarantorListAdapter extends RecyclerView.Adapter<GuarantorListAdap
     public void onBindViewHolder(ViewHolder holder, int position) {
         if(mGuarantees != null){
             Guarantee g = mGuarantees.get(position);
-            String s = g.getRequester_name() + " has requested " +
-                    "you to guarantee a loan request of " + Formatter.getCurrencyText(g.getAmount()) +
-                    ".";
-            Typeface boldFont = Typeface.createFromAsset(mContext.getAssets(), "hnbold.ttf");
-            SpannableStringBuilder ss = new SpannableStringBuilder(s);
-            ss.setSpan(new CustomTypefaceSpan(boldFont), 0, g.getRequester_name().length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
             holder.tv_decision.setText(getDecisionText(g.isDecided(), g.isApproved()));
-            holder.tv_title.setText(ss);
+            holder.tv_title.setText(getTitleText(g.getRequester_name(), g.getAmount()));
         }
 
     }
 
-    private String getTitleText(String requester_name, String amount) {
+    private SpannableStringBuilder getTitleText(String requester_name, String amount) {
+
+        String amountText = Formatter.getCurrencyText(amount);
+        int start = requester_name.length() + 50;
+        int end = start +  + amountText.length();
 
         String s = requester_name + " has requested " +
                 "you to guarantee a loan request of " + Formatter.getCurrencyText(amount) +
@@ -70,13 +66,22 @@ public class GuarantorListAdapter extends RecyclerView.Adapter<GuarantorListAdap
         Typeface boldFont = Typeface.createFromAsset(mContext.getAssets(), "hnbold.ttf");
         SpannableStringBuilder ss = new SpannableStringBuilder(s);
         ss.setSpan(new CustomTypefaceSpan(boldFont), 0, requester_name.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(new CustomTypefaceSpan(boldFont), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
 
-        return ss.toString();
+        return ss;
     }
 
     private String getDecisionText(boolean decided, boolean approved) {
-        return "UNDECIDED";
+        String result = "";
+        if(!decided)
+            result = "UNDECIDED";
+        if(decided && approved)
+            result = "APPROVED";
+        if(decided && !approved)
+            result = "DECLINED";
+
+        return result;
     }
 
     public void refreshData(List<Guarantee> guarantees){

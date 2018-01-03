@@ -17,7 +17,7 @@ MERGED from [com.github.faranjit:currency-edittext:1.0.1] C:\Users\Paul Tonga\.g
 MERGED from [me.zhanghai.android.materialprogressbar:library:1.4.1] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\library-1.4.1.aar\d6644265d2919a183f34ce6407819476\AndroidManifest.xml:6:1-16:12
 MERGED from [com.android.support:design:25.4.0] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\design-25.4.0.aar\55e3a928dabfadcb45da26c2a6f8bb5e\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:25.4.0] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\94aea02ccdf9a9baa10a736d930120d8\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\af5cd9d4c22b77a8f2a770e55c5158ed\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8d651b16ab8f56bc92ef83c765ffc637\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-v13:25.3.1] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\support-v13-25.3.1.aar\ae1e7ee743e28e40f546c968055a64ee\AndroidManifest.xml:17:1-31:12
 MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\b6b3ca1ebc187b8d8eea1ff06882c8bf\AndroidManifest.xml:16:1-21:12
 MERGED from [com.google.firebase:firebase-database:11.0.4] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\firebase-database-11.0.4.aar\2e80313ae4180c3548e2a1091295541c\AndroidManifest.xml:2:1-4:12
@@ -126,8 +126,8 @@ MERGED from [com.android.support:design:25.4.0] C:\Users\Paul Tonga\.gradle\cach
 MERGED from [com.android.support:design:25.4.0] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\design-25.4.0.aar\55e3a928dabfadcb45da26c2a6f8bb5e\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:25.4.0] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\94aea02ccdf9a9baa10a736d930120d8\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:25.4.0] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\94aea02ccdf9a9baa10a736d930120d8\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\af5cd9d4c22b77a8f2a770e55c5158ed\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\af5cd9d4c22b77a8f2a770e55c5158ed\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8d651b16ab8f56bc92ef83c765ffc637\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8d651b16ab8f56bc92ef83c765ffc637\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-v13:25.3.1] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\support-v13-25.3.1.aar\ae1e7ee743e28e40f546c968055a64ee\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v13:25.3.1] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\support-v13-25.3.1.aar\ae1e7ee743e28e40f546c968055a64ee\AndroidManifest.xml:29:5-20
 MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\b6b3ca1ebc187b8d8eea1ff06882c8bf\AndroidManifest.xml:19:5-20:19
@@ -442,8 +442,8 @@ MERGED from [com.android.support:design:25.4.0] C:\Users\Paul Tonga\.gradle\cach
 MERGED from [com.android.support:design:25.4.0] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\design-25.4.0.aar\55e3a928dabfadcb45da26c2a6f8bb5e\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:25.4.0] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\94aea02ccdf9a9baa10a736d930120d8\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:appcompat-v7:25.4.0] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\94aea02ccdf9a9baa10a736d930120d8\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\af5cd9d4c22b77a8f2a770e55c5158ed\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\af5cd9d4c22b77a8f2a770e55c5158ed\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8d651b16ab8f56bc92ef83c765ffc637\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8d651b16ab8f56bc92ef83c765ffc637\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:support-v13:25.3.1] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\support-v13-25.3.1.aar\ae1e7ee743e28e40f546c968055a64ee\AndroidManifest.xml:21:5-23:55
 MERGED from [com.android.support:support-v13:25.3.1] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\support-v13-25.3.1.aar\ae1e7ee743e28e40f546c968055a64ee\AndroidManifest.xml:21:5-23:55
 MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Paul Tonga\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\b6b3ca1ebc187b8d8eea1ff06882c8bf\AndroidManifest.xml:17:5-43

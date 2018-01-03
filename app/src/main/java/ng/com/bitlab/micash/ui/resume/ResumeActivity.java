@@ -26,6 +26,7 @@ import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.models.User;
 import ng.com.bitlab.micash.ui.common.BaseView;
 import ng.com.bitlab.micash.ui.login.LoginActivity;
+import ng.com.bitlab.micash.ui.recover.RecoverActivity;
 import ng.com.bitlab.micash.ui.register.RegisterActivity;
 
 public class ResumeActivity extends BaseView implements ResumeContract.View {
@@ -103,5 +104,12 @@ public class ResumeActivity extends BaseView implements ResumeContract.View {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    @OnClick(R.id.btn_forgot_password)
+    public void onForgotPasswordClicked() {
+        startActivity(new Intent(this, RecoverActivity.class));
+
     }
 }
