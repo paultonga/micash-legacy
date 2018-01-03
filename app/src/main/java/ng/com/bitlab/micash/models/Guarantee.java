@@ -13,10 +13,36 @@ public class Guarantee {
     private String requester_uuid;
     private String requester_name;
     private long date_created;
+    private boolean isDecided;
+    private boolean isApproved;
+    private boolean isRepaid;
 
+    public boolean isApproved() {
+        return isApproved;
+    }
+
+    public boolean isRepaid() {
+        return isRepaid;
+    }
+
+    public void setRepaid(boolean repaid) {
+        isRepaid = repaid;
+    }
+
+    public void setApproved(boolean approved) {
+        isApproved = approved;
+    }
 
     public String getUuid() {
         return uuid;
+    }
+
+    public boolean isDecided() {
+        return isDecided;
+    }
+
+    public void setDecided(boolean decided) {
+        isDecided = decided;
     }
 
     public void setUuid(String uuid) {
