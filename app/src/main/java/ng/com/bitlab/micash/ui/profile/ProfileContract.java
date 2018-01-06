@@ -1,5 +1,6 @@
 package ng.com.bitlab.micash.ui.profile;
 
+import ng.com.bitlab.micash.models.Profile;
 import ng.com.bitlab.micash.models.ProfileRecord;
 
 /**
@@ -13,7 +14,7 @@ public interface ProfileContract {
 
         void showEmptyLayout();
 
-        void showDataLayout();
+        void showDataLayout(Profile profile);
 
         void setPhoneNumber(String phone);
 
@@ -21,7 +22,7 @@ public interface ProfileContract {
 
     interface Presenter {
 
-        ProfileRecord getProfile();
+        void getProfile();
 
         String getPhoneNumber();
 

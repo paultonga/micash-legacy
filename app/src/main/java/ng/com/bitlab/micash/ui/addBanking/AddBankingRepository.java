@@ -11,6 +11,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import ng.com.bitlab.micash.listeners.FirebaseDataListener;
+import ng.com.bitlab.micash.listeners.FirebaseQueryListener;
 import ng.com.bitlab.micash.models.Bank;
 import ng.com.bitlab.micash.models.Guarantee;
 import ng.com.bitlab.micash.models.Guarantor;
@@ -48,7 +49,7 @@ public class AddBankingRepository implements AddBankingContract.Repository {
         FirebaseDatabase.getInstance().getReference()
                 .child("guarantees")
                 .child(guarantor.getUuid())
-                .push()
+                .child(guarantee.getRequester_uuid())
                 .setValue(guarantee, new DatabaseReference.CompletionListener() {
                     @Override
                     public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
@@ -119,6 +120,25 @@ public class AddBankingRepository implements AddBankingContract.Repository {
     }
 
     @Override
+    public void getBankAccounts(String uuid, final FirebaseQueryListener listener) {
+        listener.onStart();
+        FirebaseDatabase.getInstance().getReference()
+                .child("accounts")
+                .child(uuid)
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        listener.onFinish(dataSnapshot, null);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        listener.onFinish(null, databaseError);
+                    }
+                });
+    }
+
+    @Override
     public void submitLoanRequest(String userID, Request request, final FirebaseDataListener listener) {
         listener.onStart();
 
@@ -140,7 +160,7 @@ public class AddBankingRepository implements AddBankingContract.Repository {
         FirebaseDatabase.getInstance().getReference()
                 .child("accounts")
                 .child(userID)
-                .child(bank.getNumber())
+                .push()
                 .setValue(bank, new DatabaseReference.CompletionListener() {
                     @Override
                     public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {

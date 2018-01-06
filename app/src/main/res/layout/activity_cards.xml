@@ -86,5 +86,38 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/bank_loading_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/progress"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_centerHorizontal="true"
+            app:indicatorName="BallClipRotateIndicator"
+            android:layout_above="@+id/bank_loading_text"
+            app:indicatorColor="@color/colorPrimaryText"/>
+
+
+        <TextView
+            android:id="@+id/bank_loading_text"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:text="Loading bank records..."
+            android:textStyle="normal"
+            android:textSize="@dimen/_11ssp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

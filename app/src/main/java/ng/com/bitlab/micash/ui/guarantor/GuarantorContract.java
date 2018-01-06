@@ -3,6 +3,7 @@ package ng.com.bitlab.micash.ui.guarantor;
 import java.util.List;
 
 import ng.com.bitlab.micash.listeners.FirebaseDataListener;
+import ng.com.bitlab.micash.listeners.FirebaseQueryListener;
 import ng.com.bitlab.micash.models.Guarantee;
 import ng.com.bitlab.micash.ui.common.IBasePresenter;
 import ng.com.bitlab.micash.ui.common.IBaseVew;
@@ -29,13 +30,16 @@ public interface GuarantorContract {
 
         void getSingleRequest();
 
-        void approveRequest();
+        void approveRequest(Guarantee guarantee);
 
-        void rejectRequest();
+        void rejectRequest(Guarantee guarantee);
     }
 
     interface Repository{
 
-        void loadGuarantorRequests(String uuid, FirebaseDataListener listener);
+        void loadGuarantorRequests(String uuid, FirebaseQueryListener listener);
+
+        void saveResponse(Guarantee guarantee, String uuid, FirebaseQueryListener listener);
+
     }
 }

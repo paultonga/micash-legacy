@@ -94,10 +94,14 @@ public class GuarantorActivity extends BaseView implements GuarantorContract.Vie
     @Override
     public void OnGuaranteeSelected(Guarantee guarantee) {
         //show dialog to accept or decline guarantor request
-        showConfirmDialog(guarantee);
+        if (guarantee.isDecided()){
+            showToast("You have already responded to this request.");
+        }else {
+            showConfirmDialog(guarantee);
+        }
     }
 
-    private void showConfirmDialog(Guarantee guarantee){
+    private void showConfirmDialog(final Guarantee guarantee){
         new MaterialDialog.Builder(this)
                 .title("Guarantee Request from "+guarantee.getRequester_name())
                 .content("Clicking GUARANTEE means that you know requester and can be held as a surety in case the requester fails to repay.")
@@ -110,13 +114,15 @@ public class GuarantorActivity extends BaseView implements GuarantorContract.Vie
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                         //approve loan
-                        mPresenter.approveRequest();
+                        mPresenter.approveRequest(guarantee);
+                        dialog.dismiss();
                     }
                 })
                 .onNegative(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                        mPresenter.rejectRequest();
+                        mPresenter.rejectRequest(guarantee);
+                        dialog.dismiss();
                     }
                 })
                 .onNeutral(new MaterialDialog.SingleButtonCallback() {

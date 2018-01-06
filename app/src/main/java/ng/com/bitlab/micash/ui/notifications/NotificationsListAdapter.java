@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Formatter;
@@ -16,6 +17,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ng.com.bitlab.micash.R;
+import ng.com.bitlab.micash.listeners.OnNotificationTouchedListener;
 import ng.com.bitlab.micash.models.Notification;
 import ng.com.bitlab.micash.ui.loans.LoansListAdapter;
 
@@ -29,10 +31,12 @@ public class NotificationsListAdapter extends RecyclerView.Adapter<Notifications
     private final Context mContext;
     private boolean shouldHighlightSelectedItem = false;
     private int selectedPosition = 0;
+    private OnNotificationTouchedListener mListener;
 
-    public NotificationsListAdapter(List<Notification> mNotifications, Context mContext) {
+    public NotificationsListAdapter(List<Notification> mNotifications, Context mContext, OnNotificationTouchedListener mListener) {
         this.mNotifications = mNotifications;
         this.mContext = mContext;
+        this.mListener = mListener;
     }
 
     @Override
@@ -95,11 +99,16 @@ public class NotificationsListAdapter extends RecyclerView.Adapter<Notifications
         notifyDataSetChanged();
     }
 
+
+
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         @BindView(R.id.notification_title) TextView title;
         @BindView(R.id.notification_detail) TextView detail;
         @BindView(R.id.notification_time) TextView time;
+        public @BindView(R.id.view_foreground) RelativeLayout viewForeground;
+        public @BindView(R.id.view_background) RelativeLayout viewBackground;
+
 
         public ViewHolder(View itemView) {
 
@@ -116,7 +125,11 @@ public class NotificationsListAdapter extends RecyclerView.Adapter<Notifications
             n.setRead(true);
             n.save();
             notifyDataSetChanged();
+            mListener.onNotificationTouched(getAtPosition(selectedPosition));
 
+        }
+        public Notification getAtPosition(int position){
+            return mNotifications.get(position);
         }
     }
 }

@@ -222,6 +222,24 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/loading_account_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:visibility="gone">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/progress_account"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerInParent="true"
+                app:indicatorName="BallClipRotateIndicator"
+                app:indicatorColor="@color/colorPrimaryText"/>
+
+        </RelativeLayout>
+
 
 
         <LinearLayout
@@ -449,6 +467,7 @@
             android:layout_marginBottom="@dimen/_8sdp"
             android:layout_centerHorizontal="true"
             />
+
         <Button
             android:id="@+id/try_again_button"
             android:layout_width="@dimen/_100sdp"

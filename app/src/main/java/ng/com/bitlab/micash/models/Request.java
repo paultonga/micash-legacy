@@ -15,11 +15,29 @@ public class Request {
     private long date_created;
     private String guarantor;
     private boolean isApproved;
-    private boolean isGuaranteed;
+    private boolean isRepaid;
+    private boolean isNew;
+    private boolean isDecided;
 
 
 
     public Request() {
+    }
+
+    public boolean isDecided() {
+        return isDecided;
+    }
+
+    public void setDecided(boolean decided) {
+        isDecided = decided;
+    }
+
+    public boolean isNew() {
+        return isNew;
+    }
+
+    public void setNew(boolean aNew) {
+        isNew = aNew;
     }
 
     public boolean isApproved() {
@@ -30,12 +48,12 @@ public class Request {
         isApproved = approved;
     }
 
-    public boolean isGuaranteed() {
-        return isGuaranteed;
+    public boolean isRepaid() {
+        return isRepaid;
     }
 
-    public void setGuaranteed(boolean guaranteed) {
-        isGuaranteed = guaranteed;
+    public void setRepaid(boolean repaid) {
+        isRepaid = repaid;
     }
 
     public Bank getBank() {

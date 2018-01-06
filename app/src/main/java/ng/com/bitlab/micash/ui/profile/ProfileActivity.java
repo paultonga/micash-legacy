@@ -29,6 +29,7 @@ import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.common.AppPreference;
 import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.models.AccountRecord;
+import ng.com.bitlab.micash.models.Profile;
 import ng.com.bitlab.micash.models.ProfileRecord;
 import ng.com.bitlab.micash.models.User;
 import ng.com.bitlab.micash.ui.addContact.AddContactActivity;
@@ -84,6 +85,7 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
         mPref = MiCashApplication.getPreference();
         initLayout();
         mPresenter.getPhoneNumber();
+        mPresenter.getProfile();
     }
 
     @Override
@@ -100,11 +102,8 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
     }
 
     @Override
-    public void showDataLayout() {
-
-        ProfileRecord pr = mPresenter.getProfile();
-
-        if(pr != null) {
+    public void showDataLayout(Profile pr) {
+        if (pr != null) {
             employmentLayout.setVisibility(View.VISIBLE);
             addEmploymentButton.setVisibility(View.GONE);
             editEmployment.setVisibility(View.VISIBLE);
@@ -116,13 +115,9 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
             tvIncome.setText(income);
             tvState.setText(pr.getState());
             tvResidential.setText(pr.getResidential());
-
-
         } else {
             showEmptyLayout();
         }
-
-
 
     }
 
@@ -145,12 +140,7 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
     }
 
     private void initLayout(){
-        if(mPref.getEmploymentSaved() == null){
-            showEmptyLayout();
-        } else {
-            showDataLayout();
-        }
-
+        showEmptyLayout();
 
         User user = getUserFromPreference();
 
@@ -165,5 +155,5 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
                 .into(profileImage);
     }
 
-    }
+}
 

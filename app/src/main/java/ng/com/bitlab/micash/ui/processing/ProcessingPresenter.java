@@ -110,6 +110,7 @@ public class ProcessingPresenter implements ProcessingContract.Presenter {
         mView.updateMessage("Finalizing", "Putting finishing touches...Will be done in few seconds.");
 
         FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
+        mPref.setFirst(null);
 
         final FirebaseDatabase db = FirebaseDatabase.getInstance();
         final DatabaseReference checkEmail = db.getReference().child("checkEmail");
@@ -228,4 +229,5 @@ public class ProcessingPresenter implements ProcessingContract.Presenter {
                     }
                 });
     }
+
 }

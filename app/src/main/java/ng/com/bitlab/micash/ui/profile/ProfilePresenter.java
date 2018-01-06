@@ -11,6 +11,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.orm.query.Select;
 
+import ng.com.bitlab.micash.models.Profile;
 import ng.com.bitlab.micash.models.ProfileRecord;
 import ng.com.bitlab.micash.models.User;
 
@@ -28,8 +29,27 @@ public class ProfilePresenter implements ProfileContract.Presenter {
     }
 
     @Override
-    public ProfileRecord getProfile() {
-        return Select.from(ProfileRecord.class).first();
+    public void getProfile() {
+        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseDatabase.getInstance().getReference()
+                .child("profile")
+                .child(userID)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if(dataSnapshot != null){
+                            Profile profile = dataSnapshot.getValue(Profile.class);
+                            view.showDataLayout(profile);
+                        }else {
+                            view.showEmptyLayout();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
     }
 
     @Override

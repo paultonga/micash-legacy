@@ -84,6 +84,7 @@ public class AddBankingActivity extends BaseView implements AddBankingContract.V
     @BindView(R.id.error_title) TextView errorText;
 
     @BindView(R.id.select_account_layout) RelativeLayout selectAccountLayout;
+    @BindView(R.id.loading_account_layout) RelativeLayout loadingAccountLayout;
     @BindView(R.id.enter_account_layout) LinearLayout enterAccountLayout;
 
     @BindView(R.id.select_interest_spinner) LabelledSpinner interestSpinner;
@@ -102,9 +103,10 @@ public class AddBankingActivity extends BaseView implements AddBankingContract.V
     Loan mLoan;
     Interest mInterest;
     List<Interest> mInterests;
-    List<BankRecord> mBanks;
-    BankRecord mBank;
+    List<Bank> mBanks;
+    Bank mBank;
     private static String naira = "\u20a6";
+    private boolean isNewAccount = false;
 
 
 
@@ -143,12 +145,13 @@ public class AddBankingActivity extends BaseView implements AddBankingContract.V
 
         mInterests = mPresenter.getInterests(mLoan.getId());
         mInterest = mInterests.get(0);
-        mBanks = mPresenter.getAccounts();
+        //mBanks = mPresenter.getAccounts();
         if(mBanks != null && !mBanks.isEmpty())
             mBank = mBanks.get(0);
 
 
-        initializeAccountSpinner();
+        //initializeAccountSpinner();
+        mPresenter.getAccounts();
         initializeInterestSpinner();
 
 
@@ -224,8 +227,10 @@ public class AddBankingActivity extends BaseView implements AddBankingContract.V
 
     @OnClick(R.id.tv_enter_new_account)
     public void enterNewAccount(){
+        isNewAccount = true;
         selectAccountLayout.setVisibility(View.GONE);
         enterAccountLayout.setVisibility(View.VISIBLE);
+        loadingAccountLayout.setVisibility(View.GONE);
     }
 
     private void refreshView(){
@@ -344,6 +349,9 @@ public class AddBankingActivity extends BaseView implements AddBankingContract.V
     }
 
     @Override
+    public boolean isNewAccount(){ return isNewAccount; }
+
+    @Override
     public void showDialogMessage(String message) {
 
     }
@@ -367,22 +375,34 @@ public class AddBankingActivity extends BaseView implements AddBankingContract.V
     }
 
     @Override
-    public void initializeAccountSpinner() {
-        List<BankRecord> records = mPresenter.getAccounts();
+    public void initializeAccountSpinner(List<Bank> records) {
 
         if(records != null && !records.isEmpty()){
+            mBanks = records;
+            mBank = mBanks.get(0);
             selectAccountLayout.setVisibility(View.VISIBLE);
             enterAccountLayout.setVisibility(View.GONE);
+            loadingAccountLayout.setVisibility(View.GONE);
+
             List<String> items = new ArrayList<>();
-            for(BankRecord record : records){
+            for(Bank record : records){
                 items.add(record.getNumber() + " - " + record.getName());
             }
             accounttSpinner.setItemsArray(items);
         } else {
+            isNewAccount = true;
             selectAccountLayout.setVisibility(View.GONE);
+            loadingAccountLayout.setVisibility(View.GONE);
             enterAccountLayout.setVisibility(View.VISIBLE);
         }
 
+    }
+
+    @Override
+    public void showLoadingAccount() {
+        selectAccountLayout.setVisibility(View.GONE);
+        loadingAccountLayout.setVisibility(View.VISIBLE);
+        enterAccountLayout.setVisibility(View.GONE);
     }
 
     private boolean isAmountValid() {

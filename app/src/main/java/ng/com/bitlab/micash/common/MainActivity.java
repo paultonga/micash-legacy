@@ -56,6 +56,7 @@ import ng.com.bitlab.micash.ui.profile.ProfileActivity;
 import ng.com.bitlab.micash.ui.resume.ResumeActivity;
 import ng.com.bitlab.micash.ui.transactions.TransactionsActivity;
 import ng.com.bitlab.micash.utils.Constants;
+import ng.com.bitlab.micash.utils.Utility;
 
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -168,6 +169,8 @@ public class MainActivity extends BaseView {
 
 
         initViewPager();
+        Utility.updateInstanceID();
+        //testDataCopy();
 
     }
 
@@ -444,6 +447,18 @@ public class MainActivity extends BaseView {
             }
         });
         fullscreenDialog.show();
+    }
+
+    private void testDataCopy(){
+        Guarantor g = new Guarantor();
+        g.setInstanceID(FirebaseInstanceId.getInstance().getToken());
+        g.setUuid(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        g.setEmail(getMD5(FirebaseAuth.getInstance().getCurrentUser().getEmail()));
+
+        FirebaseDatabase.getInstance().getReference()
+                .child("tableOne")
+                .child(g.getEmail())
+                .setValue(g);
     }
 
     private static String getMD5(String email) {

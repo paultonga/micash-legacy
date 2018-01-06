@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/bank_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/text_label"
+        android:layout_below="@+id/employment_name_layout">
+
+        <EditText
+            android:id="@+id/input_bank_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:hint="Bank"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/_13ssp"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/bank_account_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/text_label">
+
+            <EditText
+                android:id="@+id/input_bank_account"
+                android:layout_width="@dimen/_280sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:hint="Number (10 Digits)"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textSize="@dimen/_13ssp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/bank_bvn_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/text_label"
+            android:layout_below="@+id/employment_name_layout">
+
+            <EditText
+                android:id="@+id/input_bank_bvn"
+                android:layout_width="@dimen/_280sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:hint="BVN"
+                android:inputType="number"
+                android:maxLength="11"
+                android:textSize="@dimen/_13ssp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+
+    </LinearLayout>

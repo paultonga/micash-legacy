@@ -1,6 +1,7 @@
 package ng.com.bitlab.micash.ui.guarantor;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.text.Spannable;
@@ -48,10 +49,40 @@ public class GuarantorListAdapter extends RecyclerView.Adapter<GuarantorListAdap
         if(mGuarantees != null){
             Guarantee g = mGuarantees.get(position);
 
+            holder.iv_logo.setImageResource(getIcon(g.isDecided(), g.isApproved()));
             holder.tv_decision.setText(getDecisionText(g.isDecided(), g.isApproved()));
+            holder.tv_decision.setBackgroundColor(getDecisionColor(g.isDecided(), g.isApproved()));
             holder.tv_title.setText(getTitleText(g.getRequester_name(), g.getAmount()));
+            holder.tv_time_ago.setText(Formatter.TimeFormatter(g.getDate_created()));
+
         }
 
+    }
+
+    private int getIcon(boolean decided, boolean approved) {
+        int image = R.drawable.ic_request;
+
+        if(!decided)
+            image = R.drawable.ic_request;
+        if(decided && approved)
+            image = R.drawable.ic_approve;
+        if(decided && !approved)
+            image = R.drawable.ic_decline;
+
+        return image;
+    }
+
+    private int getDecisionColor(boolean decided, boolean approved) {
+        int color = Color.parseColor("#2196F3");
+
+        if(!decided)
+            color = Color.parseColor("#2196F3");
+        if(decided && approved)
+            color = Color.parseColor("#4CAF50");
+        if(decided && !approved)
+            color = Color.parseColor("#f44336");
+
+        return color;
     }
 
     private SpannableStringBuilder getTitleText(String requester_name, String amount) {

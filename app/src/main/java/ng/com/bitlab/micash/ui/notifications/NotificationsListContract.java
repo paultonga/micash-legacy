@@ -13,6 +13,8 @@ public interface NotificationsListContract {
     interface Presenter {
 
         void loadNotifications();
+
+        void delete(Notification n);
     }
 
     interface View {

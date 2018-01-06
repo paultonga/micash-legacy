@@ -15,19 +15,11 @@ public class Guarantee {
     private long date_created;
     private boolean isDecided;
     private boolean isApproved;
-    private boolean isRepaid;
 
     public boolean isApproved() {
         return isApproved;
     }
 
-    public boolean isRepaid() {
-        return isRepaid;
-    }
-
-    public void setRepaid(boolean repaid) {
-        isRepaid = repaid;
-    }
 
     public void setApproved(boolean approved) {
         isApproved = approved;

@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,13 +22,19 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ng.com.bitlab.micash.R;
+import ng.com.bitlab.micash.listeners.OnNotificationTouchedListener;
 import ng.com.bitlab.micash.models.Notification;
+import ng.com.bitlab.micash.ui.guarantor.GuarantorActivity;
 import ng.com.bitlab.micash.ui.loans.LoansListAdapter;
+import ng.com.bitlab.micash.ui.message.ThreadActivity;
+import ng.com.bitlab.micash.ui.transactions.TransactionsActivity;
+import ng.com.bitlab.micash.utils.NotificationRecyclerItemTH;
+import ng.com.bitlab.micash.utils.RecyclerItemTouchHelper;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NotificationsListFragment extends Fragment implements NotificationsListContract.View {
+public class NotificationsListFragment extends Fragment implements OnNotificationTouchedListener, NotificationsListContract.View, NotificationRecyclerItemTH.NotificationRecyclerItemTHListener {
 
     NotificationsListContract.Presenter mPresenter;
     View mRootView;
@@ -55,12 +62,15 @@ public class NotificationsListFragment extends Fragment implements Notifications
         //setup Adapter
         List<Notification> temp = new ArrayList<>();
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-        mAdapter = new NotificationsListAdapter(temp, getActivity());
+        mAdapter = new NotificationsListAdapter(temp, getActivity(), this);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
         IntentFilter intentFilter = new IntentFilter("com.ng.bitlab.micash.CUSTOM_EVENT");
         LocalBroadcastManager.getInstance(this.getContext()).registerReceiver(onMessage, intentFilter);
+
+        ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new NotificationRecyclerItemTH(0, ItemTouchHelper.LEFT, this);
+        new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(mRecyclerView);
 
         return mRootView;
     }
@@ -90,5 +100,28 @@ public class NotificationsListFragment extends Fragment implements Notifications
     public void onResume() {
         super.onResume();
         mPresenter.loadNotifications();
+    }
+
+    @Override
+    public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction, int position) {
+        if(viewHolder instanceof NotificationsListAdapter.ViewHolder){
+            Notification n = ((NotificationsListAdapter.ViewHolder) viewHolder).getAtPosition(position);
+            mPresenter.delete(n);
+        }
+    }
+
+    @Override
+    public void onNotificationTouched(Notification n) {
+        if(n.getTitle().contains("Guarantor Request Received")){
+            startActivity(new Intent(getContext(), GuarantorActivity.class));
+        }
+        else if(n.getTitle().contains("Guarantor Request Declined")){
+            startActivity(new Intent(getContext(), TransactionsActivity.class));
+        }
+        else if(n.getTitle().contains("Message")){
+            startActivity(new Intent(getContext(), ThreadActivity.class));
+        }else {
+            //do nothing
+        }
     }
 }

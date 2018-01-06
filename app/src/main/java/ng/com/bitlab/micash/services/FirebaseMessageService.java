@@ -35,10 +35,10 @@ public class FirebaseMessageService extends FirebaseMessagingService {
         Log.d("Message", "Message received ["+ remoteMessage +"]");
         String title = remoteMessage.getNotification().getTitle();
         String detail = remoteMessage.getNotification().getBody();
-        String identifier = remoteMessage.getData().get("identifier");
+        //String identifier = remoteMessage.getData().get("identifier");
 
         storeNotification(title, detail);
-        showNotification(remoteMessage, identifier);
+        showNotification(remoteMessage);
         broadcastIntent();
 
     }
@@ -63,9 +63,9 @@ public class FirebaseMessageService extends FirebaseMessagingService {
 
     }
 
-    private void showNotification(RemoteMessage remoteMessage, String identifier){
+    private void showNotification(RemoteMessage remoteMessage){
         //Create Notification
-        Intent intent = getUserIntent(identifier);
+        Intent intent = new Intent(MiCashApplication.getContext(), MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 1,
                 intent, PendingIntent.FLAG_ONE_SHOT);

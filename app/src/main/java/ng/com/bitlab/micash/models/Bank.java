@@ -16,6 +16,9 @@ public class Bank {
         this.bvn = bvn;
     }
 
+    public Bank() {
+    }
+
     public String getName() {
         return name;
     }

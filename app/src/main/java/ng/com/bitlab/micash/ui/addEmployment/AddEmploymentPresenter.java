@@ -41,8 +41,8 @@ public class AddEmploymentPresenter extends BasePresenter<AddEmploymentContract.
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 if(databaseError == null){
-                    ProfileRecord p = new ProfileRecord(profile);
-                    p.save();
+                    //ProfileRecord p = new ProfileRecord(profile);
+                    //p.save();
                     mPref.setEmploymentSaved(Constants.DONE);
                     view.hideDialog();
                     view.showToast("Your data was saved successfully.");

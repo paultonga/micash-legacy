@@ -28,4 +28,10 @@ public class NotificationsListPresenter implements NotificationsListContract.Pre
             mView.showEmptyLayout();
         }
     }
+
+    @Override
+    public void delete(Notification n) {
+        n.delete();
+        loadNotifications();
+    }
 }
