@@ -47,6 +47,7 @@ import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.models.Guarantor;
 import ng.com.bitlab.micash.models.Notification;
+import ng.com.bitlab.micash.models.Profile;
 import ng.com.bitlab.micash.models.User;
 import ng.com.bitlab.micash.ui.cards.CardsActivity;
 import ng.com.bitlab.micash.ui.common.BaseView;
@@ -170,7 +171,7 @@ public class MainActivity extends BaseView {
 
         initViewPager();
         Utility.updateInstanceID();
-        //testDataCopy();
+        getProfile();
 
     }
 
@@ -481,6 +482,31 @@ public class MainActivity extends BaseView {
         }
 
         return _sb.toString();
+    }
+
+    public void getProfile() {
+        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseDatabase.getInstance().getReference()
+                .child("profile")
+                .child(userID)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if(dataSnapshot != null){
+                            Profile profile = dataSnapshot.getValue(Profile.class);
+                            if (profile != null){
+                                mPref.setEmploymentSaved(Constants.DONE);
+                            }
+                        }else {
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
     }
 
 }

@@ -85,8 +85,9 @@
                 android:layout_toStartOf="@id/activity_thread_send_fab"
                 android:background="@drawable/chip_chat"
                 android:hint="Send a message"
-                android:inputType="textCapSentences|textAutoComplete|textAutoCorrect"
+                android:inputType="textCapSentences|textAutoComplete|textAutoCorrect|textMultiLine"
                 android:padding="12dp"
+                android:scrollHorizontally="false"
                 android:textColor="@color/colorPrimaryText"
                 android:textSize="@dimen/_14ssp"
                 android:layout_toLeftOf="@id/activity_thread_send_fab" />

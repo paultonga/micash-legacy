@@ -81,7 +81,7 @@
             android:textColorHint="@color/whiteText">
 
             <EditText
-                android:backgroundTint="@color/whiteText"
+                app:backgroundTint="@color/whiteText"
                 android:textColor="@color/whiteText"
                 android:id="@+id/input_resume_password"
                 android:layout_width="@dimen/_250sdp"

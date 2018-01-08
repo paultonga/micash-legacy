@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import cc.cloudist.acplibrary.ACProgressConstant;
 import cc.cloudist.acplibrary.ACProgressFlower;
+import ng.com.bitlab.micash.R;
 
 
 /**
@@ -60,7 +61,7 @@ public abstract class BaseView extends AppCompatActivity implements IBaseVew  {
     public void onBackPressed() {
         if(isTaskRoot()) {
             new AlertDialog.Builder(this)
-                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setIcon(R.drawable.ic_launcher_micash)
                     .setTitle("Alert")
                     .setMessage("Are you sure you want to close miCash?")
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {

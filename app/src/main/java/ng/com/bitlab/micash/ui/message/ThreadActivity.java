@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -61,6 +62,17 @@ public class ThreadActivity extends AppCompatActivity implements ThreadContract.
 
 
         mPresenter.loadMessages();
+
+        inputMessage.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(view.hasFocus()){
+                    //mRecycler.scrollToPosition(mAdapter.getItemCount() - 1);
+                    Toast.makeText(ThreadActivity.this, "Has focus", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+        });
     }
 
     @Override
@@ -106,6 +118,7 @@ public class ThreadActivity extends AppCompatActivity implements ThreadContract.
         emptyThreadTextView.setVisibility(View.GONE);
         mRecycler.setVisibility(View.VISIBLE);
         mAdapter.refreshData(messages);
+        mRecycler.scrollToPosition(mAdapter.getItemCount() - 1);
     }
 
     @Override

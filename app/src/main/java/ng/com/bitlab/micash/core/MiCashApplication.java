@@ -2,6 +2,7 @@ package ng.com.bitlab.micash.core;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 
 
 import com.orm.SugarApp;
@@ -52,4 +53,9 @@ public class MiCashApplication extends SugarApp {
 
     public static AppPreference getPreference() { return mPreferences; }
 
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 }
