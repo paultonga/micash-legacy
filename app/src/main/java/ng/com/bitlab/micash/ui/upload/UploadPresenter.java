@@ -84,6 +84,7 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
     }
     @Override
     public void saveImageToProfile(Uri s) {
+        final String uri = s.toString();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                 .setPhotoUri(s)
@@ -95,10 +96,7 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "User profile updated.");
-                            view.hideDialog();
-                            view.showToast("Image saved successfully.");
-                            //view.showGetStartedLayout();
-                            view.startMainActivity();
+                            saveToUserProfile(uri);
                         } else {
                             view.hideDialog();
                             view.showToast("We encountered an error. Please try again.");
@@ -115,6 +113,32 @@ public class UploadPresenter extends BasePresenter<UploadContract.View>
             return username.replaceAll(" ", "_").toLowerCase() + ".jpg";
         }
         return "anonymous.jpg";
+    }
+
+    private void saveToUserProfile(final String uri){
+        String uuid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        final AppPreference pref = MiCashApplication.getPreference();
+
+        FirebaseDatabase.getInstance().getReference()
+                .child("users")
+                .child(uuid)
+                .child("profileImage")
+                .setValue(uri)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            view.hideDialog();
+                            pref.setProfile(uri);
+                            view.showToast("Image saved");
+                            view.startMainActivity();
+                        } else {
+                            view.hideDialog();
+                            view.showToast(task.getException().getMessage());
+                        }
+
+                    }
+                });
     }
 
     @Override

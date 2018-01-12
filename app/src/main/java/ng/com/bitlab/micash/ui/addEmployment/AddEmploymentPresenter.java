@@ -9,7 +9,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import ng.com.bitlab.micash.common.AppPreference;
 import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.models.Profile;
-import ng.com.bitlab.micash.models.ProfileRecord;
 import ng.com.bitlab.micash.ui.common.BasePresenter;
 import ng.com.bitlab.micash.utils.Constants;
 
@@ -41,8 +40,7 @@ public class AddEmploymentPresenter extends BasePresenter<AddEmploymentContract.
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 if(databaseError == null){
-                    ProfileRecord p = new ProfileRecord(profile);
-                    p.save();
+
                     mPref.setEmploymentSaved(Constants.DONE);
                     view.hideDialog();
                     view.showToast("Your data was saved successfully.");

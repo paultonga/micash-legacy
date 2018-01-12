@@ -69,7 +69,7 @@
             android:textColorHint="@color/whiteText">
 
             <EditText
-                android:backgroundTint="@color/whiteText"
+                app:backgroundTint="@color/whiteText"
                 android:textColor="@color/whiteText"
                 android:id="@+id/input_forgot_email"
                 android:layout_width="@dimen/_250sdp"

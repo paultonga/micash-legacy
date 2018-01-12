@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.github.pinball83:masked-edittext-1.0.3">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/masked-edittext-1.0.3.aar/3a81c872a1066f2664e60ef6798bbbbe/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/masked-edittext-1.0.3.aar/3a81c872a1066f2664e60ef6798bbbbe/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/masked-edittext-1.0.3.aar/3d8cbe96c30ff84b2bbd32a54057cff4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/masked-edittext-1.0.3.aar/3d8cbe96c30ff84b2bbd32a54057cff4/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

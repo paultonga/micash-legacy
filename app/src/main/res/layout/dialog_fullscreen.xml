@@ -54,6 +54,8 @@
         android:textColor="@color/colorPrimaryText"
         android:layout_centerInParent="true"
         android:maxLines="200"
-        android:scrollbars="vertical"/>
+        android:scrollbars="vertical"
+        android:paddingEnd="@dimen/_8sdp"
+        android:paddingStart="@dimen/_10sdp" />
 
 </RelativeLayout>

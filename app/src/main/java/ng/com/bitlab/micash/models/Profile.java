@@ -3,7 +3,6 @@ package ng.com.bitlab.micash.models;
 import android.support.annotation.Nullable;
 
 import com.google.gson.annotations.Expose;
-import com.orm.SugarRecord;
 
 /**
  * Created by Paul on 10/06/2017.

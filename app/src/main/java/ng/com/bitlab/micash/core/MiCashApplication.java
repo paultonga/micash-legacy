@@ -2,9 +2,10 @@ package ng.com.bitlab.micash.core;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 
 
-import com.orm.SugarApp;
+import com.google.firebase.database.FirebaseDatabase;
 
 import net.orange_box.storebox.StoreBox;
 
@@ -17,7 +18,7 @@ import ng.com.bitlab.micash.common.FontsOverride;
  * Created by Paul on 12/06/2017.
  */
 
-public class MiCashApplication extends SugarApp {
+public class MiCashApplication extends Application {
 
 
     private static Context context;
@@ -39,6 +40,8 @@ public class MiCashApplication extends SugarApp {
         context = getApplicationContext();
 
         mPreferences = StoreBox.create(context, AppPreference.class);
+
+        //FirebaseDatabase.getInstance().setPersistenceEnabled(true);
     }
 
     public static Context getContext(){
@@ -52,4 +55,9 @@ public class MiCashApplication extends SugarApp {
 
     public static AppPreference getPreference() { return mPreferences; }
 
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 }

@@ -7,6 +7,7 @@
     tools:context="ng.com.bitlab.micash.ui.transactions.TransactionsActivity">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -20,13 +21,22 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/transaction_list_recyclerview"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar_layout"
+        android:scrollbars="vertical"
+        android:visibility="gone"/>
+
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
-        android:id="@+id/empty_ledger_list"
+        android:id="@+id/empty_transaction_list"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:visibility="visible">
+        android:visibility="gone">
 
     <ImageView
         android:id="@+id/iv_error_icon"
@@ -43,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/tv_error_detail"
-        android:text="No Transactions"
+        android:text="Transactions"
         android:textStyle="bold"
         android:textSize="@dimen/_18ssp"
         android:layout_centerHorizontal="true" />
@@ -52,12 +62,45 @@
         android:id="@+id/tv_error_detail"
         android:layout_width="@dimen/_200sdp"
         android:layout_height="wrap_content"
-        android:text="You have not carried out any transactions."
+        android:text="You have no completed transactions."
         android:textStyle="normal"
         android:textSize="@dimen/_11ssp"
         android:textAlignment="center"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/transaction_loading_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/progress"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_centerInParent="true"
+            app:indicatorName="BallClipRotateIndicator"
+            android:layout_above="@+id/bank_loading_text"
+            app:indicatorColor="@android:color/black"/>
+
+
+        <TextView
+            android:id="@+id/transaction_loading_text"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:text="Loading transaction records..."
+            android:textStyle="normal"
+            android:layout_below="@+id/progress"
+            android:textSize="@dimen/_11ssp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true" />
+
 
     </RelativeLayout>
 

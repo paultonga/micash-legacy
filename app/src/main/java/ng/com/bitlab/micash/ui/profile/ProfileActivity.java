@@ -2,24 +2,24 @@ package ng.com.bitlab.micash.ui.profile;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.preference.PreferenceManager;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.Gson;
-import com.orm.query.Select;
 import com.squareup.picasso.Picasso;
 
-import java.util.List;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,14 +28,12 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.common.AppPreference;
 import ng.com.bitlab.micash.core.MiCashApplication;
-import ng.com.bitlab.micash.models.AccountRecord;
-import ng.com.bitlab.micash.models.ProfileRecord;
+import ng.com.bitlab.micash.models.Profile;
 import ng.com.bitlab.micash.models.User;
-import ng.com.bitlab.micash.ui.addContact.AddContactActivity;
 import ng.com.bitlab.micash.ui.addEmployment.AddEmploymentActivity;
-import ng.com.bitlab.micash.ui.addPersonalDetails.addPersonalDetailsDialog;
+import ng.com.bitlab.micash.ui.common.BaseView;
 
-public class ProfileActivity extends AppCompatActivity implements ProfileContract.View {
+public class ProfileActivity extends BaseView implements ProfileContract.View {
 
     @BindView(R.id.employment_layout) LinearLayout employmentLayout;
 
@@ -58,6 +56,7 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
 
     AppPreference mPref;
     ProfileContract.Presenter mPresenter;
+    private static final int PICK_IMAGE_REQUEST = 1;
 
 
     @Override
@@ -84,6 +83,7 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
         mPref = MiCashApplication.getPreference();
         initLayout();
         mPresenter.getPhoneNumber();
+        mPresenter.getProfile();
     }
 
     @Override
@@ -100,11 +100,8 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
     }
 
     @Override
-    public void showDataLayout() {
-
-        ProfileRecord pr = mPresenter.getProfile();
-
-        if(pr != null) {
+    public void showDataLayout(Profile pr) {
+        if (pr != null) {
             employmentLayout.setVisibility(View.VISIBLE);
             addEmploymentButton.setVisibility(View.GONE);
             editEmployment.setVisibility(View.VISIBLE);
@@ -116,19 +113,55 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
             tvIncome.setText(income);
             tvState.setText(pr.getState());
             tvResidential.setText(pr.getResidential());
-
-
         } else {
             showEmptyLayout();
         }
-
-
 
     }
 
     @Override
     public void setPhoneNumber(String phone) {
         tvPhone.setText(phone);
+    }
+
+    @Override
+    @OnClick(R.id.iv_recycler_icon)
+    public void onProfileImageTouched() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
+
+    }
+
+    private void startUpload(){
+        if(isConnected){
+            profileImage.setDrawingCacheEnabled(true);
+            profileImage.buildDrawingCache();
+            Bitmap bitmap = profileImage.getDrawingCache();
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            byte[] data = baos.toByteArray();
+            mPresenter.uploadProfileImage(data);
+
+        }else {
+            showToast("No internet connection");
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            Uri uri = data.getData();
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                profileImage.setImageBitmap(bitmap);
+                startUpload();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
@@ -145,25 +178,33 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
     }
 
     private void initLayout(){
-        if(mPref.getEmploymentSaved() == null){
-            showEmptyLayout();
-        } else {
-            showDataLayout();
-        }
-
+        showEmptyLayout();
 
         User user = getUserFromPreference();
 
         tvName.setText(user.getFullName());
         tvEmail.setText(user.getEmail());
 
+        Uri uri = FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl();
+
 
         Picasso.with(this)
-                .load(Uri.parse(user.getProfileImage()))
+                .load(uri)
                 .placeholder(R.drawable.profile)
                 .error(R.drawable.profile)
                 .into(profileImage);
     }
 
+    @Override
+    public void refreshImage() {
+        Uri uri = FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl();
+
+
+        Picasso.with(this)
+                .load(uri)
+                .placeholder(R.drawable.profile)
+                .error(R.drawable.profile)
+                .into(profileImage);
     }
+}
 

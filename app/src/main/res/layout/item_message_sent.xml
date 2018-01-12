@@ -35,6 +35,6 @@
         android:paddingStart="16dp"
         android:text="Placeholder"
         android:textColor="@color/whiteText"
-        android:textSize="14sp" />
+        android:textSize="@dimen/_14ssp" />
 
 </LinearLayout>

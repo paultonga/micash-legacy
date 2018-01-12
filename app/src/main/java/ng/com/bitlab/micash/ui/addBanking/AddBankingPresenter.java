@@ -1,17 +1,10 @@
 package ng.com.bitlab.micash.ui.addBanking;
 
-import android.provider.ContactsContract;
-import android.util.Log;
+import android.support.annotation.Nullable;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.joda.time.DateTime;
@@ -22,22 +15,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ng.com.bitlab.micash.common.AppPreference;
-import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.data.SampleLoansData;
 import ng.com.bitlab.micash.listeners.FirebaseDataListener;
-import ng.com.bitlab.micash.models.Account;
-import ng.com.bitlab.micash.models.AccountRecord;
+import ng.com.bitlab.micash.listeners.FirebaseQueryListener;
 import ng.com.bitlab.micash.models.Bank;
-import ng.com.bitlab.micash.models.BankRecord;
-import ng.com.bitlab.micash.models.Card;
 import ng.com.bitlab.micash.models.Guarantee;
 import ng.com.bitlab.micash.models.Guarantor;
 import ng.com.bitlab.micash.models.Interest;
 import ng.com.bitlab.micash.models.Loan;
 import ng.com.bitlab.micash.models.Request;
 import ng.com.bitlab.micash.ui.common.BasePresenter;
-import ng.com.bitlab.micash.ui.common.IBasePresenter;
-import ng.com.bitlab.micash.utils.Constants;
 
 /**
  * Created by paul on 12/3/17.
@@ -62,34 +49,38 @@ public class AddBankingPresenter extends BasePresenter<AddBankingContract.View> 
 
     @Override
     public void saveBanking(final Bank bank) {
-        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        mRepository.saveBankAccount(userID, bank, new FirebaseDataListener() {
-            @Override
-            public void onStart() {
-                view.updateProcessingMessage("Saving your banking details and finalizing");
-            }
 
-            @Override
-            public void onSuccess(DataSnapshot ds) {
+        if (view.isNewAccount()) {
+            String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-            }
+            mRepository.saveBankAccount(userID, bank, new FirebaseDataListener() {
+                @Override
+                public void onStart() {
+                    view.updateProcessingMessage("Saving your banking details and finalizing");
+                }
 
-            @Override
-            public void onFailed(DatabaseError de) {
-                view.showErrorLayout(de.getMessage());
-            }
+                @Override
+                public void onSuccess(DataSnapshot ds) {
 
-            @Override
-            public void onComplete(DatabaseError de) {
-                if(de == null){
-                    BankRecord br = new BankRecord(bank);
-                    br.save();
-                    view.showSuccessLayout();
-                } else {
+                }
+
+                @Override
+                public void onFailed(DatabaseError de) {
                     view.showErrorLayout(de.getMessage());
                 }
-            }
-        });
+
+                @Override
+                public void onComplete(DatabaseError de) {
+                    if (de == null) {
+                        view.showSuccessLayout();
+                    } else {
+                        view.showErrorLayout(de.getMessage());
+                    }
+                }
+            });
+        }else {
+            view.showSuccessLayout();
+        }
     }
 
     @Override
@@ -105,8 +96,31 @@ public class AddBankingPresenter extends BasePresenter<AddBankingContract.View> 
     }
 
     @Override
-    public List<BankRecord> getAccounts() {
-        return BankRecord.listAll(BankRecord.class);
+    public void getAccounts() {
+
+        String uuid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        mRepository.getBankAccounts(uuid, new FirebaseQueryListener() {
+            @Override
+            public void onStart() {
+                view.showLoadingAccount();
+            }
+
+            @Override
+            public void onFinish(@Nullable DataSnapshot dataSnapshot, @Nullable DatabaseError databaseError) {
+                if (databaseError == null){
+                    List<Bank> banks = new ArrayList<>();
+                    for (DataSnapshot ds: dataSnapshot.getChildren()){
+                        Bank bank = ds.getValue(Bank.class);
+                        banks.add(bank);
+                    }
+                    view.initializeAccountSpinner(banks);
+                } else {
+                    view.initializeAccountSpinner(null);
+                    view.showToast(databaseError.getMessage());
+                }
+            }
+        });
     }
 
     @Override
@@ -123,7 +137,7 @@ public class AddBankingPresenter extends BasePresenter<AddBankingContract.View> 
             @Override
             public void onSuccess(DataSnapshot ds) {
                 if(ds.exists()){
-                    view.showErrorLayout("Sorry, you already have an active loan.");
+                    view.showErrorLayout("Sorry, you already have an active loan that is either being processed or pending refund.");
                 } else {
                     isEmailValid(email, amount, loan, interest, bank);
                 }
@@ -153,6 +167,7 @@ public class AddBankingPresenter extends BasePresenter<AddBankingContract.View> 
         guarantee.setDate_created(DateTime.now().getMillis());
         guarantee.setDecided(false);
         guarantee.setApproved(false);
+        guarantee.setInterest(interest);
 
         mRepository.sendGuarantorRequest(guarantor, guarantee, new FirebaseDataListener() {
             @Override
@@ -178,12 +193,14 @@ public class AddBankingPresenter extends BasePresenter<AddBankingContract.View> 
                     req.setLoan(loan);
                     req.setInterest(interest);
                     req.setBank(bank);
-                    req.setGuarantor(guarantor.getEmail());
+                    req.setGuarantor(guarantor.getUuid());
                     req.setDate_created(DateTime.now().getMillis());
                     req.setToken(FirebaseInstanceId.getInstance().getToken());
                     req.setUser_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
                     req.setApproved(false);
-                    req.setGuaranteed(false);
+                    req.setRepaid(false);
+                    req.setNew(true);
+                    req.setDecided(false);
                     requestLoan(req);
                 } else {
                     view.showErrorLayout(de.getMessage());
@@ -267,7 +284,7 @@ public class AddBankingPresenter extends BasePresenter<AddBankingContract.View> 
                 if(count >= 0 && count < 3){
                     sendGuarantorRequest(g, amount, loan, interest,bank);
                 } else {
-                    view.showErrorLayout("Your guarantor has reached maximum number of requests.");
+                    view.showErrorLayout("Your guarantor has reached maximum number of requests. Please yse a different guarantor.");
                 }
             }
 

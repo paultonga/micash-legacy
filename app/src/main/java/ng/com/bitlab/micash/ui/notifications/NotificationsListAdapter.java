@@ -1,23 +1,21 @@
 package ng.com.bitlab.micash.ui.notifications;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.util.Formatter;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ng.com.bitlab.micash.R;
-import ng.com.bitlab.micash.models.Notification;
-import ng.com.bitlab.micash.ui.loans.LoansListAdapter;
+import ng.com.bitlab.micash.listeners.OnNotificationTouchedListener;
+import ng.com.bitlab.micash.models.Notif;
 
 /**
  * Created by Paul on 12/06/2017.
@@ -25,14 +23,16 @@ import ng.com.bitlab.micash.ui.loans.LoansListAdapter;
 
 public class NotificationsListAdapter extends RecyclerView.Adapter<NotificationsListAdapter.ViewHolder> {
 
-    private List<Notification> mNotifications;
+    private List<Notif> mNotifications;
     private final Context mContext;
     private boolean shouldHighlightSelectedItem = false;
     private int selectedPosition = 0;
+    private OnNotificationTouchedListener mListener;
 
-    public NotificationsListAdapter(List<Notification> mNotifications, Context mContext) {
+    public NotificationsListAdapter(List<Notif> mNotifications, Context mContext, OnNotificationTouchedListener mListener) {
         this.mNotifications = mNotifications;
         this.mContext = mContext;
+        this.mListener = mListener;
     }
 
     @Override
@@ -47,10 +47,10 @@ public class NotificationsListAdapter extends RecyclerView.Adapter<Notifications
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         if(mNotifications != null) {
-            Notification n = mNotifications.get(position);
+            Notif n = mNotifications.get(position);
             holder.title.setText(n.getTitle());
-            holder.detail.setText(n.getDetail());
-            holder.time.setText(ng.com.bitlab.micash.utils.Formatter.TimeFormatter(n.getDateSent()));
+            holder.detail.setText(n.getDescription());
+            holder.time.setText(ng.com.bitlab.micash.utils.Formatter.TimeFormatter(n.getCreated()));
 
             if (n.isRead()) {
                 holder.title.setTextColor(Color.parseColor("#696969"));
@@ -63,22 +63,15 @@ public class NotificationsListAdapter extends RecyclerView.Adapter<Notifications
                     if (selectedPosition == position) {
                         holder.title.setTextColor(Color.parseColor("#696969"));
                         holder.detail.setTextColor(Color.parseColor("#696969"));
-                        //holder.title.setTypeface(holder.detail.getTypeface(), Typeface.NORMAL);
-                        //holder.detail.setTypeface(holder.detail.getTypeface(), Typeface.NORMAL);
-                        //holder.time.setTypeface(holder.time.getTypeface(), Typeface.NORMAL);
+
                     } else {
                         holder.title.setTextColor(Color.parseColor("#000000"));
                         holder.detail.setTextColor(Color.parseColor("#000000"));
-                        //holder.title.setTypeface(holder.title.getTypeface(), Typeface.BOLD);
-                        //holder.detail.setTypeface(holder.detail.getTypeface(), Typeface.BOLD);
-                        //holder.time.setTypeface(holder.time.getTypeface(), Typeface.BOLD);
+
                     }
                 } else {
                     holder.title.setTextColor(Color.parseColor("#000000"));
                     holder.detail.setTextColor(Color.parseColor("#000000"));
-                    //holder.title.setTypeface(holder.title.getTypeface(), Typeface.BOLD);
-                    //holder.detail.setTypeface(holder.detail.getTypeface(), Typeface.BOLD);
-                    //holder.time.setTypeface(holder.time.getTypeface(), Typeface.BOLD);
                 }
 
             }
@@ -90,16 +83,21 @@ public class NotificationsListAdapter extends RecyclerView.Adapter<Notifications
         return mNotifications == null ? 0 : mNotifications.size();
     }
 
-    public void refreshData(List<Notification> notifications){
+    public void refreshData(List<Notif> notifications){
         mNotifications = notifications;
         notifyDataSetChanged();
     }
+
+
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         @BindView(R.id.notification_title) TextView title;
         @BindView(R.id.notification_detail) TextView detail;
         @BindView(R.id.notification_time) TextView time;
+        public @BindView(R.id.view_foreground) RelativeLayout viewForeground;
+        public @BindView(R.id.view_background) RelativeLayout viewBackground;
+
 
         public ViewHolder(View itemView) {
 
@@ -112,11 +110,11 @@ public class NotificationsListAdapter extends RecyclerView.Adapter<Notifications
         public void onClick(View view) {
             shouldHighlightSelectedItem = true;
             selectedPosition = getLayoutPosition();
-            Notification n = mNotifications.get(selectedPosition);
-            n.setRead(true);
-            n.save();
+            mListener.onNotificationTouched(getAtPosition(selectedPosition));
             notifyDataSetChanged();
-
+        }
+        public Notif getAtPosition(int position){
+            return mNotifications.get(position);
         }
     }
 }

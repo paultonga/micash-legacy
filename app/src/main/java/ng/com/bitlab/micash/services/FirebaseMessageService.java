@@ -10,14 +10,21 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+
+import org.greenrobot.eventbus.EventBus;
+import org.joda.time.DateTime;
 
 import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.common.MainActivity;
 import ng.com.bitlab.micash.core.MiCashApplication;
-import ng.com.bitlab.micash.listeners.OnNotificationReceivedListener;
-import ng.com.bitlab.micash.models.Notification;
+import ng.com.bitlab.micash.events.NotificationEvent;
+import ng.com.bitlab.micash.models.Notif;
 import ng.com.bitlab.micash.ui.guarantor.GuarantorActivity;
 import ng.com.bitlab.micash.ui.message.ThreadActivity;
 
@@ -35,11 +42,11 @@ public class FirebaseMessageService extends FirebaseMessagingService {
         Log.d("Message", "Message received ["+ remoteMessage +"]");
         String title = remoteMessage.getNotification().getTitle();
         String detail = remoteMessage.getNotification().getBody();
-        String identifier = remoteMessage.getData().get("identifier");
 
-        storeNotification(title, detail);
-        showNotification(remoteMessage, identifier);
-        broadcastIntent();
+        //storeNotification(title, detail);
+        saveNotif(remoteMessage);
+        //showNotification(remoteMessage);
+        //broadcastIntent();
 
     }
 
@@ -54,18 +61,43 @@ public class FirebaseMessageService extends FirebaseMessagingService {
 
     private void storeNotification(String title, String detail){
 
-        Notification notification = new Notification(title,
-                detail,
-                org.joda.time.DateTime.now().getMillis(),
-                false,
-                "welcome");
-        notification.save();
 
     }
 
-    private void showNotification(RemoteMessage remoteMessage, String identifier){
-        //Create Notification
-        Intent intent = getUserIntent(identifier);
+    private Notif getNotif(String  title, String description){
+        return  new Notif(title, description,
+                DateTime.now().getMillis(), false);
+    }
+
+    public void publishNotif(){
+
+        EventBus.getDefault().post(new NotificationEvent());
+    }
+
+    private void saveNotif(final RemoteMessage rm){
+        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        Notif notif = new Notif(rm.getNotification().getTitle(), rm.getNotification().getBody(),
+                DateTime.now().getMillis(), false);
+        FirebaseDatabase.getInstance().getReference()
+                .child("notifications")
+                .child(userID)
+                .push()
+                .setValue(notif, new DatabaseReference.CompletionListener() {
+                    @Override
+                    public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                        if(databaseError == null){
+                            //publishNotif();
+                            broadcastIntent();
+                            //showNotification(rm);
+                        }else {
+                            Log.d("Saving Notif", databaseError.getMessage());
+                        }
+                    }
+                });
+    }
+
+    private void showNotification(RemoteMessage remoteMessage){
+        Intent intent = new Intent(MiCashApplication.getContext(), MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 1,
                 intent, PendingIntent.FLAG_ONE_SHOT);

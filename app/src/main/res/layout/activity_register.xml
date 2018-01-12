@@ -68,7 +68,7 @@
 
             <EditText
                 android:layout_gravity="center"
-                android:backgroundTint="@color/whiteText"
+                app:backgroundTint="@color/whiteText"
                 android:id="@+id/editTextName"
                 android:layout_width="@dimen/_250sdp"
                 android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
 
             <EditText
                 android:layout_gravity="center"
-                android:backgroundTint="@color/whiteText"
+                app:backgroundTint="@color/whiteText"
                 android:textColor="@color/whiteText"
                 android:id="@+id/editTextEmail"
                 android:layout_width="@dimen/_250sdp"
@@ -107,7 +107,7 @@
 
             <EditText
                 android:layout_gravity="center"
-                android:backgroundTint="@color/whiteText"
+                app:backgroundTint="@color/whiteText"
                 android:textColor="@color/whiteText"
                 android:id="@+id/editTextPassword"
                 android:layout_width="@dimen/_250sdp"
@@ -151,7 +151,7 @@
 
             <CheckBox
                 android:id="@+id/check_agreement"
-                android:buttonTint="@color/whiteText"
+                app:buttonTint="@color/whiteText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="top"/>

@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.intuit.ssp:ssp-android-1.0.4">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ssp-android-1.0.4.aar/994ee996cc78e5874c24604f4bfc1c8d/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ssp-android-1.0.4.aar/994ee996cc78e5874c24604f4bfc1c8d/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ssp-android-1.0.4.aar/b1be07361e6a1733fba3aa71fef0af1e/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ssp-android-1.0.4.aar/b1be07361e6a1733fba3aa71fef0af1e/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -1,15 +1,10 @@
 package ng.com.bitlab.micash.ui.addBanking;
 
-import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.List;
 
 import ng.com.bitlab.micash.listeners.FirebaseDataListener;
-import ng.com.bitlab.micash.models.Account;
-import ng.com.bitlab.micash.models.AccountRecord;
+import ng.com.bitlab.micash.listeners.FirebaseQueryListener;
 import ng.com.bitlab.micash.models.Bank;
-import ng.com.bitlab.micash.models.BankRecord;
-import ng.com.bitlab.micash.models.Card;
 import ng.com.bitlab.micash.models.Guarantee;
 import ng.com.bitlab.micash.models.Guarantor;
 import ng.com.bitlab.micash.models.Interest;
@@ -27,6 +22,8 @@ public interface AddBankingContract {
     interface View extends IBaseVew{
 
         void showErrorLayout(String error);
+
+        boolean isNewAccount();
 
         void startNextActivity();
 
@@ -46,7 +43,9 @@ public interface AddBankingContract {
 
         void initializeInterestSpinner();
 
-        void initializeAccountSpinner();
+        void showLoadingAccount();
+
+        void initializeAccountSpinner(List<Bank> records);
     }
 
     interface Presenter extends IBasePresenter<View> {
@@ -56,7 +55,7 @@ public interface AddBankingContract {
 
         List<Interest> getInterests(String LoanID);
 
-        List<BankRecord> getAccounts();
+        void getAccounts();
 
         void startLoanRequest(String amount, Loan loan, Interest interest, Bank bank, String email);
 
@@ -78,6 +77,8 @@ public interface AddBankingContract {
         void saveBankAccount(String userID, Bank bank, FirebaseDataListener listener);
 
         void checkGuarantorEmail(String emailMD5, FirebaseDataListener listener);
+
+        void getBankAccounts(String uuid, FirebaseQueryListener listener);
 
     }
 }

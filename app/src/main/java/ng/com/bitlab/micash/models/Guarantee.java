@@ -15,19 +15,20 @@ public class Guarantee {
     private long date_created;
     private boolean isDecided;
     private boolean isApproved;
-    private boolean isRepaid;
+    private Interest interest;
+
+    public Interest getInterest() {
+        return interest;
+    }
+
+    public void setInterest(Interest interest) {
+        this.interest = interest;
+    }
 
     public boolean isApproved() {
         return isApproved;
     }
 
-    public boolean isRepaid() {
-        return isRepaid;
-    }
-
-    public void setRepaid(boolean repaid) {
-        isRepaid = repaid;
-    }
 
     public void setApproved(boolean approved) {
         isApproved = approved;

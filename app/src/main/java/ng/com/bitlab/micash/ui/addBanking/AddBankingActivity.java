@@ -1,46 +1,25 @@
 package ng.com.bitlab.micash.ui.addBanking;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.aldoapps.autoformatedittext.AutoFormatEditText;
-import com.blackcat.currencyedittext.CurrencyEditText;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.satsuware.usefulviews.LabelledSpinner;
-
-import org.w3c.dom.Text;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Currency;
 import java.util.List;
 import java.util.Locale;
 
@@ -49,19 +28,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.common.MainActivity;
-import ng.com.bitlab.micash.models.Account;
-import ng.com.bitlab.micash.models.AccountRecord;
 import ng.com.bitlab.micash.models.Bank;
-import ng.com.bitlab.micash.models.BankRecord;
-import ng.com.bitlab.micash.models.Card;
 import ng.com.bitlab.micash.models.Interest;
 import ng.com.bitlab.micash.models.Loan;
-import ng.com.bitlab.micash.ui.addContact.AddContactActivity;
 import ng.com.bitlab.micash.ui.common.BaseView;
-import ng.com.bitlab.micash.utils.CreditCardEditText;
-import ng.com.bitlab.micash.utils.CreditCardExpiryTextWatcher;
-import ng.com.bitlab.micash.utils.CreditCardFormattingTextWatcher;
-import ng.com.bitlab.micash.utils.IMMResult;
 
 import static java.lang.Long.parseLong;
 
@@ -84,6 +54,7 @@ public class AddBankingActivity extends BaseView implements AddBankingContract.V
     @BindView(R.id.error_title) TextView errorText;
 
     @BindView(R.id.select_account_layout) RelativeLayout selectAccountLayout;
+    @BindView(R.id.loading_account_layout) RelativeLayout loadingAccountLayout;
     @BindView(R.id.enter_account_layout) LinearLayout enterAccountLayout;
 
     @BindView(R.id.select_interest_spinner) LabelledSpinner interestSpinner;
@@ -102,9 +73,10 @@ public class AddBankingActivity extends BaseView implements AddBankingContract.V
     Loan mLoan;
     Interest mInterest;
     List<Interest> mInterests;
-    List<BankRecord> mBanks;
-    BankRecord mBank;
+    List<Bank> mBanks;
+    Bank mBank;
     private static String naira = "\u20a6";
+    private boolean isNewAccount = false;
 
 
 
@@ -143,12 +115,13 @@ public class AddBankingActivity extends BaseView implements AddBankingContract.V
 
         mInterests = mPresenter.getInterests(mLoan.getId());
         mInterest = mInterests.get(0);
-        mBanks = mPresenter.getAccounts();
+        //mBanks = mPresenter.getAccounts();
         if(mBanks != null && !mBanks.isEmpty())
             mBank = mBanks.get(0);
 
 
-        initializeAccountSpinner();
+        //initializeAccountSpinner();
+        mPresenter.getAccounts();
         initializeInterestSpinner();
 
 
@@ -224,8 +197,10 @@ public class AddBankingActivity extends BaseView implements AddBankingContract.V
 
     @OnClick(R.id.tv_enter_new_account)
     public void enterNewAccount(){
+        isNewAccount = true;
         selectAccountLayout.setVisibility(View.GONE);
         enterAccountLayout.setVisibility(View.VISIBLE);
+        loadingAccountLayout.setVisibility(View.GONE);
     }
 
     private void refreshView(){
@@ -344,6 +319,9 @@ public class AddBankingActivity extends BaseView implements AddBankingContract.V
     }
 
     @Override
+    public boolean isNewAccount(){ return isNewAccount; }
+
+    @Override
     public void showDialogMessage(String message) {
 
     }
@@ -367,22 +345,34 @@ public class AddBankingActivity extends BaseView implements AddBankingContract.V
     }
 
     @Override
-    public void initializeAccountSpinner() {
-        List<BankRecord> records = mPresenter.getAccounts();
+    public void initializeAccountSpinner(List<Bank> records) {
 
         if(records != null && !records.isEmpty()){
+            mBanks = records;
+            mBank = mBanks.get(0);
             selectAccountLayout.setVisibility(View.VISIBLE);
             enterAccountLayout.setVisibility(View.GONE);
+            loadingAccountLayout.setVisibility(View.GONE);
+
             List<String> items = new ArrayList<>();
-            for(BankRecord record : records){
+            for(Bank record : records){
                 items.add(record.getNumber() + " - " + record.getName());
             }
             accounttSpinner.setItemsArray(items);
         } else {
+            isNewAccount = true;
             selectAccountLayout.setVisibility(View.GONE);
+            loadingAccountLayout.setVisibility(View.GONE);
             enterAccountLayout.setVisibility(View.VISIBLE);
         }
 
+    }
+
+    @Override
+    public void showLoadingAccount() {
+        selectAccountLayout.setVisibility(View.GONE);
+        loadingAccountLayout.setVisibility(View.VISIBLE);
+        enterAccountLayout.setVisibility(View.GONE);
     }
 
     private boolean isAmountValid() {

@@ -74,7 +74,7 @@
             android:textColorHint="@color/whiteText">
 
             <EditText
-                android:backgroundTint="@color/whiteText"
+                app:backgroundTint="@color/whiteText"
                 android:textColor="@color/whiteText"
                 android:id="@+id/input_login_email"
                 android:layout_width="@dimen/_250sdp"
@@ -95,7 +95,7 @@
             android:textColorHint="@color/whiteText">
 
             <EditText
-                android:backgroundTint="@color/whiteText"
+                app:backgroundTint="@color/whiteText"
                 android:textColor="@color/whiteText"
                 android:id="@+id/input_login_password"
                 android:layout_width="@dimen/_250sdp"

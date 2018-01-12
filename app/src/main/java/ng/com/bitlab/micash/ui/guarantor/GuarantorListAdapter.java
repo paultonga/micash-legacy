@@ -1,6 +1,7 @@
 package ng.com.bitlab.micash.ui.guarantor;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.text.Spannable;
@@ -18,6 +19,7 @@ import butterknife.ButterKnife;
 import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.listeners.OnGuaranteeSelectedListener;
 import ng.com.bitlab.micash.models.Guarantee;
+import ng.com.bitlab.micash.models.Interest;
 import ng.com.bitlab.micash.utils.CustomTypefaceSpan;
 import ng.com.bitlab.micash.utils.Formatter;
 
@@ -48,25 +50,59 @@ public class GuarantorListAdapter extends RecyclerView.Adapter<GuarantorListAdap
         if(mGuarantees != null){
             Guarantee g = mGuarantees.get(position);
 
+            holder.iv_logo.setImageResource(getIcon(g.isDecided(), g.isApproved()));
             holder.tv_decision.setText(getDecisionText(g.isDecided(), g.isApproved()));
-            holder.tv_title.setText(getTitleText(g.getRequester_name(), g.getAmount()));
+            holder.tv_decision.setBackgroundColor(getDecisionColor(g.isDecided(), g.isApproved()));
+            holder.tv_title.setText(getTitleText(g.getRequester_name(), g.getAmount(), g.getInterest()));
+            holder.tv_time_ago.setText(Formatter.TimeFormatter(g.getDate_created()));
+
         }
 
     }
 
-    private SpannableStringBuilder getTitleText(String requester_name, String amount) {
+    private int getIcon(boolean decided, boolean approved) {
+        int image = R.drawable.ic_request;
+
+        if(!decided)
+            image = R.drawable.ic_request;
+        if(decided && approved)
+            image = R.drawable.ic_approve;
+        if(decided && !approved)
+            image = R.drawable.ic_decline;
+
+        return image;
+    }
+
+    private int getDecisionColor(boolean decided, boolean approved) {
+        int color = Color.parseColor("#2196F3");
+
+        if(!decided)
+            color = Color.parseColor("#2196F3");
+        if(decided && approved)
+            color = Color.parseColor("#4CAF50");
+        if(decided && !approved)
+            color = Color.parseColor("#f44336");
+
+        return color;
+    }
+
+    private SpannableStringBuilder getTitleText(String requester_name, String amount, Interest interest) {
 
         String amountText = Formatter.getCurrencyText(amount);
+        String duration = interest.getMonths() + " months";
         int start = requester_name.length() + 50;
         int end = start +  + amountText.length();
+        int ds = end + 17;
+        int de = ds + duration.length();
 
         String s = requester_name + " has requested " +
                 "you to guarantee a loan request of " + Formatter.getCurrencyText(amount) +
-                ".";
+                " for a tenure of "+duration;
         Typeface boldFont = Typeface.createFromAsset(mContext.getAssets(), "hnbold.ttf");
         SpannableStringBuilder ss = new SpannableStringBuilder(s);
         ss.setSpan(new CustomTypefaceSpan(boldFont), 0, requester_name.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         ss.setSpan(new CustomTypefaceSpan(boldFont), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(new CustomTypefaceSpan(boldFont), ds, de, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
 
         return ss;
