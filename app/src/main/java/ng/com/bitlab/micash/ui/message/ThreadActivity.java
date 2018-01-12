@@ -67,8 +67,7 @@ public class ThreadActivity extends AppCompatActivity implements ThreadContract.
             @Override
             public void onFocusChange(View view, boolean b) {
                 if(view.hasFocus()){
-                    //mRecycler.scrollToPosition(mAdapter.getItemCount() - 1);
-                    Toast.makeText(ThreadActivity.this, "Has focus", Toast.LENGTH_SHORT).show();
+                    mRecycler.scrollToPosition(mAdapter.getItemCount() - 1);
                 }
             }
 

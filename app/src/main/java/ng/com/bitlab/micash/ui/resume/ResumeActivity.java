@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
@@ -64,8 +65,10 @@ public class ResumeActivity extends BaseView implements ResumeContract.View {
 
         loginName.setText(mPref.getName());
 
+
+
         Picasso.with(this)
-                .load(Uri.parse(user.getProfileImage()))
+                .load(Uri.parse(mPref.getProfile()))
                 .placeholder(R.drawable.profile)
                 .error(R.drawable.profile)
                 .into(profileImage);

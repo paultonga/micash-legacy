@@ -1,16 +1,10 @@
 package ng.com.bitlab.micash.ui.addBanking;
 
-import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.List;
 
 import ng.com.bitlab.micash.listeners.FirebaseDataListener;
 import ng.com.bitlab.micash.listeners.FirebaseQueryListener;
-import ng.com.bitlab.micash.models.Account;
-import ng.com.bitlab.micash.models.AccountRecord;
 import ng.com.bitlab.micash.models.Bank;
-import ng.com.bitlab.micash.models.BankRecord;
-import ng.com.bitlab.micash.models.Card;
 import ng.com.bitlab.micash.models.Guarantee;
 import ng.com.bitlab.micash.models.Guarantor;
 import ng.com.bitlab.micash.models.Interest;

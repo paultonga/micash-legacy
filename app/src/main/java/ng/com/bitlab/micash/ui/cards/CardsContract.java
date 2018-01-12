@@ -3,9 +3,7 @@ package ng.com.bitlab.micash.ui.cards;
 import java.util.List;
 
 import ng.com.bitlab.micash.listeners.FirebaseQueryListener;
-import ng.com.bitlab.micash.models.AccountRecord;
 import ng.com.bitlab.micash.models.Bank;
-import ng.com.bitlab.micash.models.BankRecord;
 import ng.com.bitlab.micash.ui.common.IBasePresenter;
 import ng.com.bitlab.micash.ui.common.IBaseVew;
 
@@ -19,8 +17,6 @@ public interface CardsContract {
 
         void showEmptyLayout();
 
-        void showCards(List<BankRecord> records);
-
         void showRecords(List<Bank> records);
 
         void showAddDialog();
@@ -30,8 +26,6 @@ public interface CardsContract {
     }
 
     interface Presenter extends IBasePresenter<View>{
-
-        void loadData();
 
         void fetchData();
 

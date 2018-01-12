@@ -1,19 +1,10 @@
 package ng.com.bitlab.micash.ui.addBanking;
 
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
-import android.transition.Visibility;
-import android.util.Log;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.joda.time.DateTime;
@@ -24,23 +15,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ng.com.bitlab.micash.common.AppPreference;
-import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.data.SampleLoansData;
 import ng.com.bitlab.micash.listeners.FirebaseDataListener;
 import ng.com.bitlab.micash.listeners.FirebaseQueryListener;
-import ng.com.bitlab.micash.models.Account;
-import ng.com.bitlab.micash.models.AccountRecord;
 import ng.com.bitlab.micash.models.Bank;
-import ng.com.bitlab.micash.models.BankRecord;
-import ng.com.bitlab.micash.models.Card;
 import ng.com.bitlab.micash.models.Guarantee;
 import ng.com.bitlab.micash.models.Guarantor;
 import ng.com.bitlab.micash.models.Interest;
 import ng.com.bitlab.micash.models.Loan;
 import ng.com.bitlab.micash.models.Request;
 import ng.com.bitlab.micash.ui.common.BasePresenter;
-import ng.com.bitlab.micash.ui.common.IBasePresenter;
-import ng.com.bitlab.micash.utils.Constants;
 
 /**
  * Created by paul on 12/3/17.
@@ -183,6 +167,7 @@ public class AddBankingPresenter extends BasePresenter<AddBankingContract.View> 
         guarantee.setDate_created(DateTime.now().getMillis());
         guarantee.setDecided(false);
         guarantee.setApproved(false);
+        guarantee.setInterest(interest);
 
         mRepository.sendGuarantorRequest(guarantor, guarantee, new FirebaseDataListener() {
             @Override

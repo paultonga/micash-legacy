@@ -12,6 +12,12 @@ import ng.com.bitlab.micash.utils.Constants;
 
 public interface AppPreference {
 
+    @KeyByString("key_notifs")
+    void setNotifCount(int count);
+
+    @KeyByString("key_notifs")
+    int getNotifCount();
+
     //Name
     @KeyByString("key_name")
     void setName(String name);

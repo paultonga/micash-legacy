@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
 import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.listeners.OnGuaranteeSelectedListener;
 import ng.com.bitlab.micash.models.Guarantee;
+import ng.com.bitlab.micash.models.Interest;
 import ng.com.bitlab.micash.utils.CustomTypefaceSpan;
 import ng.com.bitlab.micash.utils.Formatter;
 
@@ -52,7 +53,7 @@ public class GuarantorListAdapter extends RecyclerView.Adapter<GuarantorListAdap
             holder.iv_logo.setImageResource(getIcon(g.isDecided(), g.isApproved()));
             holder.tv_decision.setText(getDecisionText(g.isDecided(), g.isApproved()));
             holder.tv_decision.setBackgroundColor(getDecisionColor(g.isDecided(), g.isApproved()));
-            holder.tv_title.setText(getTitleText(g.getRequester_name(), g.getAmount()));
+            holder.tv_title.setText(getTitleText(g.getRequester_name(), g.getAmount(), g.getInterest()));
             holder.tv_time_ago.setText(Formatter.TimeFormatter(g.getDate_created()));
 
         }
@@ -85,19 +86,23 @@ public class GuarantorListAdapter extends RecyclerView.Adapter<GuarantorListAdap
         return color;
     }
 
-    private SpannableStringBuilder getTitleText(String requester_name, String amount) {
+    private SpannableStringBuilder getTitleText(String requester_name, String amount, Interest interest) {
 
         String amountText = Formatter.getCurrencyText(amount);
+        String duration = interest.getMonths() + " months";
         int start = requester_name.length() + 50;
         int end = start +  + amountText.length();
+        int ds = end + 17;
+        int de = ds + duration.length();
 
         String s = requester_name + " has requested " +
                 "you to guarantee a loan request of " + Formatter.getCurrencyText(amount) +
-                ".";
+                " for a tenure of "+duration;
         Typeface boldFont = Typeface.createFromAsset(mContext.getAssets(), "hnbold.ttf");
         SpannableStringBuilder ss = new SpannableStringBuilder(s);
         ss.setSpan(new CustomTypefaceSpan(boldFont), 0, requester_name.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         ss.setSpan(new CustomTypefaceSpan(boldFont), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(new CustomTypefaceSpan(boldFont), ds, de, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
 
         return ss;

@@ -21,7 +21,6 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
     public void onTokenRefresh() {
         mPref = MiCashApplication.getPreference();
         String token = FirebaseInstanceId.getInstance().getToken();
-        //Log.d("Token", "Refreshed token: " + token);
         mPref.setToken(token);
         Utility.updateInstanceID();
     }

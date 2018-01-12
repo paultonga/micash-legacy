@@ -1,7 +1,10 @@
 package ng.com.bitlab.micash.ui.profile;
 
+import android.net.Uri;
+
 import ng.com.bitlab.micash.models.Profile;
-import ng.com.bitlab.micash.models.ProfileRecord;
+import ng.com.bitlab.micash.ui.common.IBasePresenter;
+import ng.com.bitlab.micash.ui.common.IBaseVew;
 
 /**
  * Created by paul on 11/23/17.
@@ -9,7 +12,7 @@ import ng.com.bitlab.micash.models.ProfileRecord;
 
 public interface ProfileContract {
 
-    interface View {
+    interface View extends IBaseVew {
         void showAddEmploymentDialog();
 
         void showEmptyLayout();
@@ -18,13 +21,25 @@ public interface ProfileContract {
 
         void setPhoneNumber(String phone);
 
+        void onProfileImageTouched();
+
+        void refreshImage();
+
     }
 
-    interface Presenter {
+    interface Presenter extends IBasePresenter<View> {
 
         void getProfile();
 
         String getPhoneNumber();
+
+        void uploadProfileImage(byte[] data);
+
+        String getImageName();
+
+        void updateUserProfile(Uri s);
+
+        void updateUserAccount(String uri);
 
     }
 }

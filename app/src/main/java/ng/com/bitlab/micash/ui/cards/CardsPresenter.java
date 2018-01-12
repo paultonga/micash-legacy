@@ -10,9 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ng.com.bitlab.micash.listeners.FirebaseQueryListener;
-import ng.com.bitlab.micash.models.AccountRecord;
 import ng.com.bitlab.micash.models.Bank;
-import ng.com.bitlab.micash.models.BankRecord;
 import ng.com.bitlab.micash.ui.common.BasePresenter;
 
 /**
@@ -29,15 +27,6 @@ public class CardsPresenter extends BasePresenter<CardsContract.View> implements
         mRepository = new CardsRepository();
     }
 
-    @Override
-    public void loadData() {
-        List<BankRecord> accountRecord = BankRecord.listAll(BankRecord.class);
-        if(accountRecord == null || accountRecord.isEmpty()){
-            view.showEmptyLayout();
-        } else {
-            view.showCards(accountRecord);
-        }
-    }
 
     @Override
     public void fetchData() {

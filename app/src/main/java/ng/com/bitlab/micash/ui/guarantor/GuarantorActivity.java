@@ -103,10 +103,10 @@ public class GuarantorActivity extends BaseView implements GuarantorContract.Vie
 
     private void showConfirmDialog(final Guarantee guarantee){
         new MaterialDialog.Builder(this)
-                .title("Guarantee Request from "+guarantee.getRequester_name())
-                .content("Clicking GUARANTEE means that you know requester and can be held as a surety in case the requester fails to repay.")
+                .title("Guarantor Request from "+guarantee.getRequester_name())
+                .content("By clicking ACCEPT it means that you know the borrower and would be held liable to repay in case the borrower defaults.")
                 .neutralText("Cancel")
-                .positiveText("GUARANTEE")
+                .positiveText("ACCEPT")
                 .positiveColor(Color.BLUE)
                 .negativeText("DECLINE")
                 .negativeColor(Color.RED)

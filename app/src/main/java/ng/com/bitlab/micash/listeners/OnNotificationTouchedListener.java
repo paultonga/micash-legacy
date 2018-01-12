@@ -1,6 +1,6 @@
 package ng.com.bitlab.micash.listeners;
 
-import ng.com.bitlab.micash.models.Notification;
+import ng.com.bitlab.micash.models.Notif;
 
 /**
  * Created by paul on 1/6/18.
@@ -8,5 +8,5 @@ import ng.com.bitlab.micash.models.Notification;
 
 public interface OnNotificationTouchedListener {
 
-    void onNotificationTouched(Notification n);
+    void onNotificationTouched(Notif n);
 }

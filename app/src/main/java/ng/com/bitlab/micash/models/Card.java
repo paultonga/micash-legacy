@@ -1,6 +1,5 @@
 package ng.com.bitlab.micash.models;
 
-import com.orm.SugarRecord;
 
 /**
  * Created by paul on 12/2/17.

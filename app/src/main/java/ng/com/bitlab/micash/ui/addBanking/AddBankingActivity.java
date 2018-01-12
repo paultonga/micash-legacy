@@ -1,46 +1,25 @@
 package ng.com.bitlab.micash.ui.addBanking;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.aldoapps.autoformatedittext.AutoFormatEditText;
-import com.blackcat.currencyedittext.CurrencyEditText;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.satsuware.usefulviews.LabelledSpinner;
-
-import org.w3c.dom.Text;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Currency;
 import java.util.List;
 import java.util.Locale;
 
@@ -49,19 +28,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.common.MainActivity;
-import ng.com.bitlab.micash.models.Account;
-import ng.com.bitlab.micash.models.AccountRecord;
 import ng.com.bitlab.micash.models.Bank;
-import ng.com.bitlab.micash.models.BankRecord;
-import ng.com.bitlab.micash.models.Card;
 import ng.com.bitlab.micash.models.Interest;
 import ng.com.bitlab.micash.models.Loan;
-import ng.com.bitlab.micash.ui.addContact.AddContactActivity;
 import ng.com.bitlab.micash.ui.common.BaseView;
-import ng.com.bitlab.micash.utils.CreditCardEditText;
-import ng.com.bitlab.micash.utils.CreditCardExpiryTextWatcher;
-import ng.com.bitlab.micash.utils.CreditCardFormattingTextWatcher;
-import ng.com.bitlab.micash.utils.IMMResult;
 
 import static java.lang.Long.parseLong;
 
