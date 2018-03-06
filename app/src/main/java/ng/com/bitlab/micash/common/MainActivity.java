@@ -10,6 +10,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.preference.PreferenceManager;
@@ -51,10 +53,13 @@ import butterknife.BindView;
 import ng.com.bitlab.micash.R;
 import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.events.NotificationEvent;
+import ng.com.bitlab.micash.listeners.NotificationAddedListener;
+import ng.com.bitlab.micash.listeners.NotificationReceivedListener;
 import ng.com.bitlab.micash.models.Guarantor;
 import ng.com.bitlab.micash.models.Notif;
 import ng.com.bitlab.micash.models.Profile;
 import ng.com.bitlab.micash.models.User;
+import ng.com.bitlab.micash.services.NotificationService;
 import ng.com.bitlab.micash.ui.cards.CardsActivity;
 import ng.com.bitlab.micash.ui.common.BaseView;
 import ng.com.bitlab.micash.ui.guarantor.GuarantorActivity;
@@ -64,6 +69,7 @@ import ng.com.bitlab.micash.ui.resume.ResumeActivity;
 import ng.com.bitlab.micash.ui.transactions.TransactionsActivity;
 import ng.com.bitlab.micash.utils.Constants;
 import ng.com.bitlab.micash.utils.Utility;
+import ng.com.bitlab.micash.widgets.BadgeDrawable;
 
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -71,14 +77,15 @@ import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
+import com.squareup.otto.Subscribe;
 
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
+import org.joda.time.DateTime;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import static ng.com.bitlab.micash.core.MiCashApplication.bus;
 
 public class MainActivity extends BaseView {
 
@@ -127,11 +134,13 @@ public class MainActivity extends BaseView {
             mActivity = this;
             savePreferences(Constants.DONE);
 
-            EventBus.getDefault().register(this);
-
+            bus.register(this);
             mPref = MiCashApplication.getPreference();
 
             initializeOnlinePresence();
+
+            if(mPref.getUUID() == null)
+                mPref.setUUID(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
             lastLogin();
             d();
@@ -184,16 +193,23 @@ public class MainActivity extends BaseView {
             initViewPager();
             Utility.updateInstanceID();
             getProfile();
-
-            countUnreadNotification();
+            startService(new Intent(this, NotificationService.class));
+            //countUnreadNotification();
         }else{
             startLoginActivity();
         }
+
+
     }//e
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_chat, menu);
+        getMenuInflater().inflate(R.menu.menu_talk, menu);
+
+status        MenuItem itemCart = menu.findItem(R.id.action_support);
+        LayerDrawable icon = (LayerDrawable) itemCart.getIcon();
+        setBadgeCount(this, icon, "9");
+
         return true;
     }
 
@@ -211,11 +227,28 @@ public class MainActivity extends BaseView {
     private BroadcastReceiver onMessage = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            checkNotifications();
-            //getLastAdded();
-            countUnreadNotification();
+            int count = intent.getIntExtra("com.ng.bitlab.micash.CUSTOM_COUNT", 0);
+            if(count > 0)
+                showBadge(count);
         }
     };
+
+    public static void setBadgeCount(Context context, LayerDrawable icon, String count) {
+
+        BadgeDrawable badge;
+
+        // Reuse drawable if possible
+        Drawable reuse = icon.findDrawableByLayerId(R.id.ic_badge);
+        if (reuse != null && reuse instanceof BadgeDrawable) {
+            badge = (BadgeDrawable) reuse;
+        } else {
+            badge = new BadgeDrawable(context);
+        }
+
+        badge.setCount(count);
+        icon.mutate();
+        icon.setDrawableByLayerId(R.id.ic_badge, badge);
+    }
 
     private void getLastAdded(){
 
@@ -428,6 +461,8 @@ public class MainActivity extends BaseView {
                 });
     }
 
+
+
     private void checkNotifications(){
         String uuid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         FirebaseDatabase.getInstance().getReference()
@@ -440,7 +475,7 @@ public class MainActivity extends BaseView {
                         for(DataSnapshot ds: dataSnapshot.getChildren()) {
                             Notif notif = ds.getValue(Notif.class);
                             //countUnreadNotification();
-                            showNotification(notif.getTitle(), notif.getDescription());
+                            //showNotification(notif.getTitle(), notif.getDescription());
                         }
                     }
 
@@ -452,29 +487,6 @@ public class MainActivity extends BaseView {
 
     }
 
-    private void showNotification(String title, String body){
-
-            Intent intent = new Intent(MiCashApplication.getContext(), MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            PendingIntent pendingIntent = PendingIntent.getActivity(this, 1,
-                    intent, PendingIntent.FLAG_ONE_SHOT);
-
-            Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-
-            NotificationCompat.Builder notificationBuilder = (NotificationCompat.Builder) new
-                    NotificationCompat.Builder(this)
-                    .setSmallIcon(R.drawable.ic)
-                    .setContentTitle("miCash - " + title)
-                    .setContentText(body)
-                    .setAutoCancel(true)
-                    .setSound(alarmSound)
-                    .setContentIntent(pendingIntent);
-
-            NotificationManager notificationManager = (NotificationManager)
-                    getSystemService(Context.NOTIFICATION_SERVICE);
-            notificationManager.notify(1, notificationBuilder.build());
-
-    }
 
     private void countUnreadNotification(){
         String uuid = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -500,11 +512,7 @@ public class MainActivity extends BaseView {
                 });
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onNotificationEvent(NotificationEvent event){
-        countUnreadNotification();
-    }
-
+    //can't seem to remember the purpose of this method
     private void d(){
         Guarantor g = new Guarantor();
         g.setInstanceID(FirebaseInstanceId.getInstance().getToken());
@@ -555,6 +563,13 @@ public class MainActivity extends BaseView {
         return _sb.toString();
     }
 
+    @Subscribe
+    public void getNotifCount(int count){
+        //showBadge(count);
+        //showToast("Event fired");
+    }
+
+
     public void getProfile() {
         String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
         FirebaseDatabase.getInstance().getReference()
@@ -580,21 +595,4 @@ public class MainActivity extends BaseView {
                 });
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        EventBus.getDefault().unregister(this);
-    }
 }

@@ -12,6 +12,7 @@
     <color name="white_70">#B3FFFFFF</color>
     <color name="bg_row_background">#fa315b</color>
 
+    <color name="dummy">#FF0288D1</color>
 
     <color name="black_overlay">#66000000</color>
     <color name="indicator_unselected">#c8000b12</color>

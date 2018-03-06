@@ -3,6 +3,7 @@ package ng.com.bitlab.micash.ui.profile;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
@@ -12,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,6 +38,7 @@ import ng.com.bitlab.micash.ui.common.BaseView;
 public class ProfileActivity extends BaseView implements ProfileContract.View {
 
     @BindView(R.id.employment_layout) LinearLayout employmentLayout;
+    @BindView(R.id.main) LinearLayout mainLayout;
 
     @BindView(R.id.add_employment_button) Button addEmploymentButton;
 
@@ -52,7 +55,7 @@ public class ProfileActivity extends BaseView implements ProfileContract.View {
     @BindView(R.id.tv_office_address) TextView tvAddress;
     @BindView(R.id.tv_office_name) TextView tvOfficeName;
     @BindView(R.id.tv_status) TextView tvStatus;
-
+    @BindView(R.id.progress_profile) ProgressBar progressBar;
 
     AppPreference mPref;
     ProfileContract.Presenter mPresenter;
@@ -94,6 +97,8 @@ public class ProfileActivity extends BaseView implements ProfileContract.View {
 
     @Override
     public void showEmptyLayout() {
+        mainLayout.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.GONE);
         employmentLayout.setVisibility(View.GONE);
         addEmploymentButton.setVisibility(View.VISIBLE);
         editEmployment.setVisibility(View.GONE);
@@ -102,6 +107,8 @@ public class ProfileActivity extends BaseView implements ProfileContract.View {
     @Override
     public void showDataLayout(Profile pr) {
         if (pr != null) {
+            mainLayout.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.GONE);
             employmentLayout.setVisibility(View.VISIBLE);
             addEmploymentButton.setVisibility(View.GONE);
             editEmployment.setVisibility(View.VISIBLE);
@@ -132,6 +139,16 @@ public class ProfileActivity extends BaseView implements ProfileContract.View {
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
 
+    }
+
+    @Override
+    public void showLoadingLayout() {
+        mainLayout.setVisibility(View.GONE);
+        progressBar.getIndeterminateDrawable().setColorFilter(0xFF0288D1, PorterDuff.Mode.MULTIPLY);
+        progressBar.setVisibility(View.VISIBLE);
+        employmentLayout.setVisibility(View.GONE);
+        addEmploymentButton.setVisibility(View.GONE);
+        editEmployment.setVisibility(View.GONE);
     }
 
     private void startUpload(){

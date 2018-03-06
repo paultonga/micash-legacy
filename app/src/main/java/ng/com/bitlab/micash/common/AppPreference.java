@@ -12,6 +12,24 @@ import ng.com.bitlab.micash.utils.Constants;
 
 public interface AppPreference {
 
+    @KeyByString("key_notified")
+    void setNotified(boolean isNotified);
+
+    @KeyByString("key_notified")
+    boolean getNotified();
+
+    @KeyByString("key_message_count")
+    void setMessageCount(long count);
+
+    @KeyByString("key_message_count")
+    long getMessageCount();
+
+    @KeyByString("key_uuid")
+    void setUUID(String uuid);
+
+    @KeyByString("key_uuid")
+    String getUUID();
+
     @KeyByString("key_notifs")
     void setNotifCount(int count);
 

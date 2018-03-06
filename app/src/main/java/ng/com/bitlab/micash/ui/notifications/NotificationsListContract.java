@@ -32,7 +32,7 @@ public interface NotificationsListContract {
 
         void showNotifications(List<Notif> notifications);
 
-        void onNotificationReceived();
+        void onNotificationReceived(Notif notif);
 
         void onClearAllClicked();
 

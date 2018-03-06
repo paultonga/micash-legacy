@@ -89,15 +89,15 @@ public class GuarantorListAdapter extends RecyclerView.Adapter<GuarantorListAdap
     private SpannableStringBuilder getTitleText(String requester_name, String amount, Interest interest) {
 
         String amountText = Formatter.getCurrencyText(amount);
-        String duration = interest.getMonths() + " months";
+        String duration = interest.getMonths() + " month(s).";
         int start = requester_name.length() + 50;
         int end = start +  + amountText.length();
-        int ds = end + 17;
+        int ds = end + 16;
         int de = ds + duration.length();
 
         String s = requester_name + " has requested " +
                 "you to guarantee a loan request of " + Formatter.getCurrencyText(amount) +
-                " for a tenure of "+duration;
+                " for a tenor of "+duration;
         Typeface boldFont = Typeface.createFromAsset(mContext.getAssets(), "hnbold.ttf");
         SpannableStringBuilder ss = new SpannableStringBuilder(s);
         ss.setSpan(new CustomTypefaceSpan(boldFont), 0, requester_name.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

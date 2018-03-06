@@ -12,18 +12,21 @@ public class Notif {
     private String description;
     private long created;
     private boolean isRead;
+    private boolean isOpen;
 
 
     public Notif() {
     }
 
-    public Notif(String title, String description, long created, boolean isRead) {
+    public Notif(String title, String description, long created, boolean isRead, boolean isOpen) {
         this.title = title;
         this.description = description;
         this.created = created;
         this.isRead = isRead;
+        this.isOpen = isOpen;
 
     }
+
 
     public long getCreated() {
         return created;
@@ -58,4 +61,11 @@ public class Notif {
         isRead = read;
     }
 
+    public boolean isOpen() {
+        return isOpen;
+    }
+
+    public void setOpen(boolean open) {
+        isOpen = open;
+    }
 }

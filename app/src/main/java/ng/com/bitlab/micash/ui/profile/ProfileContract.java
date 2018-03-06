@@ -23,6 +23,8 @@ public interface ProfileContract {
 
         void onProfileImageTouched();
 
+        void showLoadingLayout();
+
         void refreshImage();
 
     }

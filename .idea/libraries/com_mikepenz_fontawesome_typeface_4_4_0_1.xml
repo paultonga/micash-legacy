@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.mikepenz:fontawesome-typeface-4.4.0.1">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.4.0.1.aar/51e70da4cf81920fcdc38c570dd2dd7f/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.4.0.1.aar/51e70da4cf81920fcdc38c570dd2dd7f/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.4.0.1.aar/fa6ec21f860222feeb41a0114042046e/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.4.0.1.aar/fa6ec21f860222feeb41a0114042046e/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

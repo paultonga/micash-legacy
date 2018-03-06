@@ -9,14 +9,16 @@ public class Message {
     private String from;
     private String message;
     private long date;
+    private boolean isSeen;
 
     public Message() {
     }
 
-    public Message(String from, String message, long date) {
+    public Message(String from, String message, long date, boolean isSeen) {
         this.from = from;
         this.message = message;
         this.date = date;
+        this.isSeen = isSeen;
     }
 
     public String getFrom() {
@@ -41,5 +43,13 @@ public class Message {
 
     public void setDate(long date) {
         this.date = date;
+    }
+
+    public boolean isSeen() {
+        return isSeen;
+    }
+
+    public void setSeen(boolean seen) {
+        isSeen = seen;
     }
 }

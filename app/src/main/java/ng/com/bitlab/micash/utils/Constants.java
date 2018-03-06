@@ -17,6 +17,7 @@ public class Constants {
 
 
     public final static String PROFILE_URL = "https://firebasestorage.googleapis.com/v0/b/micash-e8219.appspot.com/o/profile%2Fprofile.png?alt=media&token=36fa184b-72f8-464d-88fe-cb379ead6fcf";
+    public final static String naira = "\u20a6";
 
 
     public final static String APP_STATE = "appState";

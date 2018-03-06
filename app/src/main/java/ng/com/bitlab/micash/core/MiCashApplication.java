@@ -6,6 +6,8 @@ import android.support.multidex.MultiDex;
 
 
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.otto.Bus;
+import com.squareup.otto.ThreadEnforcer;
 
 import net.orange_box.storebox.StoreBox;
 
@@ -23,6 +25,7 @@ public class MiCashApplication extends Application {
 
     private static Context context;
     private static AppPreference mPreferences;
+    public static Bus bus;
 
 
 
@@ -30,7 +33,7 @@ public class MiCashApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        bus = new Bus(ThreadEnforcer.ANY);
 
         FontsOverride.setDefaultFont(this, "SERIF", "hnlight.ttf");
         FontsOverride.setDefaultFont(this, "SERIF_BOLD", "hnbold.ttf");

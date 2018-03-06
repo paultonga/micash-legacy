@@ -22,12 +22,23 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <ProgressBar
+        android:visibility="visible"
+        android:id="@+id/progress_profile"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_180sdp"
+        android:tint="@color/colorPrimary"
+        />
+
     <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/_8sdp"
+        android:visibility="gone"
         android:orientation="vertical">
-
 
             <RelativeLayout
                 android:layout_width="@dimen/_290sdp"

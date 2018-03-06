@@ -65,13 +65,19 @@ public class ResumeActivity extends BaseView implements ResumeContract.View {
 
         loginName.setText(mPref.getName());
 
-
-
-        Picasso.with(this)
-                .load(Uri.parse(mPref.getProfile()))
-                .placeholder(R.drawable.profile)
-                .error(R.drawable.profile)
-                .into(profileImage);
+        if(mPref.getProfile() != null) {
+            Picasso.with(this)
+                    .load(Uri.parse(mPref.getProfile()))
+                    .placeholder(R.drawable.profile)
+                    .error(R.drawable.profile)
+                    .into(profileImage);
+        } else {
+            Picasso.with(this)
+                    .load(R.drawable.profile)
+                    .placeholder(R.drawable.profile)
+                    .error(R.drawable.profile)
+                    .into(profileImage);
+        }
     }
 
     @Override

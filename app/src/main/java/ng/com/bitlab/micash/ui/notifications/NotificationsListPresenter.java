@@ -7,6 +7,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import ng.com.bitlab.micash.listeners.FirebaseQueryListener;
@@ -26,6 +27,7 @@ public class NotificationsListPresenter extends BasePresenter<NotificationsListC
         this.mView = mView;
         this.mRepository = new NotificationsListRepository();
     }
+
 
     @Override
     public void loadNotifications() {

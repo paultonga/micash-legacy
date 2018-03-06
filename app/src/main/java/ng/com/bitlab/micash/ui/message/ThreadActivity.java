@@ -107,7 +107,7 @@ public class ThreadActivity extends AppCompatActivity implements ThreadContract.
     public void sendMessage() {
         if(inputMessage.getText().length() > 0){
             Message message = new Message(FirebaseAuth.getInstance().getCurrentUser().getDisplayName(),
-                    inputMessage.getText().toString(), DateTime.now().getMillis());
+                    inputMessage.getText().toString(), DateTime.now().getMillis(),true);
             mPresenter.sendMessage(message);
         }
     }

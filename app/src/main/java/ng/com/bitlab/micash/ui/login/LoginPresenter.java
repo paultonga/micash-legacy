@@ -27,7 +27,9 @@ import ng.com.bitlab.micash.utils.Constants;
 public class LoginPresenter extends BasePresenter<LoginContract.View> implements
             LoginContract.Presenter {
 
+    AppPreference mPref;
     public LoginPresenter(LoginContract.View view){
+        mPref = MiCashApplication.getPreference();
         this.view = view;
     }
 
@@ -44,6 +46,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.View> implements
                             view.hideDialog();
                             view.showToast("Login successful.");
                             //saveUserToPreferences(mAuth.getCurrentUser());
+                            savePreferences();
                             view.startMainActivity();
                         } else {
                             view.hideDialog();
@@ -51,6 +54,16 @@ public class LoginPresenter extends BasePresenter<LoginContract.View> implements
                         }
                     }
                 });
+    }
+
+    private void savePreferences(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user != null){
+            mPref.setProfile(user.getPhotoUrl().toString());
+            mPref.setName(user.getDisplayName());
+            mPref.setUUID(user.getUid());
+            mPref.setEmail(user.getEmail());
+        }
     }
 
     private void saveUserToPreferences(FirebaseUser user) {

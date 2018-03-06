@@ -80,6 +80,13 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name=".services.StartServiceAfterBoot" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" >
+                </action>
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".ui.recover.RecoverActivity"
             android:screenOrientation="portrait"
@@ -106,6 +113,7 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+        <service android:name=".services.NotificationService" />
 
         <activity
             android:name=".ui.profile.TestActivity"

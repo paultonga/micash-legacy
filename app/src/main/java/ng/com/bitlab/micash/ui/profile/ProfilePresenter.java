@@ -41,6 +41,7 @@ public class ProfilePresenter extends BasePresenter<ProfileContract.View> implem
 
     @Override
     public void getProfile() {
+        view.showLoadingLayout();
         String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
         FirebaseDatabase.getInstance().getReference()
                 .child("profile")

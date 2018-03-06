@@ -5,4 +5,8 @@ package ng.com.bitlab.micash.events;
  */
 
 public class NotificationEvent {
+    public int count;
+
+    public NotificationEvent() {
+    }
 }

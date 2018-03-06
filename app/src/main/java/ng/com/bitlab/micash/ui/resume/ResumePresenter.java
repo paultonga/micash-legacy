@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.gson.Gson;
 
+import ng.com.bitlab.micash.common.AppPreference;
 import ng.com.bitlab.micash.core.MiCashApplication;
 import ng.com.bitlab.micash.models.Device;
 import ng.com.bitlab.micash.models.User;
@@ -24,9 +25,11 @@ import ng.com.bitlab.micash.utils.Constants;
 
 public class ResumePresenter extends BasePresenter<ResumeContract.View>
         implements ResumeContract.Presenter {
+    AppPreference mPref;
 
 
     public ResumePresenter(ResumeContract.View view) {
+        mPref = MiCashApplication.getPreference();
         this.view = view;
     }
 
@@ -40,6 +43,7 @@ public class ResumePresenter extends BasePresenter<ResumeContract.View>
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             //saveUserToPreference(mAuth.getCurrentUser());
+                            savePreferences();
                             view.hideDialog();
                             view.showToast("Login successful.");
                             view.startMainActivity();
@@ -49,6 +53,16 @@ public class ResumePresenter extends BasePresenter<ResumeContract.View>
                         }
                     }
                 });
+    }
+
+    private void savePreferences(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user != null){
+            mPref.setProfile(user.getPhotoUrl().toString());
+            mPref.setName(user.getDisplayName());
+            mPref.setUUID(user.getUid());
+            mPref.setEmail(user.getEmail());
+        }
     }
 
     @Override
